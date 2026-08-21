@@ -1,0 +1,16 @@
+app:
+  name: "Cold Mail Agent"
+  version: "0.1.0"
+
+llm:
+  provider: "gemini"
+  model: "gemini-3.1-flash-lite"
+
+email:
+  provider: "gmail"
+
+search:
+  max_recruiters: 5
+
+hunter:
+  enabled: false

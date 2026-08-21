@@ -1,0 +1,10 @@
+pydantic
+python-dotenv
+streamlit
+langchain
+langgraph
+langchain-google-genai
+requests
+beautifulsoup4
+pytest
+ddgs
