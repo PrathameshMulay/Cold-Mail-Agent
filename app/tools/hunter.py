@@ -50,7 +50,7 @@ class HunterTool:
             first_name=data.get("first_name"),
             last_name=data.get("last_name"),
             email=data.get("email"),
-            confidence_score=data.get("score"),
+            hunter_score=data.get("score"),
             verification_status=(
                 data.get("verification", {})
                 .get("status")

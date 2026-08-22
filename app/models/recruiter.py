@@ -37,7 +37,7 @@ class RecruiterEmail(BaseModel):
 
     email: Optional[str] = None
 
-    confidence_score: Optional[float] = Field(
+    hunter_score: Optional[float] = Field(
         default=None,
         ge=0,
         le=100,
