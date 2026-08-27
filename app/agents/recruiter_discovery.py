@@ -371,7 +371,7 @@ IMPORTANT:
         # STEP 6 — CAP AT 15 ACTUAL RECRUITERS
         # ==================================================
 
-        recruiters = recruiters[:15]
+        recruiters = recruiters[:10]
 
         print(
             f"Final recruiter pool: "
