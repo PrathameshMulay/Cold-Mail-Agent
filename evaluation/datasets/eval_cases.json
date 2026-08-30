@@ -1,0 +1,58 @@
+[
+  {
+    "case_id": "case_001",
+    "description": "Strong Data Scientist internship match with clear recruiter availability",
+    "job": {
+      "company": "Microsoft",
+      "title": "Data Scientist Intern",
+      "location": "Chicago, IL",
+      "description": "We are seeking a Data Scientist Intern to work with large datasets and build predictive models. The candidate will use Python and SQL for data analysis, develop machine learning models, perform statistical analysis, and communicate insights to business stakeholders. Experience with pandas, scikit-learn, and cloud platforms is preferred."
+    },
+    "resume": {
+      "candidate_name": "Alex Morgan",
+      "text": "Alex Morgan\nMS in Data Science\n\nExperience:\nData Science Intern at Acme Analytics\n- Built customer churn prediction models using Python and scikit-learn, achieving 87% ROC-AUC.\n- Used SQL and pandas to analyze 5M+ customer records.\n- Created statistical models to identify factors affecting customer retention.\n- Presented analytical findings to business stakeholders.\n\nProjects:\n- Built a demand forecasting model using Python and time-series analysis.\n\nSkills: Python, SQL, pandas, scikit-learn, Machine Learning, Statistics"
+    },
+    "expected": {
+      "job_analysis": {
+        "company": "Microsoft",
+        "title": "Data Scientist Intern",
+        "location": "Chicago, IL",
+        "required_skills": [
+          "Python",
+          "SQL",
+          "Machine Learning",
+          "Statistical Analysis",
+          "Data Analysis"
+        ]
+      },
+      "resume_analysis": {
+        "candidate_name": "Alex Morgan",
+        "skills": [
+          "Python",
+          "SQL",
+          "Machine Learning",
+          "Statistics"
+        ]
+      },
+      "recruiter": {
+        "should_be_recruiter": true,
+        "company": "Microsoft",
+        "preferred_location": "Chicago, IL"
+      },
+      "evidence": [
+        "Built customer churn prediction models using Python and scikit-learn",
+        "Analyzed 5M+ customer records using SQL and pandas",
+        "Built statistical models",
+        "Presented findings to business stakeholders"
+      ],
+      "email": {
+        "must_be_factually_supported": true,
+        "must_not_invent_experience": true,
+        "must_mention_job": true,
+        "must_use_relevant_evidence": true
+      }
+    }
+  }
+
+  
+]

@@ -1,0 +1,216 @@
+[
+  {
+    "case_id": "case_001",
+    "status": "success",
+    "expected": {
+      "job_analysis": {
+        "company": "Microsoft",
+        "title": "Data Scientist Intern",
+        "location": "Chicago, IL",
+        "required_skills": [
+          "Python",
+          "SQL",
+          "Machine Learning",
+          "Statistical Analysis",
+          "Data Analysis"
+        ]
+      },
+      "resume_analysis": {
+        "candidate_name": "Alex Morgan",
+        "skills": [
+          "Python",
+          "SQL",
+          "Machine Learning",
+          "Statistics"
+        ]
+      },
+      "recruiter": {
+        "should_be_recruiter": true,
+        "company": "Microsoft",
+        "preferred_location": "Chicago, IL"
+      },
+      "evidence": [
+        "Built customer churn prediction models using Python and scikit-learn",
+        "Analyzed 5M+ customer records using SQL and pandas",
+        "Built statistical models",
+        "Presented findings to business stakeholders"
+      ],
+      "email": {
+        "must_be_factually_supported": true,
+        "must_not_invent_experience": true,
+        "must_mention_job": true,
+        "must_use_relevant_evidence": true
+      }
+    },
+    "outputs": {
+      "job": {
+        "title": "Data Scientist Intern",
+        "company": "Not specified",
+        "location": null,
+        "description": "We are seeking a Data Scientist Intern to work with large datasets and build predictive models. The candidate will use Python and SQL for data analysis, develop machine learning models, perform statistical analysis, and communicate insights to business stakeholders. Experience with pandas, scikit-learn, and cloud platforms is preferred.",
+        "required_skills": [
+          "Python",
+          "SQL",
+          "Data analysis",
+          "Machine learning",
+          "Statistical analysis"
+        ],
+        "preferred_skills": [
+          "pandas",
+          "scikit-learn",
+          "cloud platforms"
+        ],
+        "responsibilities": [
+          "Work with large datasets",
+          "Build predictive models",
+          "Develop machine learning models",
+          "Perform statistical analysis",
+          "Communicate insights to business stakeholders"
+        ],
+        "qualifications": [],
+        "keywords": [
+          "Data Scientist",
+          "Intern",
+          "Predictive modeling",
+          "Machine learning",
+          "Data analysis",
+          "Python",
+          "SQL"
+        ]
+      },
+      "resume": {
+        "name": "Alex Morgan",
+        "email": "Not provided",
+        "education": [
+          "MS in Data Science"
+        ],
+        "skills": [
+          "Python",
+          "SQL",
+          "pandas",
+          "scikit-learn",
+          "Machine Learning",
+          "Statistics"
+        ],
+        "experience": [
+          "Data Science Intern at Acme Analytics: Built customer churn prediction models using Python and scikit-learn, achieving 87% ROC-AUC; used SQL and pandas to analyze 5M+ customer records; created statistical models to identify factors affecting customer retention; presented analytical findings to business stakeholders."
+        ],
+        "projects": [
+          "Demand forecasting model: Built a demand forecasting model using Python and time-series analysis."
+        ],
+        "achievements": [
+          "Achieved 87% ROC-AUC on customer churn prediction models.",
+          "Analyzed 5M+ customer records."
+        ]
+      },
+      "recruiters": [
+        {
+          "name": "Sara Mohamed",
+          "title": "Talent Acquisition Specialist",
+          "company": "Property Hills",
+          "location": "قسم المعادي",
+          "linkedin_url": "https://eg.linkedin.com/in/sara-mohamed-0664b2277",
+          "source_url": "https://eg.linkedin.com/in/sara-mohamed-0664b2277",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Kevin Lynch",
+          "title": "Senior Recruiter",
+          "company": "Spectrum Mobile/Stores",
+          "location": null,
+          "linkedin_url": "https://www.linkedin.com/in/kevintlynch",
+          "source_url": "https://www.linkedin.com/in/kevintlynch",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Vidhi Purohit",
+          "title": "Senior IT Recruiter",
+          "company": "Not specified",
+          "location": null,
+          "linkedin_url": "https://uk.linkedin.com/in/vidhi-purohit-80b1a3185",
+          "source_url": "https://uk.linkedin.com/in/vidhi-purohit-80b1a3185",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Will Fairhurst",
+          "title": "Group Executive Talent Acquisition Manager",
+          "company": "Sky",
+          "location": null,
+          "linkedin_url": "https://uk.linkedin.com/in/will-fairhurst-39a044a6",
+          "source_url": "https://uk.linkedin.com/in/will-fairhurst-39a044a6",
+          "confidence_score": 0.0
+        }
+      ],
+      "ranked_recruiters": [
+        {
+          "name": "Sara Mohamed",
+          "title": "Talent Acquisition Specialist",
+          "company": "Property Hills",
+          "location": "قسم المعادي",
+          "linkedin_url": "https://eg.linkedin.com/in/sara-mohamed-0664b2277",
+          "source_url": "https://eg.linkedin.com/in/sara-mohamed-0664b2277",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Kevin Lynch",
+          "title": "Senior Recruiter",
+          "company": "Spectrum Mobile/Stores",
+          "location": null,
+          "linkedin_url": "https://www.linkedin.com/in/kevintlynch",
+          "source_url": "https://www.linkedin.com/in/kevintlynch",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Vidhi Purohit",
+          "title": "Senior IT Recruiter",
+          "company": "Not specified",
+          "location": null,
+          "linkedin_url": "https://uk.linkedin.com/in/vidhi-purohit-80b1a3185",
+          "source_url": "https://uk.linkedin.com/in/vidhi-purohit-80b1a3185",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Will Fairhurst",
+          "title": "Group Executive Talent Acquisition Manager",
+          "company": "Sky",
+          "location": null,
+          "linkedin_url": "https://uk.linkedin.com/in/will-fairhurst-39a044a6",
+          "source_url": "https://uk.linkedin.com/in/will-fairhurst-39a044a6",
+          "confidence_score": 0.0
+        }
+      ],
+      "evidence": {
+        "matches": [
+          {
+            "capability": "Machine learning and predictive modeling",
+            "evidence": "Built customer churn prediction models using Python and scikit-learn, achieving 87% ROC-AUC",
+            "relevance_reason": "Directly aligns with the requirement to build predictive models using Python and scikit-learn, with a quantified performance metric.",
+            "score": 98.0
+          },
+          {
+            "capability": "Data analysis and SQL proficiency",
+            "evidence": "Used SQL and pandas to analyze 5M+ customer records",
+            "relevance_reason": "Demonstrates the ability to handle large datasets using the required tools (SQL, pandas) at a significant scale.",
+            "score": 95.0
+          },
+          {
+            "capability": "Statistical analysis and business communication",
+            "evidence": "Created statistical models to identify factors affecting customer retention; presented analytical findings to business stakeholders",
+            "relevance_reason": "Covers the core requirements of performing statistical analysis and communicating actionable insights to business stakeholders.",
+            "score": 92.0
+          },
+          {
+            "capability": "Machine learning and time-series analysis",
+            "evidence": "Built a demand forecasting model using Python and time-series analysis",
+            "relevance_reason": "Provides additional evidence of technical capability in building predictive models using Python, expanding on the candidate's machine learning experience.",
+            "score": 88.0
+          }
+        ]
+      },
+      "email": {
+        "subject": "Data Scientist Intern Application - Alex Morgan",
+        "body": "Hi Sara,\n\nI recently applied for the Data Scientist Intern position at Property Hills and wanted to reach out to express my interest in the role.\n\nGiven my background in building predictive models and analyzing large-scale datasets, I believe I am well-positioned to contribute to your data science initiatives.\n\nKey highlights of my experience include:\n\n- Machine Learning: Built customer churn prediction models using Python and scikit-learn, achieving 87% ROC-AUC.\n- Data Analysis: Used SQL and pandas to analyze 5M+ customer records to drive data-informed decision-making.\n- Statistical Analysis: Created statistical models to identify factors affecting customer retention and presented analytical findings to business stakeholders.\n- Predictive Modeling: Built a demand forecasting model using Python and time-series analysis to solve complex forecasting challenges.\n\nMy experience aligns directly with the requirements of this internship, particularly in leveraging Python and SQL to transform raw data into actionable business insights. I am eager to apply my technical skills in machine learning and statistical analysis to support the data-driven goals at Property Hills.\n\nI would appreciate the opportunity to connect and discuss how my background can support your team. Thank you for your time and consideration.\n\nBest regards,\n\nAlex Morgan"
+      }
+    }
+  }
+]
