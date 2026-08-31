@@ -1,0 +1,132 @@
+[
+  {
+    "case_id": "case_001",
+    "status": "evaluated",
+    "scores": {
+      "job_analysis_score": 0.0,
+      "resume_analysis_score": 0.5,
+      "recruiter_discovery_score": 0.0,
+      "recruiter_ranking_score": null,
+      "evidence_score": 1.0,
+      "email_score": 1.0,
+      "overall_score": 0.5
+    }
+  },
+  {
+    "case_id": "case_002",
+    "status": "evaluated",
+    "scores": {
+      "job_analysis_score": 0.0,
+      "resume_analysis_score": null,
+      "recruiter_discovery_score": 1.0,
+      "recruiter_ranking_score": null,
+      "evidence_score": 0.8,
+      "email_score": 1.0,
+      "overall_score": 0.7
+    }
+  },
+  {
+    "case_id": "case_003",
+    "status": "evaluated",
+    "scores": {
+      "job_analysis_score": 0.0,
+      "resume_analysis_score": null,
+      "recruiter_discovery_score": 0.8888888888888888,
+      "recruiter_ranking_score": null,
+      "evidence_score": 1.0,
+      "email_score": 1.0,
+      "overall_score": 0.7222222222222222
+    }
+  },
+  {
+    "case_id": "case_004",
+    "status": "evaluated",
+    "scores": {
+      "job_analysis_score": 0.0,
+      "resume_analysis_score": null,
+      "recruiter_discovery_score": 1.0,
+      "recruiter_ranking_score": null,
+      "evidence_score": 1.0,
+      "email_score": 1.0,
+      "overall_score": 0.75
+    }
+  },
+  {
+    "case_id": "case_005",
+    "status": "evaluated",
+    "scores": {
+      "job_analysis_score": 0.0,
+      "resume_analysis_score": null,
+      "recruiter_discovery_score": 1.0,
+      "recruiter_ranking_score": null,
+      "evidence_score": 1.0,
+      "email_score": 1.0,
+      "overall_score": 0.75
+    }
+  },
+  {
+    "case_id": "case_006",
+    "status": "evaluated",
+    "scores": {
+      "job_analysis_score": 0.0,
+      "resume_analysis_score": null,
+      "recruiter_discovery_score": 1.0,
+      "recruiter_ranking_score": null,
+      "evidence_score": 1.0,
+      "email_score": null,
+      "overall_score": 0.6666666666666666
+    }
+  },
+  {
+    "case_id": "case_007",
+    "status": "evaluated",
+    "scores": {
+      "job_analysis_score": 0.0,
+      "resume_analysis_score": null,
+      "recruiter_discovery_score": 1.0,
+      "recruiter_ranking_score": null,
+      "evidence_score": 1.0,
+      "email_score": 1.0,
+      "overall_score": 0.75
+    }
+  },
+  {
+    "case_id": "case_008",
+    "status": "evaluated",
+    "scores": {
+      "job_analysis_score": 0.0,
+      "resume_analysis_score": null,
+      "recruiter_discovery_score": null,
+      "recruiter_ranking_score": null,
+      "evidence_score": null,
+      "email_score": 1.0,
+      "overall_score": 0.5
+    }
+  },
+  {
+    "case_id": "case_009",
+    "status": "evaluated",
+    "scores": {
+      "job_analysis_score": 0.0,
+      "resume_analysis_score": null,
+      "recruiter_discovery_score": null,
+      "recruiter_ranking_score": null,
+      "evidence_score": 1.0,
+      "email_score": 1.0,
+      "overall_score": 0.6666666666666666
+    }
+  },
+  {
+    "case_id": "case_010",
+    "status": "evaluated",
+    "scores": {
+      "job_analysis_score": 0.0,
+      "resume_analysis_score": null,
+      "recruiter_discovery_score": null,
+      "recruiter_ranking_score": null,
+      "evidence_score": 1.0,
+      "email_score": 1.0,
+      "overall_score": 0.6666666666666666
+    }
+  }
+]

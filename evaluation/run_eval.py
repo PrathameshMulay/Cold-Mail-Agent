@@ -4,6 +4,7 @@ import sys
 from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
+import argparse
 
 sys.path.insert(0, str(PROJECT_ROOT))
 from app.agents.jd_analyzer import JDAnalyzer
@@ -284,7 +285,7 @@ def run_case(case):
     return result
 
 
-def run_evaluation():
+def run_evaluation(case_id=None):
 
     print("=" * 70)
     print("COLD MAIL AGENT — AI EVALUATION")
@@ -292,8 +293,22 @@ def run_evaluation():
 
     cases = load_cases()
 
+    # Run only the requested case
+    if case_id:
+
+        cases = [
+            case
+            for case in cases
+            if case["case_id"] == case_id
+        ]
+
+        if not cases:
+            raise ValueError(
+                f"Case '{case_id}' not found in eval_cases.json"
+            )
+
     print(
-        f"\nLoaded {len(cases)} evaluation cases."
+        f"\nRunning {len(cases)} evaluation case(s)."
     )
 
     results = []
@@ -330,6 +345,36 @@ def run_evaluation():
         exist_ok=True,
     )
 
+    # Load existing results
+    existing_results = []
+
+    if RESULTS_PATH.exists():
+
+        with open(
+            RESULTS_PATH,
+            "r",
+            encoding="utf-8",
+        ) as f:
+
+            existing_results = json.load(f)
+
+    # Remove previous result for the same case
+    # so rerunning a case updates it instead
+    completed_case_ids = {
+        result["case_id"]
+        for result in results
+    }
+
+    existing_results = [
+        result
+        for result in existing_results
+        if result.get("case_id")
+        not in completed_case_ids
+    ]
+
+    # Add new results
+    existing_results.extend(results)
+
     with open(
         RESULTS_PATH,
         "w",
@@ -337,38 +382,22 @@ def run_evaluation():
     ) as f:
 
         json.dump(
-            results,
+            existing_results,
             f,
             indent=2,
             ensure_ascii=False,
         )
-
-    # ==================================================
-    # SUMMARY
-    # ==================================================
-
-    successful = sum(
-        1
-        for result in results
-        if result.get("status") == "success"
-    )
-
-    failed = len(results) - successful
 
     print("\n" + "=" * 70)
     print("EVALUATION RUN COMPLETE")
     print("=" * 70)
 
     print(
-        f"Total cases: {len(results)}"
+        f"Cases executed this run: {len(results)}"
     )
 
     print(
-        f"Successful: {successful}"
-    )
-
-    print(
-        f"Failed: {failed}"
+        f"Total saved results: {len(existing_results)}"
     )
 
     print(
@@ -377,4 +406,19 @@ def run_evaluation():
 
 
 if __name__ == "__main__":
-    run_evaluation()
+
+    parser = argparse.ArgumentParser(
+        description="Run Cold Mail Agent evaluations"
+    )
+
+    parser.add_argument(
+        "--case",
+        type=str,
+        help="Run a specific evaluation case, e.g. case_001",
+    )
+
+    args = parser.parse_args()
+
+    run_evaluation(
+        case_id=args.case
+    )

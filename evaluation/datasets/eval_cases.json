@@ -52,6 +52,353 @@
         "must_use_relevant_evidence": true
       }
     }
+  },
+  {
+    "case_id": "case_002",
+    "description": "City-first recruiter discovery",
+    "job": {
+      "company": "Amazon",
+      "title": "Business Intelligence Engineer",
+      "location": "Seattle, WA",
+      "description": "Amazon is seeking a Business Intelligence Engineer to develop analytical solutions using SQL, Python, and data visualization. The role involves building dashboards, analyzing business metrics, developing scalable data pipelines, and partnering with business teams."
+    },
+    "resume": {
+      "candidate_name": "Jordan Lee",
+      "text": "Jordan Lee\nMS Information Systems\n\nExperience:\nAnalytics Intern at RetailCo\n- Built SQL queries to analyze sales and customer behavior.\n- Automated weekly KPI reporting using Python.\n- Developed Power BI dashboards used by business stakeholders.\n- Built ETL workflows to combine data from multiple sources.\n\nSkills: SQL, Python, Power BI, ETL, Data Analysis"
+    },
+    "expected": {
+      "job_analysis": {
+        "company": "Amazon",
+        "title": "Business Intelligence Engineer",
+        "location": "Seattle, WA"
+      },
+      "recruiter": {
+        "should_be_recruiter": true,
+        "company": "Amazon",
+        "preferred_location": "Seattle, WA",
+        "city_priority": "Recruiters in Seattle should rank above equally qualified recruiters outside Seattle"
+      },
+      "evidence": [
+        "SQL analysis",
+        "Python automation",
+        "KPI reporting",
+        "Power BI dashboards",
+        "ETL workflows"
+      ],
+      "email": {
+        "must_be_factually_supported": true,
+        "must_not_invent_experience": true
+      }
+    }
+  },
+
+  {
+    "case_id": "case_003",
+    "description": "City recruiter shortage requiring company-wide fallback",
+    "job": {
+      "company": "Meta",
+      "title": "Data Analyst Intern",
+      "location": "Dallas, TX",
+      "description": "Meta is looking for a Data Analyst Intern to analyze product and business data using SQL and Python. Responsibilities include developing metrics, performing exploratory analysis, creating dashboards, and communicating insights."
+    },
+    "resume": {
+      "candidate_name": "Taylor Chen",
+      "text": "Taylor Chen\nMS Business Analytics\n\nExperience:\nData Analyst at FinTech Labs\n- Wrote SQL queries for customer and transaction analysis.\n- Built Python scripts to automate recurring reports.\n- Created dashboards tracking product KPIs.\n- Performed exploratory data analysis to identify customer trends.\n\nSkills: SQL, Python, Tableau, Data Analysis, Product Analytics"
+    },
+    "expected": {
+      "job_analysis": {
+        "company": "Meta",
+        "title": "Data Analyst Intern",
+        "location": "Dallas, TX"
+      },
+      "recruiter": {
+        "should_be_recruiter": true,
+        "company": "Meta",
+        "location_behavior": "If fewer than 10 suitable Dallas recruiters are discovered, supplement with Meta recruiters from other US locations"
+      },
+      "evidence": [
+        "SQL analysis",
+        "Python reporting automation",
+        "Product KPI dashboards",
+        "Exploratory data analysis"
+      ],
+      "email": {
+        "must_be_factually_supported": true,
+        "must_not_invent_experience": true
+      }
+    }
+  },
+
+  {
+    "case_id": "case_004",
+    "description": "Zero local recruiters",
+    "job": {
+      "company": "Netflix",
+      "title": "Machine Learning Engineer Intern",
+      "location": "Austin, TX",
+      "description": "Netflix is seeking a Machine Learning Engineer Intern with experience in Python, machine learning, data processing, and model development. Candidates should be comfortable working with large datasets and developing predictive models."
+    },
+    "resume": {
+      "candidate_name": "Sam Patel",
+      "text": "Sam Patel\nMS Computer Science\n\nProjects:\n- Developed an image classification model using Python and PyTorch with 91% validation accuracy.\n- Built a data preprocessing pipeline for 2M image records.\n- Implemented feature engineering and model evaluation workflows.\n\nSkills: Python, PyTorch, Machine Learning, Deep Learning, Data Processing"
+    },
+    "expected": {
+      "job_analysis": {
+        "company": "Netflix",
+        "title": "Machine Learning Engineer Intern",
+        "location": "Austin, TX"
+      },
+      "recruiter": {
+        "should_be_recruiter": true,
+        "company": "Netflix",
+        "location_behavior": "If no Austin recruiter is found, return suitable Netflix recruiters from other US locations"
+      },
+      "evidence": [
+        "Image classification model",
+        "Python",
+        "PyTorch",
+        "Data preprocessing pipeline",
+        "Feature engineering"
+      ],
+      "email": {
+        "must_not_invent_experience": true,
+        "must_use_resume_evidence": true
+      }
+    }
+  },
+
+  {
+    "case_id": "case_005",
+    "description": "Search results containing non-recruiters",
+    "job": {
+      "company": "Google",
+      "title": "Data Science Intern",
+      "location": "New York, NY",
+      "description": "Google is seeking a Data Science Intern to work on statistical analysis, machine learning, experimentation, and large-scale data analysis using Python and SQL."
+    },
+    "resume": {
+      "candidate_name": "Chris Wilson",
+      "text": "Chris Wilson\nMS Statistics\n\nExperience:\nAnalytics Intern\n- Built statistical models in Python.\n- Used SQL to analyze customer datasets.\n- Designed A/B testing experiments.\n- Developed machine learning models for classification.\n\nSkills: Python, SQL, Statistics, Machine Learning, A/B Testing"
+    },
+    "expected": {
+      "job_analysis": {
+        "company": "Google",
+        "title": "Data Science Intern",
+        "location": "New York, NY"
+      },
+      "recruiter": {
+        "should_be_recruiter": true,
+        "invalid_roles": [
+          "Data Scientist",
+          "Software Engineer",
+          "Product Manager",
+          "Data Analyst",
+          "Machine Learning Engineer"
+        ]
+      },
+      "evidence": [
+        "Statistical modeling",
+        "SQL",
+        "A/B testing",
+        "Machine learning classification"
+      ],
+      "email": {
+        "must_not_use_unrelated_experience": true,
+        "must_not_invent_experience": true
+      }
+    }
+  },
+
+  {
+    "case_id": "case_006",
+    "description": "Ambiguous recruiter titles",
+    "job": {
+      "company": "Salesforce",
+      "title": "Product Analyst",
+      "location": "San Francisco, CA",
+      "description": "Salesforce is hiring a Product Analyst to analyze product usage data, develop KPIs, perform SQL analysis, build dashboards, and partner with product managers to identify opportunities."
+    },
+    "resume": {
+      "candidate_name": "Morgan Davis",
+      "text": "Morgan Davis\nMS Information Management\n\nExperience:\nBusiness Analyst\n- Analyzed product usage data using SQL.\n- Built dashboards tracking product adoption.\n- Partnered with product managers on feature analysis.\n- Developed KPI frameworks for product teams.\n\nSkills: SQL, Tableau, Product Analytics, KPI Development"
+    },
+    "expected": {
+      "job_analysis": {
+        "company": "Salesforce",
+        "title": "Product Analyst",
+        "location": "San Francisco, CA"
+      },
+      "recruiter": {
+        "should_be_recruiter": true,
+        "acceptable_titles": [
+          "Talent Acquisition Partner",
+          "Talent Partner",
+          "Recruiting Partner",
+          "University Recruiting",
+          "Technical Recruiter"
+        ],
+        "ambiguous_titles_require_llm_validation": true
+      },
+      "evidence": [
+        "Product usage analysis",
+        "SQL",
+        "Product dashboards",
+        "KPI frameworks"
+      ]
+    }
+  },
+
+  {
+    "case_id": "case_007",
+    "description": "Different company from previous cases",
+    "job": {
+      "company": "JPMorgan Chase",
+      "title": "Data Science Analyst",
+      "location": "New York, NY",
+      "description": "JPMorgan Chase is seeking a Data Science Analyst to develop machine learning models, analyze financial data, use Python and SQL, and communicate analytical findings."
+    },
+    "resume": {
+      "candidate_name": "Priya Shah",
+      "text": "Priya Shah\nMS Applied Analytics\n\nExperience:\nData Science Intern\n- Developed a credit risk classification model using Python.\n- Used SQL to analyze financial transaction data.\n- Built feature engineering pipelines for machine learning models.\n- Presented model results to senior stakeholders.\n\nSkills: Python, SQL, Machine Learning, Financial Analytics"
+    },
+    "expected": {
+      "job_analysis": {
+        "company": "JPMorgan Chase",
+        "title": "Data Science Analyst",
+        "location": "New York, NY"
+      },
+      "recruiter": {
+        "should_be_recruiter": true,
+        "company": "JPMorgan Chase"
+      },
+      "evidence": [
+        "Credit risk classification model",
+        "Python",
+        "SQL",
+        "Financial transaction analysis",
+        "Feature engineering"
+      ],
+      "email": {
+        "must_mention_company": true,
+        "must_mention_role": true,
+        "must_use_relevant_evidence": true,
+        "must_not_invent_experience": true
+      }
+    }
+  },
+
+  {
+    "case_id": "case_008",
+    "description": "Weak resume-to-JD alignment",
+    "job": {
+      "company": "Tesla",
+      "title": "Machine Learning Engineer",
+      "location": "Palo Alto, CA",
+      "description": "Tesla is seeking a Machine Learning Engineer with experience in Python, PyTorch, computer vision, deep learning, model deployment, and large-scale machine learning systems."
+    },
+    "resume": {
+      "candidate_name": "Ryan Brooks",
+      "text": "Ryan Brooks\nMS Business Analytics\n\nExperience:\nBusiness Analyst\n- Created Excel reports for finance teams.\n- Built basic Tableau dashboards.\n- Performed monthly financial reporting.\n\nSkills: Excel, Tableau, Financial Analysis, Reporting"
+    },
+    "expected": {
+      "job_analysis": {
+        "company": "Tesla",
+        "title": "Machine Learning Engineer",
+        "location": "Palo Alto, CA",
+        "required_skills": [
+          "Python",
+          "PyTorch",
+          "Computer Vision",
+          "Deep Learning",
+          "Model Deployment"
+        ]
+      },
+      "resume_analysis": {
+        "alignment": "weak"
+      },
+      "evidence": [],
+      "email": {
+        "must_not_claim_machine_learning_experience": true,
+        "must_not_invent_experience": true
+      }
+    }
+  },
+
+  {
+    "case_id": "case_009",
+    "description": "Strong time-series and forecasting alignment",
+    "job": {
+      "company": "Adobe",
+      "title": "Data Science Intern",
+      "location": "San Jose, CA",
+      "description": "Adobe is looking for a Data Science Intern with experience in forecasting, statistical modeling, Python, SQL, and machine learning. The intern will work on predictive analytics and business forecasting problems."
+    },
+    "resume": {
+      "candidate_name": "Emily Carter",
+      "text": "Emily Carter\nMS Data Analytics\n\nExperience:\nData Science Intern\n- Built demand forecasting models using ETS and ARIMA.\n- Improved forecast error by 18% compared with the previous baseline.\n- Used Python and SQL to prepare time-series datasets.\n- Developed regression models for business forecasting.\n\nSkills: Python, SQL, Forecasting, Time Series, Statistics, Machine Learning"
+    },
+    "expected": {
+      "job_analysis": {
+        "company": "Adobe",
+        "title": "Data Science Intern",
+        "location": "San Jose, CA"
+      },
+      "evidence": [
+        "Demand forecasting",
+        "ETS",
+        "ARIMA",
+        "18% improvement in forecast error",
+        "Python",
+        "SQL",
+        "Regression"
+      ],
+      "email": {
+        "must_use_quantified_evidence": true,
+        "must_not_invent_experience": true
+      }
+    }
+  },
+
+  {
+    "case_id": "case_010",
+    "description": "Factuality stress test with tempting but unsupported claims",
+    "job": {
+      "company": "Microsoft",
+      "title": "Data Analyst Intern",
+      "location": "Redmond, WA",
+      "description": "Microsoft is seeking a Data Analyst Intern to use SQL and Python to analyze business data, build dashboards, develop KPIs, and communicate insights to stakeholders."
+    },
+    "resume": {
+      "candidate_name": "Daniel Kim",
+      "text": "Daniel Kim\nMS Information Systems\n\nExperience:\nAnalytics Assistant\n- Used SQL to analyze 100,000 customer records.\n- Built a Tableau dashboard for weekly reporting.\n- Automated a recurring report using Python.\n\nSkills: SQL, Python, Tableau, Data Analysis"
+    },
+    "expected": {
+      "job_analysis": {
+        "company": "Microsoft",
+        "title": "Data Analyst Intern",
+        "location": "Redmond, WA"
+      },
+      "evidence": [
+        "SQL analysis of 100,000 customer records",
+        "Tableau dashboard",
+        "Python report automation"
+      ],
+      "forbidden_claims": [
+        "Machine learning",
+        "Deep learning",
+        "PyTorch",
+        "Managing a team",
+        "Leading engineers",
+        "Cloud architecture",
+        "Millions of records"
+      ],
+      "email": {
+        "must_not_invent_experience": true,
+        "must_not_exaggerate_metrics": true,
+        "must_use_only_resume_supported_claims": true,
+        "must_mention_relevant_experience": true
+      }
+    }
   }
 
   

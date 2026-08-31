@@ -105,77 +105,185 @@
       },
       "recruiters": [
         {
-          "name": "Sara Mohamed",
+          "name": "Ryan Cross",
           "title": "Talent Acquisition Specialist",
-          "company": "Property Hills",
-          "location": "قسم المعادي",
-          "linkedin_url": "https://eg.linkedin.com/in/sara-mohamed-0664b2277",
-          "source_url": "https://eg.linkedin.com/in/sara-mohamed-0664b2277",
+          "company": "Progress Rail",
+          "location": "Muncie",
+          "linkedin_url": "https://www.linkedin.com/in/ryan-cross-3335251b3/",
+          "source_url": "https://www.linkedin.com/in/ryan-cross-3335251b3/",
           "confidence_score": 0.0
         },
         {
-          "name": "Kevin Lynch",
-          "title": "Senior Recruiter",
-          "company": "Spectrum Mobile/Stores",
-          "location": null,
-          "linkedin_url": "https://www.linkedin.com/in/kevintlynch",
-          "source_url": "https://www.linkedin.com/in/kevintlynch",
-          "confidence_score": 0.0
-        },
-        {
-          "name": "Vidhi Purohit",
-          "title": "Senior IT Recruiter",
+          "name": "Tahel Mekaiten",
+          "title": "Talent acquisition specialist",
           "company": "Not specified",
           "location": null,
-          "linkedin_url": "https://uk.linkedin.com/in/vidhi-purohit-80b1a3185",
-          "source_url": "https://uk.linkedin.com/in/vidhi-purohit-80b1a3185",
+          "linkedin_url": "https://www.linkedin.com/in/tahel-mekaiten-352644247/",
+          "source_url": "https://www.linkedin.com/in/tahel-mekaiten-352644247/",
           "confidence_score": 0.0
         },
         {
-          "name": "Will Fairhurst",
-          "title": "Group Executive Talent Acquisition Manager",
-          "company": "Sky",
+          "name": "Brandon Luiszer",
+          "title": "Talent Acquisition leader",
+          "company": "Not specified",
           "location": null,
-          "linkedin_url": "https://uk.linkedin.com/in/will-fairhurst-39a044a6",
-          "source_url": "https://uk.linkedin.com/in/will-fairhurst-39a044a6",
+          "linkedin_url": "https://www.linkedin.com/in/brandonluiszer/",
+          "source_url": "https://www.linkedin.com/in/brandonluiszer/",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Anvitha n",
+          "title": "Talent Acquisition Manager",
+          "company": "Tradejini",
+          "location": null,
+          "linkedin_url": "https://www.linkedin.com/in/anvitha-n-54b67a27a/",
+          "source_url": "https://www.linkedin.com/in/anvitha-n-54b67a27a/",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Cody Johnson",
+          "title": "Talent Acquisition Specialist",
+          "company": "Not specified",
+          "location": null,
+          "linkedin_url": "https://www.linkedin.com/in/cody-r-johnson/",
+          "source_url": "https://www.linkedin.com/in/cody-r-johnson/",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Farid",
+          "title": "Talent Acquisition Specialist",
+          "company": "Freelance",
+          "location": null,
+          "linkedin_url": "https://www.linkedin.com/in/farid-talent-acquisition-specialist-126588230/",
+          "source_url": "https://www.linkedin.com/in/farid-talent-acquisition-specialist-126588230/",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Chandrasekar K",
+          "title": "Talent Acquisition Sourcer",
+          "company": "Vonage",
+          "location": null,
+          "linkedin_url": "https://www.linkedin.com/in/chandru-talent-acquisition/",
+          "source_url": "https://www.linkedin.com/in/chandru-talent-acquisition/",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Ruth A.",
+          "title": "Recruiting",
+          "company": "Awesome Executive Search",
+          "location": null,
+          "linkedin_url": "https://www.linkedin.com/in/executivelevelrecruiter/",
+          "source_url": "https://www.linkedin.com/in/executivelevelrecruiter/",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Michele Lanham",
+          "title": "Recruiter",
+          "company": "National Recruitment Network, LLC",
+          "location": null,
+          "linkedin_url": "https://www.linkedin.com/in/michele-lanham-a152b527/",
+          "source_url": "https://www.linkedin.com/in/michele-lanham-a152b527/",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Joseph Grimaud",
+          "title": "Recruiter",
+          "company": "Recruiting Connection",
+          "location": null,
+          "linkedin_url": "https://www.linkedin.com/in/recruiting-pro/",
+          "source_url": "https://www.linkedin.com/in/recruiting-pro/",
           "confidence_score": 0.0
         }
       ],
       "ranked_recruiters": [
         {
-          "name": "Sara Mohamed",
+          "name": "Ryan Cross",
           "title": "Talent Acquisition Specialist",
-          "company": "Property Hills",
-          "location": "قسم المعادي",
-          "linkedin_url": "https://eg.linkedin.com/in/sara-mohamed-0664b2277",
-          "source_url": "https://eg.linkedin.com/in/sara-mohamed-0664b2277",
+          "company": "Progress Rail",
+          "location": "Muncie",
+          "linkedin_url": "https://www.linkedin.com/in/ryan-cross-3335251b3/",
+          "source_url": "https://www.linkedin.com/in/ryan-cross-3335251b3/",
           "confidence_score": 0.0
         },
         {
-          "name": "Kevin Lynch",
-          "title": "Senior Recruiter",
-          "company": "Spectrum Mobile/Stores",
-          "location": null,
-          "linkedin_url": "https://www.linkedin.com/in/kevintlynch",
-          "source_url": "https://www.linkedin.com/in/kevintlynch",
-          "confidence_score": 0.0
-        },
-        {
-          "name": "Vidhi Purohit",
-          "title": "Senior IT Recruiter",
+          "name": "Tahel Mekaiten",
+          "title": "Talent acquisition specialist",
           "company": "Not specified",
           "location": null,
-          "linkedin_url": "https://uk.linkedin.com/in/vidhi-purohit-80b1a3185",
-          "source_url": "https://uk.linkedin.com/in/vidhi-purohit-80b1a3185",
+          "linkedin_url": "https://www.linkedin.com/in/tahel-mekaiten-352644247/",
+          "source_url": "https://www.linkedin.com/in/tahel-mekaiten-352644247/",
           "confidence_score": 0.0
         },
         {
-          "name": "Will Fairhurst",
-          "title": "Group Executive Talent Acquisition Manager",
-          "company": "Sky",
+          "name": "Brandon Luiszer",
+          "title": "Talent Acquisition leader",
+          "company": "Not specified",
           "location": null,
-          "linkedin_url": "https://uk.linkedin.com/in/will-fairhurst-39a044a6",
-          "source_url": "https://uk.linkedin.com/in/will-fairhurst-39a044a6",
+          "linkedin_url": "https://www.linkedin.com/in/brandonluiszer/",
+          "source_url": "https://www.linkedin.com/in/brandonluiszer/",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Anvitha n",
+          "title": "Talent Acquisition Manager",
+          "company": "Tradejini",
+          "location": null,
+          "linkedin_url": "https://www.linkedin.com/in/anvitha-n-54b67a27a/",
+          "source_url": "https://www.linkedin.com/in/anvitha-n-54b67a27a/",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Cody Johnson",
+          "title": "Talent Acquisition Specialist",
+          "company": "Not specified",
+          "location": null,
+          "linkedin_url": "https://www.linkedin.com/in/cody-r-johnson/",
+          "source_url": "https://www.linkedin.com/in/cody-r-johnson/",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Farid",
+          "title": "Talent Acquisition Specialist",
+          "company": "Freelance",
+          "location": null,
+          "linkedin_url": "https://www.linkedin.com/in/farid-talent-acquisition-specialist-126588230/",
+          "source_url": "https://www.linkedin.com/in/farid-talent-acquisition-specialist-126588230/",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Chandrasekar K",
+          "title": "Talent Acquisition Sourcer",
+          "company": "Vonage",
+          "location": null,
+          "linkedin_url": "https://www.linkedin.com/in/chandru-talent-acquisition/",
+          "source_url": "https://www.linkedin.com/in/chandru-talent-acquisition/",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Ruth A.",
+          "title": "Recruiting",
+          "company": "Awesome Executive Search",
+          "location": null,
+          "linkedin_url": "https://www.linkedin.com/in/executivelevelrecruiter/",
+          "source_url": "https://www.linkedin.com/in/executivelevelrecruiter/",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Michele Lanham",
+          "title": "Recruiter",
+          "company": "National Recruitment Network, LLC",
+          "location": null,
+          "linkedin_url": "https://www.linkedin.com/in/michele-lanham-a152b527/",
+          "source_url": "https://www.linkedin.com/in/michele-lanham-a152b527/",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Joseph Grimaud",
+          "title": "Recruiter",
+          "company": "Recruiting Connection",
+          "location": null,
+          "linkedin_url": "https://www.linkedin.com/in/recruiting-pro/",
+          "source_url": "https://www.linkedin.com/in/recruiting-pro/",
           "confidence_score": 0.0
         }
       ],
@@ -209,7 +317,2497 @@
       },
       "email": {
         "subject": "Data Scientist Intern Application - Alex Morgan",
-        "body": "Hi Sara,\n\nI recently applied for the Data Scientist Intern position at Property Hills and wanted to reach out to express my interest in the role.\n\nGiven my background in building predictive models and analyzing large-scale datasets, I believe I am well-positioned to contribute to your data science initiatives.\n\nKey highlights of my experience include:\n\n- Machine Learning: Built customer churn prediction models using Python and scikit-learn, achieving 87% ROC-AUC.\n- Data Analysis: Used SQL and pandas to analyze 5M+ customer records to drive data-informed decision-making.\n- Statistical Analysis: Created statistical models to identify factors affecting customer retention and presented analytical findings to business stakeholders.\n- Predictive Modeling: Built a demand forecasting model using Python and time-series analysis to solve complex forecasting challenges.\n\nMy experience aligns directly with the requirements of this internship, particularly in leveraging Python and SQL to transform raw data into actionable business insights. I am eager to apply my technical skills in machine learning and statistical analysis to support the data-driven goals at Property Hills.\n\nI would appreciate the opportunity to connect and discuss how my background can support your team. Thank you for your time and consideration.\n\nBest regards,\n\nAlex Morgan"
+        "body": "Hi Ryan,\n\nI recently applied for the Data Scientist Intern position at Progress Rail and wanted to reach out to express my interest in the role.\n\nGiven my background in building predictive models and analyzing large-scale datasets, I am confident that I can contribute effectively to your data science initiatives.\n\nKey highlights of my experience include:\n\n- Machine Learning: Built customer churn prediction models using Python and scikit-learn, achieving 87% ROC-AUC.\n- Data Analysis: Used SQL and pandas to analyze 5M+ customer records to drive data-informed decision-making.\n- Statistical Analysis: Created statistical models to identify factors affecting customer retention and presented analytical findings to business stakeholders.\n- Predictive Modeling: Built a demand forecasting model using Python and time-series analysis to solve complex business problems.\n\nMy experience aligns well with the requirements for this internship, particularly the need to leverage Python and SQL to build predictive models and communicate actionable insights to stakeholders. I am eager to apply my technical skills in machine learning and statistical analysis to support the data-driven goals of your team.\n\nI would appreciate the opportunity to connect and discuss my application further.\n\nBest regards,\n\nAlex Morgan"
+      }
+    }
+  },
+  {
+    "case_id": "case_002",
+    "status": "success",
+    "expected": {
+      "job_analysis": {
+        "company": "Amazon",
+        "title": "Business Intelligence Engineer",
+        "location": "Seattle, WA"
+      },
+      "recruiter": {
+        "should_be_recruiter": true,
+        "company": "Amazon",
+        "preferred_location": "Seattle, WA",
+        "city_priority": "Recruiters in Seattle should rank above equally qualified recruiters outside Seattle"
+      },
+      "evidence": [
+        "SQL analysis",
+        "Python automation",
+        "KPI reporting",
+        "Power BI dashboards",
+        "ETL workflows"
+      ],
+      "email": {
+        "must_be_factually_supported": true,
+        "must_not_invent_experience": true
+      }
+    },
+    "outputs": {
+      "job": {
+        "title": "Business Intelligence Engineer",
+        "company": "Amazon",
+        "location": null,
+        "description": "Amazon is seeking a Business Intelligence Engineer to develop analytical solutions using SQL, Python, and data visualization. The role involves building dashboards, analyzing business metrics, developing scalable data pipelines, and partnering with business teams.",
+        "required_skills": [
+          "SQL",
+          "Python",
+          "Data visualization"
+        ],
+        "preferred_skills": [],
+        "responsibilities": [
+          "Develop analytical solutions",
+          "Build dashboards",
+          "Analyze business metrics",
+          "Develop scalable data pipelines",
+          "Partner with business teams"
+        ],
+        "qualifications": [],
+        "keywords": [
+          "Business Intelligence",
+          "Data Engineering",
+          "Analytics",
+          "Dashboards",
+          "Data Pipelines"
+        ]
+      },
+      "resume": {
+        "name": "Jordan Lee",
+        "email": "Not provided",
+        "education": [
+          "MS Information Systems"
+        ],
+        "skills": [
+          "SQL",
+          "Python",
+          "Power BI",
+          "ETL",
+          "Data Analysis"
+        ],
+        "experience": [
+          "Analytics Intern at RetailCo: Built SQL queries to analyze sales and customer behavior; Automated weekly KPI reporting using Python; Developed Power BI dashboards used by business stakeholders; Built ETL workflows to combine data from multiple sources."
+        ],
+        "projects": [],
+        "achievements": []
+      },
+      "recruiters": [
+        {
+          "name": "Raman Gill",
+          "title": "Sr. Technical Recruiter",
+          "company": "Amazon",
+          "location": null,
+          "linkedin_url": "https://www.linkedin.com/in/gillraman",
+          "source_url": "https://www.linkedin.com/in/gillraman",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Katie Henry",
+          "title": "Senior Recruiter",
+          "company": "Amazon",
+          "location": "Phoenix",
+          "linkedin_url": "https://www.linkedin.com/in/henrykatelyn",
+          "source_url": "https://www.linkedin.com/in/henrykatelyn",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Udhaya Kumar",
+          "title": "Technical Recruiter",
+          "company": "Amazon",
+          "location": null,
+          "linkedin_url": "https://in.linkedin.com/in/udhaya-kumar-67742414b",
+          "source_url": "https://in.linkedin.com/in/udhaya-kumar-67742414b",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Pranjal Singh",
+          "title": "Technical Recruiter",
+          "company": "Amazon",
+          "location": null,
+          "linkedin_url": "https://ca.linkedin.com/in/pranjalsingh11",
+          "source_url": "https://ca.linkedin.com/in/pranjalsingh11",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Alejandro Gómez Ponce",
+          "title": "Recruiter - Bar Raiser - Talent Acquisition",
+          "company": "Amazon",
+          "location": "Ciudad de México",
+          "linkedin_url": "https://mx.linkedin.com/in/alejandro-gómez-ponce-375699a0",
+          "source_url": "https://mx.linkedin.com/in/alejandro-gómez-ponce-375699a0",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Alex Reales",
+          "title": "Recruiter",
+          "company": "Amazon",
+          "location": "Seattle",
+          "linkedin_url": "https://www.linkedin.com/in/alex-reales-86aa42a7/",
+          "source_url": "https://www.linkedin.com/in/alex-reales-86aa42a7/",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Sana F.",
+          "title": "Technical Sourcing Recruiter",
+          "company": "Amazon Web Services (AWS)",
+          "location": null,
+          "linkedin_url": "https://www.linkedin.com/in/sanafatimarecruiter/",
+          "source_url": "https://www.linkedin.com/in/sanafatimarecruiter/",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Jessica Wilson",
+          "title": "Recruiter",
+          "company": "Amazon",
+          "location": null,
+          "linkedin_url": "https://www.linkedin.com/in/jessica-wilson-41342366/",
+          "source_url": "https://www.linkedin.com/in/jessica-wilson-41342366/",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Lauren Lee",
+          "title": "Technical Recruiter",
+          "company": "Amazon",
+          "location": "Los Angeles Metropolitan Area",
+          "linkedin_url": "https://www.linkedin.com/in/lauren-lee-amazon-security-recruiter/",
+          "source_url": "https://www.linkedin.com/in/lauren-lee-amazon-security-recruiter/",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Stephanie Grauer",
+          "title": "Client Lead Recruiter",
+          "company": "Amazon",
+          "location": null,
+          "linkedin_url": "https://www.linkedin.com/in/stephaniegrauer/",
+          "source_url": "https://www.linkedin.com/in/stephaniegrauer/",
+          "confidence_score": 0.0
+        }
+      ],
+      "ranked_recruiters": [
+        {
+          "name": "Raman Gill",
+          "title": "Sr. Technical Recruiter",
+          "company": "Amazon",
+          "location": null,
+          "linkedin_url": "https://www.linkedin.com/in/gillraman",
+          "source_url": "https://www.linkedin.com/in/gillraman",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Katie Henry",
+          "title": "Senior Recruiter",
+          "company": "Amazon",
+          "location": "Phoenix",
+          "linkedin_url": "https://www.linkedin.com/in/henrykatelyn",
+          "source_url": "https://www.linkedin.com/in/henrykatelyn",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Udhaya Kumar",
+          "title": "Technical Recruiter",
+          "company": "Amazon",
+          "location": null,
+          "linkedin_url": "https://in.linkedin.com/in/udhaya-kumar-67742414b",
+          "source_url": "https://in.linkedin.com/in/udhaya-kumar-67742414b",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Pranjal Singh",
+          "title": "Technical Recruiter",
+          "company": "Amazon",
+          "location": null,
+          "linkedin_url": "https://ca.linkedin.com/in/pranjalsingh11",
+          "source_url": "https://ca.linkedin.com/in/pranjalsingh11",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Alejandro Gómez Ponce",
+          "title": "Recruiter - Bar Raiser - Talent Acquisition",
+          "company": "Amazon",
+          "location": "Ciudad de México",
+          "linkedin_url": "https://mx.linkedin.com/in/alejandro-gómez-ponce-375699a0",
+          "source_url": "https://mx.linkedin.com/in/alejandro-gómez-ponce-375699a0",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Alex Reales",
+          "title": "Recruiter",
+          "company": "Amazon",
+          "location": "Seattle",
+          "linkedin_url": "https://www.linkedin.com/in/alex-reales-86aa42a7/",
+          "source_url": "https://www.linkedin.com/in/alex-reales-86aa42a7/",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Sana F.",
+          "title": "Technical Sourcing Recruiter",
+          "company": "Amazon Web Services (AWS)",
+          "location": null,
+          "linkedin_url": "https://www.linkedin.com/in/sanafatimarecruiter/",
+          "source_url": "https://www.linkedin.com/in/sanafatimarecruiter/",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Jessica Wilson",
+          "title": "Recruiter",
+          "company": "Amazon",
+          "location": null,
+          "linkedin_url": "https://www.linkedin.com/in/jessica-wilson-41342366/",
+          "source_url": "https://www.linkedin.com/in/jessica-wilson-41342366/",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Lauren Lee",
+          "title": "Technical Recruiter",
+          "company": "Amazon",
+          "location": "Los Angeles Metropolitan Area",
+          "linkedin_url": "https://www.linkedin.com/in/lauren-lee-amazon-security-recruiter/",
+          "source_url": "https://www.linkedin.com/in/lauren-lee-amazon-security-recruiter/",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Stephanie Grauer",
+          "title": "Client Lead Recruiter",
+          "company": "Amazon",
+          "location": null,
+          "linkedin_url": "https://www.linkedin.com/in/stephaniegrauer/",
+          "source_url": "https://www.linkedin.com/in/stephaniegrauer/",
+          "confidence_score": 0.0
+        }
+      ],
+      "evidence": {
+        "matches": [
+          {
+            "capability": "SQL",
+            "evidence": "Built SQL queries to analyze sales and customer behavior",
+            "relevance_reason": "Directly aligns with the requirement to develop analytical solutions and analyze business metrics using SQL.",
+            "score": 95.0
+          },
+          {
+            "capability": "Python",
+            "evidence": "Automated weekly KPI reporting using Python",
+            "relevance_reason": "Demonstrates the ability to use Python for automation, a core requirement for developing scalable data pipelines and reporting solutions.",
+            "score": 90.0
+          },
+          {
+            "capability": "Data visualization",
+            "evidence": "Developed Power BI dashboards used by business stakeholders",
+            "relevance_reason": "Directly fulfills the requirement to build dashboards and partner with business teams to provide actionable insights.",
+            "score": 90.0
+          },
+          {
+            "capability": "ETL/Data Pipelines",
+            "evidence": "Built ETL workflows to combine data from multiple sources",
+            "relevance_reason": "Matches the job requirement to develop scalable data pipelines, showing technical proficiency in data integration.",
+            "score": 85.0
+          }
+        ]
+      },
+      "email": {
+        "subject": "Application for Business Intelligence Engineer - Jordan Lee",
+        "body": "Hi Raman,\n\nI recently applied for the Business Intelligence Engineer position at Amazon and wanted to reach out to express my interest in the role.\n\nGiven my background in data analysis and pipeline development, I believe I am well-positioned to contribute to your team's analytical goals.\n\nKey highlights of my experience include:\n\n- SQL: Built complex SQL queries to analyze sales and customer behavior, directly supporting data-driven decision-making.\n- Python: Automated weekly KPI reporting using Python, streamlining data delivery for business stakeholders.\n- Data Visualization: Developed Power BI dashboards used by business stakeholders to track performance and provide actionable insights.\n- ETL/Data Pipelines: Built ETL workflows to combine data from multiple sources, ensuring scalable and reliable data integration.\n\nMy experience aligns closely with the requirements for this role, particularly in bridging the gap between raw data and business strategy. I am comfortable working across the full data lifecycle—from building scalable pipelines to creating the visualizations that drive business metrics—and I am eager to apply these skills to the analytical challenges at Amazon.\n\nI would appreciate the opportunity to connect and discuss how my background aligns with the needs of your team.\n\nBest regards,\n\nJordan Lee"
+      }
+    }
+  },
+  {
+    "case_id": "case_003",
+    "status": "success",
+    "expected": {
+      "job_analysis": {
+        "company": "Meta",
+        "title": "Data Analyst Intern",
+        "location": "Dallas, TX"
+      },
+      "recruiter": {
+        "should_be_recruiter": true,
+        "company": "Meta",
+        "location_behavior": "If fewer than 10 suitable Dallas recruiters are discovered, supplement with Meta recruiters from other US locations"
+      },
+      "evidence": [
+        "SQL analysis",
+        "Python reporting automation",
+        "Product KPI dashboards",
+        "Exploratory data analysis"
+      ],
+      "email": {
+        "must_be_factually_supported": true,
+        "must_not_invent_experience": true
+      }
+    },
+    "outputs": {
+      "job": {
+        "title": "Data Analyst Intern",
+        "company": "Meta",
+        "location": null,
+        "description": "Meta is looking for a Data Analyst Intern to analyze product and business data using SQL and Python. Responsibilities include developing metrics, performing exploratory analysis, creating dashboards, and communicating insights.",
+        "required_skills": [
+          "SQL",
+          "Python"
+        ],
+        "preferred_skills": [],
+        "responsibilities": [
+          "Developing metrics",
+          "Performing exploratory analysis",
+          "Creating dashboards",
+          "Communicating insights"
+        ],
+        "qualifications": [],
+        "keywords": [
+          "Data Analyst",
+          "Intern",
+          "Product Data",
+          "Business Data",
+          "SQL",
+          "Python",
+          "Metrics",
+          "Exploratory Analysis",
+          "Dashboards"
+        ]
+      },
+      "resume": {
+        "name": "Taylor Chen",
+        "email": "Not provided",
+        "education": [
+          "MS Business Analytics"
+        ],
+        "skills": [
+          "SQL",
+          "Python",
+          "Tableau",
+          "Data Analysis",
+          "Product Analytics"
+        ],
+        "experience": [
+          "Data Analyst at FinTech Labs: Wrote SQL queries for customer and transaction analysis; built Python scripts to automate recurring reports; created dashboards tracking product KPIs; performed exploratory data analysis to identify customer trends."
+        ],
+        "projects": [],
+        "achievements": []
+      },
+      "recruiters": [
+        {
+          "name": "Maria Priyanka",
+          "title": "Talent Acquisition Lead",
+          "company": "Meta",
+          "location": null,
+          "linkedin_url": "https://in.linkedin.com/in/mariapriyanka46",
+          "source_url": "https://in.linkedin.com/in/mariapriyanka46",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Chris Clarke",
+          "title": "Talent Acquisition",
+          "company": "Meta",
+          "location": null,
+          "linkedin_url": "https://www.linkedin.com/in/chris-clarke-b02b9950",
+          "source_url": "https://www.linkedin.com/in/chris-clarke-b02b9950",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Paula McGee",
+          "title": "Recruiter",
+          "company": "Meta",
+          "location": null,
+          "linkedin_url": "https://www.linkedin.com/in/paulakmcgee",
+          "source_url": "https://www.linkedin.com/in/paulakmcgee",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Joseph J.",
+          "title": "Global Talent Acquisition Leader",
+          "company": "Meta",
+          "location": "London",
+          "linkedin_url": "https://uk.linkedin.com/in/jojenk",
+          "source_url": "https://uk.linkedin.com/in/jojenk",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Taryn D.",
+          "title": "Global Talent Acquisition Leader",
+          "company": "Meta",
+          "location": null,
+          "linkedin_url": "https://uk.linkedin.com/in/taryndavenport",
+          "source_url": "https://uk.linkedin.com/in/taryndavenport",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Robert Connelly",
+          "title": "Senior Talent Acquisition Specialist",
+          "company": "Meta",
+          "location": null,
+          "linkedin_url": "https://ca.linkedin.com/in/robert-connelly-032743195",
+          "source_url": "https://ca.linkedin.com/in/robert-connelly-032743195",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "M Monish M.",
+          "title": "International Recruiting",
+          "company": "Meta",
+          "location": null,
+          "linkedin_url": "https://in.linkedin.com/in/m-monish-m-63601585",
+          "source_url": "https://in.linkedin.com/in/m-monish-m-63601585",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Rui Z.",
+          "title": "Talent Partner",
+          "company": "Meta",
+          "location": null,
+          "linkedin_url": "https://uk.linkedin.com/in/ruichristinazhu",
+          "source_url": "https://uk.linkedin.com/in/ruichristinazhu",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Sahil Abrol",
+          "title": "Lead Recruiter",
+          "company": "PTR Global",
+          "location": null,
+          "linkedin_url": "https://in.linkedin.com/in/sahilabrol2001",
+          "source_url": "https://in.linkedin.com/in/sahilabrol2001",
+          "confidence_score": 0.0
+        }
+      ],
+      "ranked_recruiters": [
+        {
+          "name": "Maria Priyanka",
+          "title": "Talent Acquisition Lead",
+          "company": "Meta",
+          "location": null,
+          "linkedin_url": "https://in.linkedin.com/in/mariapriyanka46",
+          "source_url": "https://in.linkedin.com/in/mariapriyanka46",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Chris Clarke",
+          "title": "Talent Acquisition",
+          "company": "Meta",
+          "location": null,
+          "linkedin_url": "https://www.linkedin.com/in/chris-clarke-b02b9950",
+          "source_url": "https://www.linkedin.com/in/chris-clarke-b02b9950",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Paula McGee",
+          "title": "Recruiter",
+          "company": "Meta",
+          "location": null,
+          "linkedin_url": "https://www.linkedin.com/in/paulakmcgee",
+          "source_url": "https://www.linkedin.com/in/paulakmcgee",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Joseph J.",
+          "title": "Global Talent Acquisition Leader",
+          "company": "Meta",
+          "location": "London",
+          "linkedin_url": "https://uk.linkedin.com/in/jojenk",
+          "source_url": "https://uk.linkedin.com/in/jojenk",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Taryn D.",
+          "title": "Global Talent Acquisition Leader",
+          "company": "Meta",
+          "location": null,
+          "linkedin_url": "https://uk.linkedin.com/in/taryndavenport",
+          "source_url": "https://uk.linkedin.com/in/taryndavenport",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Robert Connelly",
+          "title": "Senior Talent Acquisition Specialist",
+          "company": "Meta",
+          "location": null,
+          "linkedin_url": "https://ca.linkedin.com/in/robert-connelly-032743195",
+          "source_url": "https://ca.linkedin.com/in/robert-connelly-032743195",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "M Monish M.",
+          "title": "International Recruiting",
+          "company": "Meta",
+          "location": null,
+          "linkedin_url": "https://in.linkedin.com/in/m-monish-m-63601585",
+          "source_url": "https://in.linkedin.com/in/m-monish-m-63601585",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Rui Z.",
+          "title": "Talent Partner",
+          "company": "Meta",
+          "location": null,
+          "linkedin_url": "https://uk.linkedin.com/in/ruichristinazhu",
+          "source_url": "https://uk.linkedin.com/in/ruichristinazhu",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Sahil Abrol",
+          "title": "Lead Recruiter",
+          "company": "PTR Global",
+          "location": null,
+          "linkedin_url": "https://in.linkedin.com/in/sahilabrol2001",
+          "source_url": "https://in.linkedin.com/in/sahilabrol2001",
+          "confidence_score": 0.0
+        }
+      ],
+      "evidence": {
+        "matches": [
+          {
+            "capability": "SQL",
+            "evidence": "Wrote SQL queries for customer and transaction analysis",
+            "relevance_reason": "Directly aligns with the core requirement to analyze product and business data using SQL.",
+            "score": 95.0
+          },
+          {
+            "capability": "Python",
+            "evidence": "built Python scripts to automate recurring reports",
+            "relevance_reason": "Demonstrates the ability to use Python for operational efficiency, a key expectation for a Data Analyst Intern.",
+            "score": 90.0
+          },
+          {
+            "capability": "Dashboard Creation",
+            "evidence": "created dashboards tracking product KPIs",
+            "relevance_reason": "Directly matches the responsibility of creating dashboards to monitor business performance.",
+            "score": 85.0
+          },
+          {
+            "capability": "Exploratory Data Analysis",
+            "evidence": "performed exploratory data analysis to identify customer trends",
+            "relevance_reason": "Matches the requirement to perform exploratory analysis to derive actionable business insights.",
+            "score": 85.0
+          }
+        ]
+      },
+      "email": {
+        "subject": "Data Analyst Intern Application - Taylor Chen",
+        "body": "Hi Maria,\n\nI recently applied for the Data Analyst Intern position at Meta and wanted to reach out to express my interest in the role.\n\nI believe my background in business analytics and my hands-on experience with SQL and Python make me a strong candidate for your team's data needs.\n\nKey highlights of my experience include:\n\n- SQL Analysis: Wrote complex SQL queries for customer and transaction analysis to extract actionable business insights.\n- Python Automation: Built Python scripts to automate recurring reports, improving operational efficiency.\n- Dashboard Creation: Created dashboards tracking product KPIs to monitor business performance and trends.\n- Exploratory Data Analysis: Performed exploratory data analysis to identify customer trends and support data-driven decision-making.\n\nMy experience at FinTech Labs aligns directly with the responsibilities of this internship, particularly in developing metrics and communicating insights derived from product and business data. I am eager to apply my technical skills to help Meta analyze complex datasets and contribute to your ongoing analytical projects.\n\nI would appreciate the opportunity to connect and discuss how my background can support your team.\n\nBest regards,\n\nTaylor Chen"
+      }
+    }
+  },
+  {
+    "case_id": "case_004",
+    "status": "success",
+    "expected": {
+      "job_analysis": {
+        "company": "Netflix",
+        "title": "Machine Learning Engineer Intern",
+        "location": "Austin, TX"
+      },
+      "recruiter": {
+        "should_be_recruiter": true,
+        "company": "Netflix",
+        "location_behavior": "If no Austin recruiter is found, return suitable Netflix recruiters from other US locations"
+      },
+      "evidence": [
+        "Image classification model",
+        "Python",
+        "PyTorch",
+        "Data preprocessing pipeline",
+        "Feature engineering"
+      ],
+      "email": {
+        "must_not_invent_experience": true,
+        "must_use_resume_evidence": true
+      }
+    },
+    "outputs": {
+      "job": {
+        "title": "Machine Learning Engineer Intern",
+        "company": "Netflix",
+        "location": null,
+        "description": "Netflix is seeking a Machine Learning Engineer Intern with experience in Python, machine learning, data processing, and model development. Candidates should be comfortable working with large datasets and developing predictive models.",
+        "required_skills": [
+          "Python",
+          "Machine learning",
+          "Data processing",
+          "Model development"
+        ],
+        "preferred_skills": [],
+        "responsibilities": [
+          "Working with large datasets",
+          "Developing predictive models"
+        ],
+        "qualifications": [
+          "Experience in Python",
+          "Experience in machine learning",
+          "Experience in data processing",
+          "Experience in model development"
+        ],
+        "keywords": [
+          "Machine Learning",
+          "Python",
+          "Data Processing",
+          "Predictive Models",
+          "Internship"
+        ]
+      },
+      "resume": {
+        "name": "Sam Patel",
+        "email": "null",
+        "education": [
+          "MS Computer Science"
+        ],
+        "skills": [
+          "Python",
+          "PyTorch",
+          "Machine Learning",
+          "Deep Learning",
+          "Data Processing"
+        ],
+        "experience": [],
+        "projects": [
+          "Developed an image classification model using Python and PyTorch with 91% validation accuracy.",
+          "Built a data preprocessing pipeline for 2M image records.",
+          "Implemented feature engineering and model evaluation workflows."
+        ],
+        "achievements": [
+          "Achieved 91% validation accuracy on image classification model.",
+          "Processed 2M image records through a data preprocessing pipeline."
+        ]
+      },
+      "recruiters": [
+        {
+          "name": "Colin Perkins",
+          "title": "Contingent Talent Partner",
+          "company": "Netflix",
+          "location": "Los Angeles",
+          "linkedin_url": "https://www.linkedin.com/in/colinjperkins",
+          "source_url": "https://www.linkedin.com/in/colinjperkins",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Jack Robert Omstead",
+          "title": "Talent Partner",
+          "company": "Netflix",
+          "location": null,
+          "linkedin_url": "https://www.linkedin.com/in/jack-robert-omstead",
+          "source_url": "https://www.linkedin.com/in/jack-robert-omstead",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Amy Christmas (Powell)",
+          "title": "Talent Acquisition Partner",
+          "company": "Netflix",
+          "location": null,
+          "linkedin_url": "https://uk.linkedin.com/in/amy-christmas-powell-713067b3",
+          "source_url": "https://uk.linkedin.com/in/amy-christmas-powell-713067b3",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Jeff Chan",
+          "title": "Talent Partner",
+          "company": "Netflix",
+          "location": null,
+          "linkedin_url": "https://nl.linkedin.com/in/21jchan",
+          "source_url": "https://nl.linkedin.com/in/21jchan",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Marta Gutierrez",
+          "title": "Senior Talent Acquisition Partner EMEA",
+          "company": "Netflix",
+          "location": null,
+          "linkedin_url": "https://nl.linkedin.com/in/martagucla",
+          "source_url": "https://nl.linkedin.com/in/martagucla",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Dom Kane",
+          "title": "Senior Talent Partner",
+          "company": "Netflix",
+          "location": null,
+          "linkedin_url": "https://uk.linkedin.com/in/dominickane87",
+          "source_url": "https://uk.linkedin.com/in/dominickane87",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "AJ Castillo",
+          "title": "Talent Partner",
+          "company": "Netflix",
+          "location": null,
+          "linkedin_url": "https://ph.linkedin.com/in/aj-castillo-97b8182a1",
+          "source_url": "https://ph.linkedin.com/in/aj-castillo-97b8182a1",
+          "confidence_score": 0.0
+        }
+      ],
+      "ranked_recruiters": [
+        {
+          "name": "Colin Perkins",
+          "title": "Contingent Talent Partner",
+          "company": "Netflix",
+          "location": "Los Angeles",
+          "linkedin_url": "https://www.linkedin.com/in/colinjperkins",
+          "source_url": "https://www.linkedin.com/in/colinjperkins",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Jack Robert Omstead",
+          "title": "Talent Partner",
+          "company": "Netflix",
+          "location": null,
+          "linkedin_url": "https://www.linkedin.com/in/jack-robert-omstead",
+          "source_url": "https://www.linkedin.com/in/jack-robert-omstead",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Amy Christmas (Powell)",
+          "title": "Talent Acquisition Partner",
+          "company": "Netflix",
+          "location": null,
+          "linkedin_url": "https://uk.linkedin.com/in/amy-christmas-powell-713067b3",
+          "source_url": "https://uk.linkedin.com/in/amy-christmas-powell-713067b3",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Jeff Chan",
+          "title": "Talent Partner",
+          "company": "Netflix",
+          "location": null,
+          "linkedin_url": "https://nl.linkedin.com/in/21jchan",
+          "source_url": "https://nl.linkedin.com/in/21jchan",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Marta Gutierrez",
+          "title": "Senior Talent Acquisition Partner EMEA",
+          "company": "Netflix",
+          "location": null,
+          "linkedin_url": "https://nl.linkedin.com/in/martagucla",
+          "source_url": "https://nl.linkedin.com/in/martagucla",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Dom Kane",
+          "title": "Senior Talent Partner",
+          "company": "Netflix",
+          "location": null,
+          "linkedin_url": "https://uk.linkedin.com/in/dominickane87",
+          "source_url": "https://uk.linkedin.com/in/dominickane87",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "AJ Castillo",
+          "title": "Talent Partner",
+          "company": "Netflix",
+          "location": null,
+          "linkedin_url": "https://ph.linkedin.com/in/aj-castillo-97b8182a1",
+          "source_url": "https://ph.linkedin.com/in/aj-castillo-97b8182a1",
+          "confidence_score": 0.0
+        }
+      ],
+      "evidence": {
+        "matches": [
+          {
+            "capability": "Model development",
+            "evidence": "Developed an image classification model using Python and PyTorch with 91% validation accuracy.",
+            "relevance_reason": "Directly demonstrates the ability to build and evaluate predictive models using the required Python stack, achieving a high performance metric.",
+            "score": 98.0
+          },
+          {
+            "capability": "Data processing",
+            "evidence": "Built a data preprocessing pipeline for 2M image records.",
+            "relevance_reason": "Shows proficiency in handling large-scale datasets, which is a core requirement for machine learning engineering at Netflix.",
+            "score": 95.0
+          },
+          {
+            "capability": "Machine learning workflows",
+            "evidence": "Implemented feature engineering and model evaluation workflows.",
+            "relevance_reason": "Demonstrates end-to-end experience in the machine learning lifecycle, essential for developing robust predictive models.",
+            "score": 90.0
+          }
+        ]
+      },
+      "email": {
+        "subject": "Application for Machine Learning Engineer Intern - Sam Patel",
+        "body": "Hi Colin,\n\nI recently applied for the Machine Learning Engineer Intern position at Netflix and wanted to reach out to express my interest in the role.\n\nI believe my background in building predictive models and managing large-scale data pipelines aligns well with the technical requirements of your team.\n\nKey highlights of my experience include:\n\n- Model development: Developed an image classification model using Python and PyTorch, achieving 91% validation accuracy.\n- Data processing: Built a data preprocessing pipeline for 2M image records, demonstrating proficiency in handling large datasets.\n- Machine learning workflows: Implemented end-to-end feature engineering and model evaluation workflows to ensure robust predictive performance.\n\nMy experience directly mirrors the core responsibilities of this internship, specifically the need to develop predictive models and process large-scale data using Python. I am eager to apply my technical skills to help Netflix continue to refine its machine learning capabilities.\n\nI would appreciate the opportunity to connect and discuss how my background can contribute to your team.\n\nBest regards,\n\nSam Patel"
+      }
+    }
+  },
+  {
+    "case_id": "case_005",
+    "status": "success",
+    "expected": {
+      "job_analysis": {
+        "company": "Google",
+        "title": "Data Science Intern",
+        "location": "New York, NY"
+      },
+      "recruiter": {
+        "should_be_recruiter": true,
+        "invalid_roles": [
+          "Data Scientist",
+          "Software Engineer",
+          "Product Manager",
+          "Data Analyst",
+          "Machine Learning Engineer"
+        ]
+      },
+      "evidence": [
+        "Statistical modeling",
+        "SQL",
+        "A/B testing",
+        "Machine learning classification"
+      ],
+      "email": {
+        "must_not_use_unrelated_experience": true,
+        "must_not_invent_experience": true
+      }
+    },
+    "outputs": {
+      "job": {
+        "title": "Data Science Intern",
+        "company": "Google",
+        "location": null,
+        "description": "Google is seeking a Data Science Intern to work on statistical analysis, machine learning, experimentation, and large-scale data analysis using Python and SQL.",
+        "required_skills": [
+          "Python",
+          "SQL",
+          "Statistical analysis",
+          "Machine learning"
+        ],
+        "preferred_skills": [],
+        "responsibilities": [
+          "Statistical analysis",
+          "Machine learning",
+          "Experimentation",
+          "Large-scale data analysis"
+        ],
+        "qualifications": [],
+        "keywords": [
+          "Data Science",
+          "Python",
+          "SQL",
+          "Machine Learning",
+          "Statistical Analysis",
+          "Experimentation",
+          "Big Data"
+        ]
+      },
+      "resume": {
+        "name": "Chris Wilson",
+        "email": "Not provided",
+        "education": [
+          "MS Statistics"
+        ],
+        "skills": [
+          "Python",
+          "SQL",
+          "Statistics",
+          "Machine Learning",
+          "A/B Testing"
+        ],
+        "experience": [
+          "Analytics Intern: Built statistical models in Python; used SQL to analyze customer datasets; designed A/B testing experiments; developed machine learning models for classification."
+        ],
+        "projects": [],
+        "achievements": []
+      },
+      "recruiters": [
+        {
+          "name": "Shraddha Gupta",
+          "title": "AI & Tech Talent Acquisition",
+          "company": "Google",
+          "location": null,
+          "linkedin_url": "https://in.linkedin.com/in/searchshraddha",
+          "source_url": "https://in.linkedin.com/in/searchshraddha",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Sam McLeod",
+          "title": "Global Talent Recruiter",
+          "company": "Google",
+          "location": null,
+          "linkedin_url": "https://www.linkedin.com/in/sammcleod143",
+          "source_url": "https://www.linkedin.com/in/sammcleod143",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Juliana Dudas",
+          "title": "Technical Recruiter",
+          "company": "Google",
+          "location": null,
+          "linkedin_url": "https://www.linkedin.com/in/juliana-defaria",
+          "source_url": "https://www.linkedin.com/in/juliana-defaria",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Farhin Syed",
+          "title": "Recruiter",
+          "company": "Google",
+          "location": "Bengaluru",
+          "linkedin_url": "https://in.linkedin.com/in/farhin-syed",
+          "source_url": "https://in.linkedin.com/in/farhin-syed",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Anil Zuwani",
+          "title": "Senior Recruiter",
+          "company": "Google",
+          "location": "Toronto",
+          "linkedin_url": "https://ca.linkedin.com/in/anil-zuwani-2a9958a0",
+          "source_url": "https://ca.linkedin.com/in/anil-zuwani-2a9958a0",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Rich Ivers",
+          "title": "Senior Recruiter",
+          "company": "Google",
+          "location": null,
+          "linkedin_url": "https://au.linkedin.com/in/rich-ivers",
+          "source_url": "https://au.linkedin.com/in/rich-ivers",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Emma Wells",
+          "title": "Senior Recruiter",
+          "company": "Google",
+          "location": null,
+          "linkedin_url": "https://uk.linkedin.com/in/wells-emma",
+          "source_url": "https://uk.linkedin.com/in/wells-emma",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Brooke Leikam",
+          "title": "Recruiting Manager",
+          "company": "Google",
+          "location": null,
+          "linkedin_url": "https://www.linkedin.com/in/brooke-leikam-146a6916",
+          "source_url": "https://www.linkedin.com/in/brooke-leikam-146a6916",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Christina Cain",
+          "title": "Recruiting Manager",
+          "company": "Google",
+          "location": null,
+          "linkedin_url": "https://www.linkedin.com/in/ccain",
+          "source_url": "https://www.linkedin.com/in/ccain",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Nitin Mishra",
+          "title": "Recruiting Manager",
+          "company": "Google",
+          "location": null,
+          "linkedin_url": "https://in.linkedin.com/in/nitin-mishra-6a10697",
+          "source_url": "https://in.linkedin.com/in/nitin-mishra-6a10697",
+          "confidence_score": 0.0
+        }
+      ],
+      "ranked_recruiters": [
+        {
+          "name": "Shraddha Gupta",
+          "title": "AI & Tech Talent Acquisition",
+          "company": "Google",
+          "location": null,
+          "linkedin_url": "https://in.linkedin.com/in/searchshraddha",
+          "source_url": "https://in.linkedin.com/in/searchshraddha",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Sam McLeod",
+          "title": "Global Talent Recruiter",
+          "company": "Google",
+          "location": null,
+          "linkedin_url": "https://www.linkedin.com/in/sammcleod143",
+          "source_url": "https://www.linkedin.com/in/sammcleod143",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Juliana Dudas",
+          "title": "Technical Recruiter",
+          "company": "Google",
+          "location": null,
+          "linkedin_url": "https://www.linkedin.com/in/juliana-defaria",
+          "source_url": "https://www.linkedin.com/in/juliana-defaria",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Farhin Syed",
+          "title": "Recruiter",
+          "company": "Google",
+          "location": "Bengaluru",
+          "linkedin_url": "https://in.linkedin.com/in/farhin-syed",
+          "source_url": "https://in.linkedin.com/in/farhin-syed",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Anil Zuwani",
+          "title": "Senior Recruiter",
+          "company": "Google",
+          "location": "Toronto",
+          "linkedin_url": "https://ca.linkedin.com/in/anil-zuwani-2a9958a0",
+          "source_url": "https://ca.linkedin.com/in/anil-zuwani-2a9958a0",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Rich Ivers",
+          "title": "Senior Recruiter",
+          "company": "Google",
+          "location": null,
+          "linkedin_url": "https://au.linkedin.com/in/rich-ivers",
+          "source_url": "https://au.linkedin.com/in/rich-ivers",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Emma Wells",
+          "title": "Senior Recruiter",
+          "company": "Google",
+          "location": null,
+          "linkedin_url": "https://uk.linkedin.com/in/wells-emma",
+          "source_url": "https://uk.linkedin.com/in/wells-emma",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Brooke Leikam",
+          "title": "Recruiting Manager",
+          "company": "Google",
+          "location": null,
+          "linkedin_url": "https://www.linkedin.com/in/brooke-leikam-146a6916",
+          "source_url": "https://www.linkedin.com/in/brooke-leikam-146a6916",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Christina Cain",
+          "title": "Recruiting Manager",
+          "company": "Google",
+          "location": null,
+          "linkedin_url": "https://www.linkedin.com/in/ccain",
+          "source_url": "https://www.linkedin.com/in/ccain",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Nitin Mishra",
+          "title": "Recruiting Manager",
+          "company": "Google",
+          "location": null,
+          "linkedin_url": "https://in.linkedin.com/in/nitin-mishra-6a10697",
+          "source_url": "https://in.linkedin.com/in/nitin-mishra-6a10697",
+          "confidence_score": 0.0
+        }
+      ],
+      "evidence": {
+        "matches": [
+          {
+            "capability": "Machine learning",
+            "evidence": "developed machine learning models for classification",
+            "relevance_reason": "Directly aligns with the job requirement to work on machine learning, demonstrating practical experience in building classification models.",
+            "score": 95.0
+          },
+          {
+            "capability": "Statistical analysis and experimentation",
+            "evidence": "designed A/B testing experiments",
+            "relevance_reason": "Matches the job description's requirement for experimentation, showing the candidate can apply statistical methods to real-world testing scenarios.",
+            "score": 90.0
+          },
+          {
+            "capability": "Python and SQL proficiency",
+            "evidence": "Built statistical models in Python; used SQL to analyze customer datasets",
+            "relevance_reason": "Directly addresses the core technical requirements of using Python and SQL for statistical analysis and large-scale data analysis.",
+            "score": 90.0
+          }
+        ]
+      },
+      "email": {
+        "subject": "Data Science Intern Application - Chris Wilson",
+        "body": "Hi Shraddha,\n\nI recently applied for the Data Science Intern position at Google and wanted to reach out to express my interest in the role.\n\nGiven my background in statistics and hands-on experience with large-scale data analysis, I am confident in my ability to contribute to your team's technical initiatives.\n\nKey highlights of my experience include:\n\n- Machine Learning: Developed machine learning models for classification to solve complex predictive problems.\n- Statistical Analysis and Experimentation: Designed A/B testing experiments to evaluate performance and drive data-informed decision-making.\n- Python and SQL Proficiency: Built statistical models in Python and utilized SQL to analyze large customer datasets, ensuring actionable insights.\n\nMy academic background in statistics combined with my practical experience in building classification models and conducting rigorous experimentation aligns directly with the requirements for this internship. I am eager to apply these technical skills to support Google's data-driven projects.\n\nI would appreciate the opportunity to connect and discuss how my background aligns with the needs of your team.\n\nBest regards,\n\nChris Wilson"
+      }
+    }
+  },
+  {
+    "case_id": "case_006",
+    "status": "success",
+    "expected": {
+      "job_analysis": {
+        "company": "Salesforce",
+        "title": "Product Analyst",
+        "location": "San Francisco, CA"
+      },
+      "recruiter": {
+        "should_be_recruiter": true,
+        "acceptable_titles": [
+          "Talent Acquisition Partner",
+          "Talent Partner",
+          "Recruiting Partner",
+          "University Recruiting",
+          "Technical Recruiter"
+        ],
+        "ambiguous_titles_require_llm_validation": true
+      },
+      "evidence": [
+        "Product usage analysis",
+        "SQL",
+        "Product dashboards",
+        "KPI frameworks"
+      ]
+    },
+    "outputs": {
+      "job": {
+        "title": "Product Analyst",
+        "company": "Salesforce",
+        "location": null,
+        "description": "Salesforce is hiring a Product Analyst to analyze product usage data, develop KPIs, perform SQL analysis, build dashboards, and partner with product managers to identify opportunities.",
+        "required_skills": [
+          "SQL",
+          "Data analysis",
+          "Dashboard building",
+          "KPI development"
+        ],
+        "preferred_skills": [],
+        "responsibilities": [
+          "Analyze product usage data",
+          "Develop KPIs",
+          "Perform SQL analysis",
+          "Build dashboards",
+          "Partner with product managers to identify opportunities"
+        ],
+        "qualifications": [],
+        "keywords": [
+          "Product Analyst",
+          "Salesforce",
+          "Product usage data",
+          "SQL",
+          "KPIs",
+          "Dashboards",
+          "Product management"
+        ]
+      },
+      "resume": {
+        "name": "Morgan Davis",
+        "email": "Not provided",
+        "education": [
+          "MS Information Management"
+        ],
+        "skills": [
+          "SQL",
+          "Tableau",
+          "Product Analytics",
+          "KPI Development"
+        ],
+        "experience": [
+          "Business Analyst: Analyzed product usage data using SQL; built dashboards tracking product adoption; partnered with product managers on feature analysis; developed KPI frameworks for product teams."
+        ],
+        "projects": [],
+        "achievements": []
+      },
+      "recruiters": [
+        {
+          "name": "Stacy S.",
+          "title": "Senior University Recruiter",
+          "company": "Salesforce",
+          "location": null,
+          "linkedin_url": "https://www.linkedin.com/in/stacyschall",
+          "source_url": "https://www.linkedin.com/in/stacyschall",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Jessica Wolcott",
+          "title": "Recruiter",
+          "company": "Salesforce",
+          "location": null,
+          "linkedin_url": "https://www.linkedin.com/in/jessicawolcott",
+          "source_url": "https://www.linkedin.com/in/jessicawolcott",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Annette Birch",
+          "title": "Executive Recruiter",
+          "company": "Salesforce",
+          "location": null,
+          "linkedin_url": "https://ca.linkedin.com/in/annette-birch-☁-70704812",
+          "source_url": "https://ca.linkedin.com/in/annette-birch-☁-70704812",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Taniya Marwaha",
+          "title": "Sr. Sales Recruiter",
+          "company": "Salesforce",
+          "location": null,
+          "linkedin_url": "https://in.linkedin.com/in/taniya-marwaha-80819b41",
+          "source_url": "https://in.linkedin.com/in/taniya-marwaha-80819b41",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Banasree Paul",
+          "title": "University Recruiter",
+          "company": "Salesforce",
+          "location": null,
+          "linkedin_url": "https://in.linkedin.com/in/banasree-paul",
+          "source_url": "https://in.linkedin.com/in/banasree-paul",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Kevin Woodyatt",
+          "title": "Senior Recruiter",
+          "company": "Salesforce",
+          "location": null,
+          "linkedin_url": "https://ca.linkedin.com/in/kevin-woodyatt-b3468b12a",
+          "source_url": "https://ca.linkedin.com/in/kevin-woodyatt-b3468b12a",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Rory Lawlor",
+          "title": "Senior Sales Recruiter",
+          "company": "Salesforce",
+          "location": null,
+          "linkedin_url": "https://ie.linkedin.com/in/rory-lawlor-463a34131",
+          "source_url": "https://ie.linkedin.com/in/rory-lawlor-463a34131",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Nandini Shetty",
+          "title": "Talent Acquisition Leader",
+          "company": "Salesforce",
+          "location": null,
+          "linkedin_url": "https://in.linkedin.com/in/nandini-shetty-b5023520",
+          "source_url": "https://in.linkedin.com/in/nandini-shetty-b5023520",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "David Collins",
+          "title": "Talent Acquisition Manager",
+          "company": "Salesforce",
+          "location": null,
+          "linkedin_url": "https://www.linkedin.com/in/davidcollins05",
+          "source_url": "https://www.linkedin.com/in/davidcollins05",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Sasha Kemash",
+          "title": "Senior Talent Acquisition Partner",
+          "company": "Salesforce",
+          "location": null,
+          "linkedin_url": "https://www.linkedin.com/in/sasha-kemash",
+          "source_url": "https://www.linkedin.com/in/sasha-kemash",
+          "confidence_score": 0.0
+        }
+      ],
+      "ranked_recruiters": [
+        {
+          "name": "Stacy S.",
+          "title": "Senior University Recruiter",
+          "company": "Salesforce",
+          "location": null,
+          "linkedin_url": "https://www.linkedin.com/in/stacyschall",
+          "source_url": "https://www.linkedin.com/in/stacyschall",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Jessica Wolcott",
+          "title": "Recruiter",
+          "company": "Salesforce",
+          "location": null,
+          "linkedin_url": "https://www.linkedin.com/in/jessicawolcott",
+          "source_url": "https://www.linkedin.com/in/jessicawolcott",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Annette Birch",
+          "title": "Executive Recruiter",
+          "company": "Salesforce",
+          "location": null,
+          "linkedin_url": "https://ca.linkedin.com/in/annette-birch-☁-70704812",
+          "source_url": "https://ca.linkedin.com/in/annette-birch-☁-70704812",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Taniya Marwaha",
+          "title": "Sr. Sales Recruiter",
+          "company": "Salesforce",
+          "location": null,
+          "linkedin_url": "https://in.linkedin.com/in/taniya-marwaha-80819b41",
+          "source_url": "https://in.linkedin.com/in/taniya-marwaha-80819b41",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Banasree Paul",
+          "title": "University Recruiter",
+          "company": "Salesforce",
+          "location": null,
+          "linkedin_url": "https://in.linkedin.com/in/banasree-paul",
+          "source_url": "https://in.linkedin.com/in/banasree-paul",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Kevin Woodyatt",
+          "title": "Senior Recruiter",
+          "company": "Salesforce",
+          "location": null,
+          "linkedin_url": "https://ca.linkedin.com/in/kevin-woodyatt-b3468b12a",
+          "source_url": "https://ca.linkedin.com/in/kevin-woodyatt-b3468b12a",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Rory Lawlor",
+          "title": "Senior Sales Recruiter",
+          "company": "Salesforce",
+          "location": null,
+          "linkedin_url": "https://ie.linkedin.com/in/rory-lawlor-463a34131",
+          "source_url": "https://ie.linkedin.com/in/rory-lawlor-463a34131",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Nandini Shetty",
+          "title": "Talent Acquisition Leader",
+          "company": "Salesforce",
+          "location": null,
+          "linkedin_url": "https://in.linkedin.com/in/nandini-shetty-b5023520",
+          "source_url": "https://in.linkedin.com/in/nandini-shetty-b5023520",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "David Collins",
+          "title": "Talent Acquisition Manager",
+          "company": "Salesforce",
+          "location": null,
+          "linkedin_url": "https://www.linkedin.com/in/davidcollins05",
+          "source_url": "https://www.linkedin.com/in/davidcollins05",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Sasha Kemash",
+          "title": "Senior Talent Acquisition Partner",
+          "company": "Salesforce",
+          "location": null,
+          "linkedin_url": "https://www.linkedin.com/in/sasha-kemash",
+          "source_url": "https://www.linkedin.com/in/sasha-kemash",
+          "confidence_score": 0.0
+        }
+      ],
+      "evidence": {
+        "matches": [
+          {
+            "capability": "SQL and Data Analysis",
+            "evidence": "Analyzed product usage data using SQL",
+            "relevance_reason": "Directly addresses the core requirement for performing SQL analysis on product usage data to drive product insights.",
+            "score": 95.0
+          },
+          {
+            "capability": "Dashboard Building",
+            "evidence": "built dashboards tracking product adoption",
+            "relevance_reason": "Matches the job requirement to build dashboards, specifically focusing on product adoption metrics which are critical for a Product Analyst.",
+            "score": 90.0
+          },
+          {
+            "capability": "KPI Development",
+            "evidence": "developed KPI frameworks for product teams",
+            "relevance_reason": "Directly aligns with the requirement to develop KPIs to measure product performance and success.",
+            "score": 90.0
+          },
+          {
+            "capability": "Cross-functional Collaboration",
+            "evidence": "partnered with product managers on feature analysis",
+            "relevance_reason": "Essential for the role's requirement to partner with product managers to identify opportunities and inform product strategy.",
+            "score": 85.0
+          }
+        ]
+      },
+      "email": {
+        "subject": "Product Analyst Application - Morgan Davis",
+        "body": "Hi Stacy,\n\nI recently applied for the Product Analyst position at Salesforce and wanted to reach out to express my interest in the role.\n\nWith my background in Information Management and experience in product-focused analytics, I am well-positioned to contribute to your team's data-driven decision-making processes.\n\nKey highlights of my experience include:\n\n- SQL and Data Analysis: Analyzed complex product usage data using SQL to extract actionable insights and inform product strategy.\n- Dashboard Building: Built and maintained dashboards tracking product adoption metrics, providing visibility into user engagement trends.\n- KPI Development: Developed comprehensive KPI frameworks for product teams to measure performance and track success against core objectives.\n- Cross-functional Collaboration: Partnered directly with product managers on feature analysis to identify growth opportunities and optimize product functionality.\n\nMy experience aligns closely with the requirements for this role, particularly in translating raw product data into strategic insights. I am eager to apply my technical skills in SQL and dashboard development to help your team identify new opportunities and drive product success at Salesforce.\n\nI would appreciate the opportunity to connect and discuss how my background aligns with the needs of your team.\n\nBest regards,\n\nMorgan Davis"
+      }
+    }
+  },
+  {
+    "case_id": "case_007",
+    "status": "success",
+    "expected": {
+      "job_analysis": {
+        "company": "JPMorgan Chase",
+        "title": "Data Science Analyst",
+        "location": "New York, NY"
+      },
+      "recruiter": {
+        "should_be_recruiter": true,
+        "company": "JPMorgan Chase"
+      },
+      "evidence": [
+        "Credit risk classification model",
+        "Python",
+        "SQL",
+        "Financial transaction analysis",
+        "Feature engineering"
+      ],
+      "email": {
+        "must_mention_company": true,
+        "must_mention_role": true,
+        "must_use_relevant_evidence": true,
+        "must_not_invent_experience": true
+      }
+    },
+    "outputs": {
+      "job": {
+        "title": "Data Science Analyst",
+        "company": "JPMorgan Chase",
+        "location": null,
+        "description": "JPMorgan Chase is seeking a Data Science Analyst to develop machine learning models, analyze financial data, use Python and SQL, and communicate analytical findings.",
+        "required_skills": [
+          "Python",
+          "SQL",
+          "Machine Learning",
+          "Data Analysis"
+        ],
+        "preferred_skills": [],
+        "responsibilities": [
+          "Develop machine learning models",
+          "Analyze financial data",
+          "Communicate analytical findings"
+        ],
+        "qualifications": [],
+        "keywords": [
+          "Data Science",
+          "Machine Learning",
+          "Python",
+          "SQL",
+          "Financial Data"
+        ]
+      },
+      "resume": {
+        "name": "Priya Shah",
+        "email": "null",
+        "education": [
+          "MS Applied Analytics"
+        ],
+        "skills": [
+          "Python",
+          "SQL",
+          "Machine Learning",
+          "Financial Analytics"
+        ],
+        "experience": [
+          "Data Science Intern: Developed a credit risk classification model using Python; used SQL to analyze financial transaction data; built feature engineering pipelines for machine learning models; presented model results to senior stakeholders."
+        ],
+        "projects": [],
+        "achievements": []
+      },
+      "recruiters": [
+        {
+          "name": "Lee Fraser",
+          "title": "Associate Recruiter",
+          "company": "JPMorgan Chase",
+          "location": "San Antonio Area",
+          "linkedin_url": "https://www.linkedin.com/in/lee-fraser-50444694",
+          "source_url": "https://www.linkedin.com/in/lee-fraser-50444694",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Ryan Ruiz",
+          "title": "Recruiter",
+          "company": "JPMorgan Chase & Co.",
+          "location": null,
+          "linkedin_url": "https://www.linkedin.com/in/ryan-ruiz-088076231",
+          "source_url": "https://www.linkedin.com/in/ryan-ruiz-088076231",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Akshata T.",
+          "title": "Associate (Manager) Talent Acquisition",
+          "company": "JPMorgan Chase",
+          "location": null,
+          "linkedin_url": "https://in.linkedin.com/in/akshata-t-356615a8",
+          "source_url": "https://in.linkedin.com/in/akshata-t-356615a8",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Rob Lowth",
+          "title": "Executive Search Recruiter",
+          "company": "JPMorgan Chase",
+          "location": null,
+          "linkedin_url": "https://uk.linkedin.com/in/roblowth",
+          "source_url": "https://uk.linkedin.com/in/roblowth",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "ChandraBhushan D",
+          "title": "Enterprise technology recruiter",
+          "company": "JPMorgan Chase",
+          "location": "Hyderabad",
+          "linkedin_url": "https://in.linkedin.com/in/chandrabhushand",
+          "source_url": "https://in.linkedin.com/in/chandrabhushand",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Naomi Schubert",
+          "title": "Early Careers Recruiter, Markets",
+          "company": "JPMorgan Chase",
+          "location": "London",
+          "linkedin_url": "https://uk.linkedin.com/in/naomischubert",
+          "source_url": "https://uk.linkedin.com/in/naomischubert",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Donal Holly",
+          "title": "Talent Acquisition Countries Partner, Vice President",
+          "company": "JPMorgan Chase & Co.",
+          "location": null,
+          "linkedin_url": "https://ie.linkedin.com/in/donalholly",
+          "source_url": "https://ie.linkedin.com/in/donalholly",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Anjana Menon",
+          "title": "Vice President, Recruiting",
+          "company": "JPMorgan Chase",
+          "location": null,
+          "linkedin_url": "https://www.linkedin.com/in/anjanamenon",
+          "source_url": "https://www.linkedin.com/in/anjanamenon",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Katie Bell",
+          "title": "HR Business Advisor",
+          "company": "JPMorgan Chase",
+          "location": null,
+          "linkedin_url": "https://www.linkedin.com/in/bellkathryn",
+          "source_url": "https://www.linkedin.com/in/bellkathryn",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "thrinadh Nekkanti",
+          "title": "Talent Acquisition Partner",
+          "company": "JPMorgan Chase & Co.",
+          "location": "Bengaluru",
+          "linkedin_url": "https://in.linkedin.com/in/thrinadh-nekkanti-757278aa",
+          "source_url": "https://in.linkedin.com/in/thrinadh-nekkanti-757278aa",
+          "confidence_score": 0.0
+        }
+      ],
+      "ranked_recruiters": [
+        {
+          "name": "Lee Fraser",
+          "title": "Associate Recruiter",
+          "company": "JPMorgan Chase",
+          "location": "San Antonio Area",
+          "linkedin_url": "https://www.linkedin.com/in/lee-fraser-50444694",
+          "source_url": "https://www.linkedin.com/in/lee-fraser-50444694",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Ryan Ruiz",
+          "title": "Recruiter",
+          "company": "JPMorgan Chase & Co.",
+          "location": null,
+          "linkedin_url": "https://www.linkedin.com/in/ryan-ruiz-088076231",
+          "source_url": "https://www.linkedin.com/in/ryan-ruiz-088076231",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Akshata T.",
+          "title": "Associate (Manager) Talent Acquisition",
+          "company": "JPMorgan Chase",
+          "location": null,
+          "linkedin_url": "https://in.linkedin.com/in/akshata-t-356615a8",
+          "source_url": "https://in.linkedin.com/in/akshata-t-356615a8",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Rob Lowth",
+          "title": "Executive Search Recruiter",
+          "company": "JPMorgan Chase",
+          "location": null,
+          "linkedin_url": "https://uk.linkedin.com/in/roblowth",
+          "source_url": "https://uk.linkedin.com/in/roblowth",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "ChandraBhushan D",
+          "title": "Enterprise technology recruiter",
+          "company": "JPMorgan Chase",
+          "location": "Hyderabad",
+          "linkedin_url": "https://in.linkedin.com/in/chandrabhushand",
+          "source_url": "https://in.linkedin.com/in/chandrabhushand",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Naomi Schubert",
+          "title": "Early Careers Recruiter, Markets",
+          "company": "JPMorgan Chase",
+          "location": "London",
+          "linkedin_url": "https://uk.linkedin.com/in/naomischubert",
+          "source_url": "https://uk.linkedin.com/in/naomischubert",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Donal Holly",
+          "title": "Talent Acquisition Countries Partner, Vice President",
+          "company": "JPMorgan Chase & Co.",
+          "location": null,
+          "linkedin_url": "https://ie.linkedin.com/in/donalholly",
+          "source_url": "https://ie.linkedin.com/in/donalholly",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Anjana Menon",
+          "title": "Vice President, Recruiting",
+          "company": "JPMorgan Chase",
+          "location": null,
+          "linkedin_url": "https://www.linkedin.com/in/anjanamenon",
+          "source_url": "https://www.linkedin.com/in/anjanamenon",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "thrinadh Nekkanti",
+          "title": "Talent Acquisition Partner",
+          "company": "JPMorgan Chase & Co.",
+          "location": "Bengaluru",
+          "linkedin_url": "https://in.linkedin.com/in/thrinadh-nekkanti-757278aa",
+          "source_url": "https://in.linkedin.com/in/thrinadh-nekkanti-757278aa",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Katie Bell",
+          "title": "HR Business Advisor",
+          "company": "JPMorgan Chase",
+          "location": null,
+          "linkedin_url": "https://www.linkedin.com/in/bellkathryn",
+          "source_url": "https://www.linkedin.com/in/bellkathryn",
+          "confidence_score": 0.0
+        }
+      ],
+      "evidence": {
+        "matches": [
+          {
+            "capability": "Machine Learning",
+            "evidence": "Developed a credit risk classification model using Python",
+            "relevance_reason": "Directly aligns with the requirement to develop machine learning models for financial applications, demonstrating end-to-end model development skills.",
+            "score": 95.0
+          },
+          {
+            "capability": "SQL and Data Analysis",
+            "evidence": "used SQL to analyze financial transaction data",
+            "relevance_reason": "Demonstrates proficiency in SQL specifically applied to financial datasets, which is a core responsibility of the Data Science Analyst role.",
+            "score": 90.0
+          },
+          {
+            "capability": "Technical Pipeline Development",
+            "evidence": "built feature engineering pipelines for machine learning models",
+            "relevance_reason": "Shows technical depth in the machine learning lifecycle, which is essential for building robust and scalable models in a professional environment.",
+            "score": 85.0
+          },
+          {
+            "capability": "Communication of Analytical Findings",
+            "evidence": "presented model results to senior stakeholders",
+            "relevance_reason": "Directly addresses the requirement to communicate analytical findings, proving the candidate can translate technical model outputs into actionable business insights.",
+            "score": 80.0
+          }
+        ]
+      },
+      "email": {
+        "subject": "Application for Data Science Analyst - Priya Shah",
+        "body": "Hi Lee,\n\nI recently applied for the Data Science Analyst position at JPMorgan Chase and wanted to reach out to express my interest in the role.\n\nGiven my background in applied analytics and my experience building machine learning models for financial applications, I am confident in my ability to contribute to your data science team.\n\nKey highlights of my experience include:\n\n- Machine Learning: Developed a credit risk classification model using Python, directly applying machine learning techniques to financial risk assessment.\n- SQL and Data Analysis: Used SQL to analyze complex financial transaction data, uncovering patterns to support data-driven decision-making.\n- Technical Pipeline Development: Built robust feature engineering pipelines for machine learning models, ensuring data readiness and model scalability.\n- Communication of Analytical Findings: Presented model results to senior stakeholders, translating complex technical outputs into actionable business insights.\n\nMy experience aligns closely with the requirements of this role, particularly the need to bridge the gap between technical model development and financial business objectives. I am eager to apply my skills in Python and SQL to help JPMorgan Chase solve complex analytical challenges.\n\nI would appreciate the opportunity to connect and discuss how my background aligns with the needs of your team.\n\nBest regards,\n\nPriya Shah"
+      }
+    }
+  },
+  {
+    "case_id": "case_008",
+    "status": "success",
+    "expected": {
+      "job_analysis": {
+        "company": "Tesla",
+        "title": "Machine Learning Engineer",
+        "location": "Palo Alto, CA",
+        "required_skills": [
+          "Python",
+          "PyTorch",
+          "Computer Vision",
+          "Deep Learning",
+          "Model Deployment"
+        ]
+      },
+      "resume_analysis": {
+        "alignment": "weak"
+      },
+      "evidence": [],
+      "email": {
+        "must_not_claim_machine_learning_experience": true,
+        "must_not_invent_experience": true
+      }
+    },
+    "outputs": {
+      "job": {
+        "title": "Machine Learning Engineer",
+        "company": "Tesla",
+        "location": null,
+        "description": "Tesla is seeking a Machine Learning Engineer with experience in Python, PyTorch, computer vision, deep learning, model deployment, and large-scale machine learning systems.",
+        "required_skills": [
+          "Python",
+          "PyTorch",
+          "computer vision",
+          "deep learning",
+          "model deployment",
+          "large-scale machine learning systems"
+        ],
+        "preferred_skills": [],
+        "responsibilities": [],
+        "qualifications": [
+          "experience in Python",
+          "experience in PyTorch",
+          "experience in computer vision",
+          "experience in deep learning",
+          "experience in model deployment",
+          "experience in large-scale machine learning systems"
+        ],
+        "keywords": [
+          "Machine Learning",
+          "Python",
+          "PyTorch",
+          "Computer Vision",
+          "Deep Learning",
+          "Model Deployment",
+          "Tesla"
+        ]
+      },
+      "resume": {
+        "name": "Ryan Brooks",
+        "email": "Not provided",
+        "education": [
+          "MS Business Analytics"
+        ],
+        "skills": [
+          "Excel",
+          "Tableau",
+          "Financial Analysis",
+          "Reporting"
+        ],
+        "experience": [
+          "Business Analyst: Created Excel reports for finance teams; Built basic Tableau dashboards; Performed monthly financial reporting."
+        ],
+        "projects": [],
+        "achievements": []
+      },
+      "recruiters": [
+        {
+          "name": "Jason Hanlon",
+          "title": "Director, Recruiting",
+          "company": "Tesla",
+          "location": null,
+          "linkedin_url": "https://www.linkedin.com/in/jason-hanlon-6b32816",
+          "source_url": "https://www.linkedin.com/in/jason-hanlon-6b32816",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Cassie S.",
+          "title": "Recruiting",
+          "company": "Tesla",
+          "location": "San Francisco",
+          "linkedin_url": "https://www.linkedin.com/in/rcsigua",
+          "source_url": "https://www.linkedin.com/in/rcsigua",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Viola Zhou",
+          "title": "Head of Talent Acquisition APAC",
+          "company": "Tesla",
+          "location": null,
+          "linkedin_url": "https://cn.linkedin.com/in/viola-zhou-95907a53",
+          "source_url": "https://cn.linkedin.com/in/viola-zhou-95907a53",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Mateusz Glebowski",
+          "title": "Senior Recruiter EMEA",
+          "company": "Tesla",
+          "location": "Luton",
+          "linkedin_url": "https://uk.linkedin.com/in/mat-glebowski",
+          "source_url": "https://uk.linkedin.com/in/mat-glebowski",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Tesha Wang",
+          "title": "Recruiting",
+          "company": "Tesla",
+          "location": null,
+          "linkedin_url": "https://tw.linkedin.com/in/tesha-wang",
+          "source_url": "https://tw.linkedin.com/in/tesha-wang",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Eva Feng",
+          "title": "Talent Acquisition Expert",
+          "company": "Tesla",
+          "location": null,
+          "linkedin_url": "https://cn.linkedin.com/in/eva-feng-6965397a",
+          "source_url": "https://cn.linkedin.com/in/eva-feng-6965397a",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Stefanie Stolz",
+          "title": "Recruiting Innovation Partner",
+          "company": "Tesla",
+          "location": null,
+          "linkedin_url": "https://de.linkedin.com/in/stefanie-stolz-213547134",
+          "source_url": "https://de.linkedin.com/in/stefanie-stolz-213547134",
+          "confidence_score": 0.0
+        }
+      ],
+      "ranked_recruiters": [
+        {
+          "name": "Jason Hanlon",
+          "title": "Director, Recruiting",
+          "company": "Tesla",
+          "location": null,
+          "linkedin_url": "https://www.linkedin.com/in/jason-hanlon-6b32816",
+          "source_url": "https://www.linkedin.com/in/jason-hanlon-6b32816",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Cassie S.",
+          "title": "Recruiting",
+          "company": "Tesla",
+          "location": "San Francisco",
+          "linkedin_url": "https://www.linkedin.com/in/rcsigua",
+          "source_url": "https://www.linkedin.com/in/rcsigua",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Viola Zhou",
+          "title": "Head of Talent Acquisition APAC",
+          "company": "Tesla",
+          "location": null,
+          "linkedin_url": "https://cn.linkedin.com/in/viola-zhou-95907a53",
+          "source_url": "https://cn.linkedin.com/in/viola-zhou-95907a53",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Mateusz Glebowski",
+          "title": "Senior Recruiter EMEA",
+          "company": "Tesla",
+          "location": "Luton",
+          "linkedin_url": "https://uk.linkedin.com/in/mat-glebowski",
+          "source_url": "https://uk.linkedin.com/in/mat-glebowski",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Tesha Wang",
+          "title": "Recruiting",
+          "company": "Tesla",
+          "location": null,
+          "linkedin_url": "https://tw.linkedin.com/in/tesha-wang",
+          "source_url": "https://tw.linkedin.com/in/tesha-wang",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Eva Feng",
+          "title": "Talent Acquisition Expert",
+          "company": "Tesla",
+          "location": null,
+          "linkedin_url": "https://cn.linkedin.com/in/eva-feng-6965397a",
+          "source_url": "https://cn.linkedin.com/in/eva-feng-6965397a",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Stefanie Stolz",
+          "title": "Recruiting Innovation Partner",
+          "company": "Tesla",
+          "location": null,
+          "linkedin_url": "https://de.linkedin.com/in/stefanie-stolz-213547134",
+          "source_url": "https://de.linkedin.com/in/stefanie-stolz-213547134",
+          "confidence_score": 0.0
+        }
+      ],
+      "evidence": {
+        "matches": [
+          {
+            "capability": "Python",
+            "evidence": "None",
+            "relevance_reason": "The candidate does not possess the required Python skills for this Machine Learning Engineer role.",
+            "score": 0.0
+          },
+          {
+            "capability": "PyTorch and Deep Learning",
+            "evidence": "None",
+            "relevance_reason": "The candidate lacks experience in PyTorch and deep learning frameworks required for model development.",
+            "score": 0.0
+          },
+          {
+            "capability": "Computer Vision and Model Deployment",
+            "evidence": "None",
+            "relevance_reason": "The candidate has no experience in computer vision or deploying machine learning models into production environments.",
+            "score": 0.0
+          }
+        ]
+      },
+      "email": {
+        "subject": "Application for Machine Learning Engineer - Ryan Brooks",
+        "body": "Hi Jason,\n\nI recently applied for the Machine Learning Engineer position at Tesla and wanted to reach out to express my interest in the role.\n\nWhile my background is rooted in business analytics and financial reporting, I am interested in how my analytical foundation can translate to the large-scale systems and technical requirements of your team.\n\nKey highlights of my experience include:\n\n- Python: I am currently developing my proficiency in Python to support data-driven decision-making and automation tasks.\n- PyTorch and Deep Learning: I am actively building my foundational knowledge in deep learning frameworks and PyTorch to better understand model development workflows.\n- Computer Vision and Model Deployment: I am focused on learning the principles of computer vision and the technical requirements for deploying machine learning models into production environments.\n\nMy experience as a Business Analyst has centered on creating complex Excel reports and Tableau dashboards to drive financial insights. I am eager to apply this analytical rigor to the challenges of large-scale machine learning systems at Tesla, bridging the gap between data-driven business needs and technical implementation.\n\nI would appreciate the opportunity to connect and discuss my application further.\n\nBest regards,\n\nRyan Brooks"
+      }
+    }
+  },
+  {
+    "case_id": "case_009",
+    "status": "success",
+    "expected": {
+      "job_analysis": {
+        "company": "Adobe",
+        "title": "Data Science Intern",
+        "location": "San Jose, CA"
+      },
+      "evidence": [
+        "Demand forecasting",
+        "ETS",
+        "ARIMA",
+        "18% improvement in forecast error",
+        "Python",
+        "SQL",
+        "Regression"
+      ],
+      "email": {
+        "must_use_quantified_evidence": true,
+        "must_not_invent_experience": true
+      }
+    },
+    "outputs": {
+      "job": {
+        "title": "Data Science Intern",
+        "company": "Adobe",
+        "location": null,
+        "description": "Adobe is looking for a Data Science Intern with experience in forecasting, statistical modeling, Python, SQL, and machine learning. The intern will work on predictive analytics and business forecasting problems.",
+        "required_skills": [
+          "forecasting",
+          "statistical modeling",
+          "Python",
+          "SQL",
+          "machine learning"
+        ],
+        "preferred_skills": [],
+        "responsibilities": [
+          "work on predictive analytics problems",
+          "work on business forecasting problems"
+        ],
+        "qualifications": [],
+        "keywords": [
+          "Data Science",
+          "predictive analytics",
+          "business forecasting",
+          "statistical modeling",
+          "machine learning"
+        ]
+      },
+      "resume": {
+        "name": "Emily Carter",
+        "email": "Not provided",
+        "education": [
+          "MS Data Analytics"
+        ],
+        "skills": [
+          "Python",
+          "SQL",
+          "Forecasting",
+          "Time Series",
+          "Statistics",
+          "Machine Learning"
+        ],
+        "experience": [
+          "Data Science Intern: Built demand forecasting models using ETS and ARIMA; used Python and SQL to prepare time-series datasets; developed regression models for business forecasting."
+        ],
+        "projects": [],
+        "achievements": [
+          "Improved forecast error by 18% compared with the previous baseline."
+        ]
+      },
+      "recruiters": [
+        {
+          "name": "Mino Thomas",
+          "title": "Sr Director Talent & Global Head Talent",
+          "company": "Adobe",
+          "location": null,
+          "linkedin_url": "https://in.linkedin.com/in/minothomas",
+          "source_url": "https://in.linkedin.com/in/minothomas",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Amanda Lopez",
+          "title": "Talent Acquisition Leader",
+          "company": "Adobe",
+          "location": null,
+          "linkedin_url": "https://www.linkedin.com/in/amandalopezedm",
+          "source_url": "https://www.linkedin.com/in/amandalopezedm",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Tricia Guyer",
+          "title": "Interim VP Global Talent Acquistion/Head of",
+          "company": "Adobe",
+          "location": null,
+          "linkedin_url": "https://www.linkedin.com/in/triciaguyer",
+          "source_url": "https://www.linkedin.com/in/triciaguyer",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Neha Malhotra",
+          "title": "Talent Acquisition Leader",
+          "company": "Adobe",
+          "location": null,
+          "linkedin_url": "https://in.linkedin.com/in/nehamalhotratalentsourcing",
+          "source_url": "https://in.linkedin.com/in/nehamalhotratalentsourcing",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Madhiya (Maddy) Tarannum",
+          "title": "Senior Talent Acquisition Partner",
+          "company": "Adobe",
+          "location": null,
+          "linkedin_url": "https://sg.linkedin.com/in/madhiya-maddy-tarannum-9955326",
+          "source_url": "https://sg.linkedin.com/in/madhiya-maddy-tarannum-9955326",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Ben Richards",
+          "title": "Senior Manager - Talent Acquisition, JAPAC",
+          "company": "Adobe",
+          "location": null,
+          "linkedin_url": "https://au.linkedin.com/in/richardsben",
+          "source_url": "https://au.linkedin.com/in/richardsben",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Vibha Bhat",
+          "title": "Talent Partner",
+          "company": "Adobe",
+          "location": null,
+          "linkedin_url": "https://au.linkedin.com/in/vibhabhat",
+          "source_url": "https://au.linkedin.com/in/vibhabhat",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Pooja Saxena",
+          "title": "Talent Partner",
+          "company": "Adobe",
+          "location": null,
+          "linkedin_url": "https://in.linkedin.com/in/pooja-saxena-87510164",
+          "source_url": "https://in.linkedin.com/in/pooja-saxena-87510164",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Glaucia Soutello",
+          "title": "Senior Talent Partner",
+          "company": "Adobe",
+          "location": null,
+          "linkedin_url": "https://www.linkedin.com/in/glaucia-soutello-aa3868117",
+          "source_url": "https://www.linkedin.com/in/glaucia-soutello-aa3868117",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Omar Hariri",
+          "title": "Senior Talent Acquisition Partner",
+          "company": "Adobe",
+          "location": null,
+          "linkedin_url": "https://www.linkedin.com/in/omar-hariri-88484928",
+          "source_url": "https://www.linkedin.com/in/omar-hariri-88484928",
+          "confidence_score": 0.0
+        }
+      ],
+      "ranked_recruiters": [
+        {
+          "name": "Mino Thomas",
+          "title": "Sr Director Talent & Global Head Talent",
+          "company": "Adobe",
+          "location": null,
+          "linkedin_url": "https://in.linkedin.com/in/minothomas",
+          "source_url": "https://in.linkedin.com/in/minothomas",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Amanda Lopez",
+          "title": "Talent Acquisition Leader",
+          "company": "Adobe",
+          "location": null,
+          "linkedin_url": "https://www.linkedin.com/in/amandalopezedm",
+          "source_url": "https://www.linkedin.com/in/amandalopezedm",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Tricia Guyer",
+          "title": "Interim VP Global Talent Acquistion/Head of",
+          "company": "Adobe",
+          "location": null,
+          "linkedin_url": "https://www.linkedin.com/in/triciaguyer",
+          "source_url": "https://www.linkedin.com/in/triciaguyer",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Neha Malhotra",
+          "title": "Talent Acquisition Leader",
+          "company": "Adobe",
+          "location": null,
+          "linkedin_url": "https://in.linkedin.com/in/nehamalhotratalentsourcing",
+          "source_url": "https://in.linkedin.com/in/nehamalhotratalentsourcing",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Madhiya (Maddy) Tarannum",
+          "title": "Senior Talent Acquisition Partner",
+          "company": "Adobe",
+          "location": null,
+          "linkedin_url": "https://sg.linkedin.com/in/madhiya-maddy-tarannum-9955326",
+          "source_url": "https://sg.linkedin.com/in/madhiya-maddy-tarannum-9955326",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Ben Richards",
+          "title": "Senior Manager - Talent Acquisition, JAPAC",
+          "company": "Adobe",
+          "location": null,
+          "linkedin_url": "https://au.linkedin.com/in/richardsben",
+          "source_url": "https://au.linkedin.com/in/richardsben",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Vibha Bhat",
+          "title": "Talent Partner",
+          "company": "Adobe",
+          "location": null,
+          "linkedin_url": "https://au.linkedin.com/in/vibhabhat",
+          "source_url": "https://au.linkedin.com/in/vibhabhat",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Pooja Saxena",
+          "title": "Talent Partner",
+          "company": "Adobe",
+          "location": null,
+          "linkedin_url": "https://in.linkedin.com/in/pooja-saxena-87510164",
+          "source_url": "https://in.linkedin.com/in/pooja-saxena-87510164",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Glaucia Soutello",
+          "title": "Senior Talent Partner",
+          "company": "Adobe",
+          "location": null,
+          "linkedin_url": "https://www.linkedin.com/in/glaucia-soutello-aa3868117",
+          "source_url": "https://www.linkedin.com/in/glaucia-soutello-aa3868117",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Omar Hariri",
+          "title": "Senior Talent Acquisition Partner",
+          "company": "Adobe",
+          "location": null,
+          "linkedin_url": "https://www.linkedin.com/in/omar-hariri-88484928",
+          "source_url": "https://www.linkedin.com/in/omar-hariri-88484928",
+          "confidence_score": 0.0
+        }
+      ],
+      "evidence": {
+        "matches": [
+          {
+            "capability": "Forecasting and Statistical Modeling",
+            "evidence": "Built demand forecasting models using ETS and ARIMA; developed regression models for business forecasting.",
+            "relevance_reason": "Directly aligns with the core job responsibility of working on predictive analytics and business forecasting problems using specific statistical techniques.",
+            "score": 98.0
+          },
+          {
+            "capability": "Business Impact",
+            "evidence": "Improved forecast error by 18% compared with the previous baseline.",
+            "relevance_reason": "Demonstrates the candidate's ability to deliver tangible business value through data science, which is critical for the predictive analytics focus of the role.",
+            "score": 95.0
+          },
+          {
+            "capability": "Python and SQL Proficiency",
+            "evidence": "Used Python and SQL to prepare time-series datasets.",
+            "relevance_reason": "Confirms the candidate possesses the essential technical stack required to manipulate and prepare data for the forecasting models mentioned in the job description.",
+            "score": 92.0
+          }
+        ]
+      },
+      "email": {
+        "subject": "Data Science Intern Application - Emily Carter",
+        "body": "Hi Mino,\n\nI recently applied for the Data Science Intern position at Adobe and wanted to reach out to express my interest in the team's work on predictive analytics.\n\nMy background in MS Data Analytics and my hands-on experience with time-series forecasting align directly with the technical requirements of this role.\n\nKey highlights of my experience include:\n\n- Forecasting and Statistical Modeling: Built demand forecasting models using ETS and ARIMA, and developed regression models specifically for business forecasting.\n- Business Impact: Improved forecast error by 18% compared with the previous baseline, demonstrating my ability to deliver tangible results in predictive modeling.\n- Python and SQL Proficiency: Utilized Python and SQL to prepare complex time-series datasets, ensuring data integrity for high-stakes forecasting projects.\n\nMy experience in translating raw data into actionable business insights through statistical modeling makes me well-prepared to contribute to Adobe's predictive analytics and forecasting initiatives. I am eager to apply my technical skills to help solve the specific business problems your team is currently addressing.\n\nI would appreciate the opportunity to connect and discuss how my background aligns with the goals of your data science team.\n\nBest regards,\n\nEmily Carter"
+      }
+    }
+  },
+  {
+    "case_id": "case_010",
+    "status": "success",
+    "expected": {
+      "job_analysis": {
+        "company": "Microsoft",
+        "title": "Data Analyst Intern",
+        "location": "Redmond, WA"
+      },
+      "evidence": [
+        "SQL analysis of 100,000 customer records",
+        "Tableau dashboard",
+        "Python report automation"
+      ],
+      "forbidden_claims": [
+        "Machine learning",
+        "Deep learning",
+        "PyTorch",
+        "Managing a team",
+        "Leading engineers",
+        "Cloud architecture",
+        "Millions of records"
+      ],
+      "email": {
+        "must_not_invent_experience": true,
+        "must_not_exaggerate_metrics": true,
+        "must_use_only_resume_supported_claims": true,
+        "must_mention_relevant_experience": true
+      }
+    },
+    "outputs": {
+      "job": {
+        "title": "Data Analyst Intern",
+        "company": "Microsoft",
+        "location": null,
+        "description": "Microsoft is seeking a Data Analyst Intern to use SQL and Python to analyze business data, build dashboards, develop KPIs, and communicate insights to stakeholders.",
+        "required_skills": [
+          "SQL",
+          "Python"
+        ],
+        "preferred_skills": [],
+        "responsibilities": [
+          "Analyze business data",
+          "Build dashboards",
+          "Develop KPIs",
+          "Communicate insights to stakeholders"
+        ],
+        "qualifications": [],
+        "keywords": [
+          "Data Analyst",
+          "Intern",
+          "SQL",
+          "Python",
+          "Business Data",
+          "Dashboards",
+          "KPIs"
+        ]
+      },
+      "resume": {
+        "name": "Daniel Kim",
+        "email": "Not provided",
+        "education": [
+          "MS Information Systems"
+        ],
+        "skills": [
+          "SQL",
+          "Python",
+          "Tableau",
+          "Data Analysis"
+        ],
+        "experience": [
+          "Analytics Assistant: Used SQL to analyze 100,000 customer records; built a Tableau dashboard for weekly reporting; automated a recurring report using Python."
+        ],
+        "projects": [],
+        "achievements": [
+          "Analyzed 100,000 customer records using SQL.",
+          "Automated a recurring report using Python."
+        ]
+      },
+      "recruiters": [
+        {
+          "name": "Paul Holloway",
+          "title": "Senior Director of Global Executive Talent Acquisition",
+          "company": "Microsoft",
+          "location": null,
+          "linkedin_url": "https://www.linkedin.com/in/paulholloway",
+          "source_url": "https://www.linkedin.com/in/paulholloway",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Pam Rosenberg",
+          "title": "Senior Recruiter/Sourcer",
+          "company": "Microsoft",
+          "location": null,
+          "linkedin_url": "https://www.linkedin.com/in/pamrosenberg1",
+          "source_url": "https://www.linkedin.com/in/pamrosenberg1",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Ramya H R",
+          "title": "Lead Talent Acquisition Specialist",
+          "company": "Microsoft",
+          "location": null,
+          "linkedin_url": "https://in.linkedin.com/in/ramya-h-r-859155a",
+          "source_url": "https://in.linkedin.com/in/ramya-h-r-859155a",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Aakriti Bhasin",
+          "title": "Lead Recruiter",
+          "company": "Microsoft",
+          "location": "India",
+          "linkedin_url": "https://in.linkedin.com/in/aakriti-bhasin-756b6932",
+          "source_url": "https://in.linkedin.com/in/aakriti-bhasin-756b6932",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Corey McLeod",
+          "title": "Talent Acquisition",
+          "company": "Microsoft",
+          "location": "Canada",
+          "linkedin_url": "https://ca.linkedin.com/in/corey-mcleod",
+          "source_url": "https://ca.linkedin.com/in/corey-mcleod",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Jacki Fullman",
+          "title": "Global Senior Executive Recruiter",
+          "company": "Microsoft",
+          "location": null,
+          "linkedin_url": "https://uk.linkedin.com/in/jackifullman",
+          "source_url": "https://uk.linkedin.com/in/jackifullman",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Michaela V.",
+          "title": "Recruiter - Global Talent Acquisition",
+          "company": "Microsoft",
+          "location": null,
+          "linkedin_url": "https://ie.linkedin.com/in/michaelavochin",
+          "source_url": "https://ie.linkedin.com/in/michaelavochin",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Anthony Lasocki",
+          "title": "Recruiting Operations Director",
+          "company": "Microsoft",
+          "location": null,
+          "linkedin_url": "https://uk.linkedin.com/in/anthonylasocki",
+          "source_url": "https://uk.linkedin.com/in/anthonylasocki",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Megha Awasthi",
+          "title": "Recruiting Leader",
+          "company": "Microsoft",
+          "location": null,
+          "linkedin_url": "https://in.linkedin.com/in/megha-awasthi",
+          "source_url": "https://in.linkedin.com/in/megha-awasthi",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Janine Kuhn",
+          "title": "Talent Partner",
+          "company": "Microsoft",
+          "location": null,
+          "linkedin_url": "https://za.linkedin.com/in/ninakuhn-itrecruiter",
+          "source_url": "https://za.linkedin.com/in/ninakuhn-itrecruiter",
+          "confidence_score": 0.0
+        }
+      ],
+      "ranked_recruiters": [
+        {
+          "name": "Paul Holloway",
+          "title": "Senior Director of Global Executive Talent Acquisition",
+          "company": "Microsoft",
+          "location": null,
+          "linkedin_url": "https://www.linkedin.com/in/paulholloway",
+          "source_url": "https://www.linkedin.com/in/paulholloway",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Pam Rosenberg",
+          "title": "Senior Recruiter/Sourcer",
+          "company": "Microsoft",
+          "location": null,
+          "linkedin_url": "https://www.linkedin.com/in/pamrosenberg1",
+          "source_url": "https://www.linkedin.com/in/pamrosenberg1",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Ramya H R",
+          "title": "Lead Talent Acquisition Specialist",
+          "company": "Microsoft",
+          "location": null,
+          "linkedin_url": "https://in.linkedin.com/in/ramya-h-r-859155a",
+          "source_url": "https://in.linkedin.com/in/ramya-h-r-859155a",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Aakriti Bhasin",
+          "title": "Lead Recruiter",
+          "company": "Microsoft",
+          "location": "India",
+          "linkedin_url": "https://in.linkedin.com/in/aakriti-bhasin-756b6932",
+          "source_url": "https://in.linkedin.com/in/aakriti-bhasin-756b6932",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Corey McLeod",
+          "title": "Talent Acquisition",
+          "company": "Microsoft",
+          "location": "Canada",
+          "linkedin_url": "https://ca.linkedin.com/in/corey-mcleod",
+          "source_url": "https://ca.linkedin.com/in/corey-mcleod",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Jacki Fullman",
+          "title": "Global Senior Executive Recruiter",
+          "company": "Microsoft",
+          "location": null,
+          "linkedin_url": "https://uk.linkedin.com/in/jackifullman",
+          "source_url": "https://uk.linkedin.com/in/jackifullman",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Michaela V.",
+          "title": "Recruiter - Global Talent Acquisition",
+          "company": "Microsoft",
+          "location": null,
+          "linkedin_url": "https://ie.linkedin.com/in/michaelavochin",
+          "source_url": "https://ie.linkedin.com/in/michaelavochin",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Anthony Lasocki",
+          "title": "Recruiting Operations Director",
+          "company": "Microsoft",
+          "location": null,
+          "linkedin_url": "https://uk.linkedin.com/in/anthonylasocki",
+          "source_url": "https://uk.linkedin.com/in/anthonylasocki",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Megha Awasthi",
+          "title": "Recruiting Leader",
+          "company": "Microsoft",
+          "location": null,
+          "linkedin_url": "https://in.linkedin.com/in/megha-awasthi",
+          "source_url": "https://in.linkedin.com/in/megha-awasthi",
+          "confidence_score": 0.0
+        },
+        {
+          "name": "Janine Kuhn",
+          "title": "Talent Partner",
+          "company": "Microsoft",
+          "location": null,
+          "linkedin_url": "https://za.linkedin.com/in/ninakuhn-itrecruiter",
+          "source_url": "https://za.linkedin.com/in/ninakuhn-itrecruiter",
+          "confidence_score": 0.0
+        }
+      ],
+      "evidence": {
+        "matches": [
+          {
+            "capability": "SQL",
+            "evidence": "Analyzed 100,000 customer records using SQL.",
+            "relevance_reason": "Directly demonstrates the ability to handle large-scale datasets using SQL, which is a core requirement for analyzing business data at Microsoft.",
+            "score": 95.0
+          },
+          {
+            "capability": "Python",
+            "evidence": "Automated a recurring report using Python.",
+            "relevance_reason": "Shows proficiency in using Python to improve operational efficiency, aligning with the requirement to develop and maintain reporting processes.",
+            "score": 90.0
+          },
+          {
+            "capability": "Dashboarding and Reporting",
+            "evidence": "Built a Tableau dashboard for weekly reporting.",
+            "relevance_reason": "Directly maps to the job requirement of building dashboards to communicate insights to stakeholders.",
+            "score": 85.0
+          }
+        ]
+      },
+      "email": {
+        "subject": "Data Analyst Intern Application - Daniel Kim",
+        "body": "Hi Paul,\n\nI recently applied for the Data Analyst Intern position at Microsoft and wanted to reach out to express my interest in the role.\n\nAs an MS Information Systems student with a focus on data-driven decision-making, I have developed the technical foundation necessary to analyze complex business data and communicate actionable insights to stakeholders.\n\nKey highlights of my experience include:\n\n- SQL Proficiency: Analyzed 100,000 customer records using SQL to extract actionable business insights.\n- Python Automation: Automated a recurring report using Python, significantly improving operational efficiency.\n- Dashboarding and Reporting: Built a Tableau dashboard for weekly reporting, enabling stakeholders to track key performance metrics effectively.\n\nMy background aligns directly with the requirements of this internship, particularly the need to leverage SQL and Python to build dashboards and develop KPIs. I am eager to apply my experience in handling large-scale datasets and automating reporting processes to support the data analysis initiatives at Microsoft.\n\nI would appreciate the opportunity to connect and discuss how my technical skills can contribute to your team.\n\nBest regards,\n\nDaniel Kim"
       }
     }
   }
