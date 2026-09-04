@@ -21,7 +21,10 @@ class RecruiterDiscovery:
 
         city = job.location
 
+        # --------------------------------------------------
         # City-first searches
+        # --------------------------------------------------
+
         city_queries = []
 
         if city:
@@ -39,7 +42,13 @@ class RecruiterDiscovery:
                 f'"{job.company}" "talent partner" "{city}"',
             ]
 
-        # Company-wide fallback searches
+        # --------------------------------------------------
+        # Company-wide fallback
+        #
+        # Company remains fixed.
+        # Location is broadened.
+        # --------------------------------------------------
+
         company_queries = [
             f'site:linkedin.com/in/ '
             f'"{job.company}" recruiter',
@@ -58,10 +67,7 @@ class RecruiterDiscovery:
         # SEARCH HELPER
         # ==================================================
 
-        def run_queries(
-            queries,
-            results,
-        ):
+        def run_queries(queries, results):
 
             for query in queries:
 
@@ -107,7 +113,7 @@ class RecruiterDiscovery:
             )
 
         # ==================================================
-        # DEDUPLICATE CITY RESULTS
+        # STEP 2 — DEDUPLICATE CITY RESULTS
         # ==================================================
 
         city_unique_results = {}
@@ -119,7 +125,7 @@ class RecruiterDiscovery:
             if not url:
                 continue
 
-            if "linkedin.com/in/" not in url:
+            if "linkedin.com/in/" not in url.lower():
                 continue
 
             city_unique_results[url] = result
@@ -134,13 +140,8 @@ class RecruiterDiscovery:
         )
 
         # ==================================================
-        # STEP 2 — COMPANY FALLBACK
+        # STEP 3 — COMPANY-WIDE FALLBACK
         # ==================================================
-
-        # We intentionally do NOT cap at 15 yet.
-        #
-        # We want to build a pool of actual recruiter
-        # candidates first.
 
         if len(city_results) < 15:
 
@@ -155,7 +156,7 @@ class RecruiterDiscovery:
             )
 
         # ==================================================
-        # DEDUPLICATE ALL RESULTS
+        # STEP 4 — DEDUPLICATE ALL RESULTS
         # ==================================================
 
         unique_results = {}
@@ -167,7 +168,7 @@ class RecruiterDiscovery:
             if not url:
                 continue
 
-            if "linkedin.com/in/" not in url:
+            if "linkedin.com/in/" not in url.lower():
                 continue
 
             unique_results[url] = result
@@ -189,7 +190,7 @@ class RecruiterDiscovery:
             )
 
         # ==================================================
-        # STEP 3 — BASIC RECRUITER FILTERING
+        # STEP 5 — BASIC RECRUITER FILTERING
         # ==================================================
 
         recruiter_keywords = [
@@ -200,6 +201,10 @@ class RecruiterDiscovery:
             "technical recruiter",
             "campus recruiter",
             "university recruiter",
+            "university talent",
+            "campus talent",
+            "hiring",
+            "talent management",
         ]
 
         non_recruiter_keywords = [
@@ -209,6 +214,9 @@ class RecruiterDiscovery:
             "product manager",
             "machine learning engineer",
             "developer",
+            "software developer",
+            "research scientist",
+            "business analyst",
         ]
 
         recruiter_results = []
@@ -270,7 +278,7 @@ class RecruiterDiscovery:
             )
 
         # ==================================================
-        # STEP 4 — LLM EXTRACTION
+        # STEP 6 — LLM EXTRACTION
         # ==================================================
 
         structured_llm = self.llm.with_structured_output(
@@ -301,7 +309,7 @@ URL:
 
         prompt = f"""
 You are extracting structured information about recruiters
-from search results for a job.
+from public search-engine results.
 
 JOB
 ---
@@ -322,19 +330,70 @@ For each search result, determine:
 4. Location, if available
 5. LinkedIn URL
 
-IMPORTANT:
+==================================================
+COMPANY FILTER — CRITICAL
+==================================================
 
-- Extract the person's actual name.
-- Do not include "LinkedIn" in the person's name.
-- Do not include their professional headline in their name.
+The target company is:
+
+{job.company}
+
+Only return people who appear to work for
+the target company.
+
+The target company is a HARD FILTER.
+
+Do NOT return a person simply because the
+target company appears somewhere in the search
+snippet.
+
+Do NOT assume the person works for the target
+company because the search query contained the
+company name.
+
+If the person's company is clearly another company,
+do not return them.
+
+If you cannot establish that the person works for
+the target company, set company=null.
+
+==================================================
+RECRUITER FILTER
+==================================================
+
+Only return people who appear to be involved in:
+
+- Recruiting
+- Talent Acquisition
+- Technical Recruiting
+- Campus Recruiting
+- University Recruiting
+- Talent Partnerships
+- Recruiting Management
+- Hiring
+
+Do NOT return:
+
+- Data Scientists
+- Data Analysts
+- Software Engineers
+- Machine Learning Engineers
+- Product Managers
+- Developers
+- Researchers
+- Other non-recruiting employees
+
+==================================================
+EXTRACTION RULES
+==================================================
+
+- Extract the person's actual full name.
+- Do not include "LinkedIn" in the name.
+- Do not include their professional headline in the name.
 - Do not invent information.
 - If a field is unavailable, return null.
 - Preserve the LinkedIn URL exactly as provided.
-- Only return people who appear to be recruiters,
-  talent acquisition professionals, recruiting professionals,
-  or hiring professionals.
-- Do not return data scientists, engineers, analysts,
-  product managers, or other non-recruiting professionals.
+- Use only information supported by the search result.
 """
 
         extracted = structured_llm.invoke(
@@ -342,10 +401,18 @@ IMPORTANT:
         )
 
         # ==================================================
-        # STEP 5 — CREATE RECRUITER OBJECTS
+        # STEP 7 — HARD COMPANY VALIDATION
         # ==================================================
 
         recruiters = []
+
+        target_company = (
+            job.company
+            .lower()
+            .strip()
+        )
+
+        seen_linkedin_urls = set()
 
         for person in extracted.recruiters:
 
@@ -355,34 +422,84 @@ IMPORTANT:
             if not person.linkedin_url:
                 continue
 
+            # --------------------------------------------------
+            # Company must be known.
+            # --------------------------------------------------
+
+            if not person.company:
+                print(
+                    f"Skipping {person.name}: "
+                    f"company could not be established."
+                )
+                continue
+
+            person_company = (
+                person.company
+                .lower()
+                .strip()
+            )
+
+            # --------------------------------------------------
+            # HARD COMPANY FILTER
+            # --------------------------------------------------
+
+            if person_company != target_company:
+
+                print(
+                    f"Skipping {person.name}: "
+                    f"company mismatch "
+                    f"({person.company} != {job.company})"
+                )
+
+                continue
+
+            # --------------------------------------------------
+            # Deduplicate
+            # --------------------------------------------------
+
+            linkedin_url = (
+                person.linkedin_url.strip()
+            )
+
+            if linkedin_url in seen_linkedin_urls:
+                continue
+
+            seen_linkedin_urls.add(
+                linkedin_url
+            )
+
+            # --------------------------------------------------
+            # Create recruiter
+            # --------------------------------------------------
+
             recruiters.append(
                 Recruiter(
                     name=person.name,
                     title=person.title,
-                    company=person.company or job.company,
+                    company=person.company,
                     location=person.location,
-                    linkedin_url=person.linkedin_url,
-                    source_url=person.linkedin_url,
+                    linkedin_url=linkedin_url,
+                    source_url=linkedin_url,
                     confidence_score=0.0,
                 )
             )
 
         # ==================================================
-        # STEP 6 — CAP AT 15 ACTUAL RECRUITERS
+        # STEP 8 — CAP AT 10
         # ==================================================
 
         recruiters = recruiters[:10]
 
         print(
-            f"Final recruiter pool: "
+            f"Final validated recruiter pool: "
             f"{len(recruiters)}"
         )
 
         if not recruiters:
 
             raise ValueError(
-                f"No valid recruiters could be extracted "
-                f"for {job.company}."
+                f"No valid recruiters associated with "
+                f"{job.company} could be extracted."
             )
 
         return recruiters

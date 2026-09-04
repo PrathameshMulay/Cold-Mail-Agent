@@ -1,5 +1,6 @@
 from typing import List
 
+from app.models.job import Job
 from app.models.recruiter import Recruiter
 from app.models.recruiter import RecruiterRanking
 from app.services.llm import get_llm
@@ -12,7 +13,7 @@ class RecruiterRanker:
 
     def rank(
         self,
-        job,
+        job: Job,
         recruiters: List[Recruiter],
     ) -> List[Recruiter]:
 
@@ -28,103 +29,223 @@ class RecruiterRanker:
         for recruiter in recruiters:
 
             prompt = f"""
-You are ranking people who may be recruiters for a job.
+You are ranking recruiters for a job.
 
+IMPORTANT:
+
+The recruiter has ALREADY passed a hard company filter.
+
+Therefore, DO NOT score or reconsider company association.
+
+Your job is to rank recruiters primarily by LOCATION,
+and secondarily by RECRUITER RELEVANCE.
+
+==================================================
 JOB
----
-Title: {job.title}
-Company: {job.company}
-Location: {job.location}
+==================================================
 
+Company:
+{job.company}
+
+Job Title:
+{job.title}
+
+Job Location:
+{job.location}
+
+Job Description:
+{getattr(job, "description", "")}
+
+==================================================
 RECRUITER
----------
-Name: {recruiter.name}
-Title: {recruiter.title}
-Company: {recruiter.company}
-Location: {recruiter.location}
-LinkedIn: {recruiter.linkedin_url}
+==================================================
 
+Name:
+{recruiter.name}
 
-PRIORITY 1 — RECRUITER VALIDATION
+Title:
+{recruiter.title}
 
-Determine whether this person is actually involved in:
+Company:
+{recruiter.company}
 
-- Recruiting
-- Talent acquisition
-- Hiring
-- Recruiting management
+Location:
+{recruiter.location}
 
-Examples generally considered recruiters:
+LinkedIn:
+{recruiter.linkedin_url}
+
+==================================================
+PRIORITY 1 — LOCATION
+==================================================
+
+Location is the MOST IMPORTANT ranking factor.
+
+Compare the recruiter's location with the job location.
+
+Use:
+
+100 = exact same city
+
+80 = same metropolitan area
+
+60 = same state
+
+30 = different state, same country
+
+0 = unknown location or outside the country
+
+Do NOT invent a location.
+
+A recruiter in the target city should generally
+rank above a recruiter outside the target city.
+
+==================================================
+PRIORITY 2 — RECRUITER RELEVANCE
+==================================================
+
+Determine how relevant this recruiter appears
+to the target job.
+
+This is an ADDITIONAL ADVANTAGE, not a requirement.
+
+Most recruiters do not publicly specify the
+exact job functions they recruit for.
+
+Therefore:
+
+- Do NOT penalize a recruiter simply because
+  their profile does not mention the target
+  job function.
+- Do NOT assume a recruiter is irrelevant
+  because their specialization is unknown.
+- General recruiters can still receive a high
+  relevance score.
+- Specific evidence of recruiting for the target
+  function or job level is a bonus.
+
+Examples of positive signals:
+
+- Technical Recruiter
+- Data/AI Recruiter
+- Engineering Recruiter
+- University Recruiter for an internship
+- Campus Recruiter for an entry-level role
+- Recruiter whose profile mentions the relevant
+  job family
+
+==================================================
+RECRUITER AUTHENTICITY
+==================================================
+
+Determine whether this person genuinely appears
+to be involved in recruiting or talent acquisition.
+
+Examples:
+
+Strong evidence:
 
 - Recruiter
 - Technical Recruiter
-- Senior Recruiter
-- Talent Acquisition Specialist
-- Talent Acquisition Partner
+- Talent Acquisition
 - University Recruiter
 - Campus Recruiter
 - Recruiting Manager
 - Talent Partner
 
-Examples generally NOT considered recruiters:
+Weak/no evidence:
 
 - Data Scientist
-- Data Analyst
 - Software Engineer
-- Machine Learning Engineer
+- Data Analyst
 - Product Manager
-- Business Analyst
-- Consultant
+- Developer
+- Researcher
 
-Set is_recruiter to true only when the available information
-supports that the person is actually involved in recruiting.
+Set:
 
-Recruiter score:
+is_recruiter = true
 
-100 = clearly a recruiter / talent acquisition professional
-75 = likely recruiting-related but not completely clear
-50 = uncertain
-25 = unlikely to be a recruiter
-0 = clearly not a recruiter
+when the evidence supports recruiting involvement.
 
+Otherwise:
 
-PRIORITY 2 — LOCATION
+is_recruiter = false.
 
-Compare the recruiter's location with the job location.
+==================================================
+SCORING
+==================================================
 
-Location score:
+Recruiter relevance score:
 
-100 = exact same city
-80 = same metropolitan area
-60 = same state but different metro
-30 = different state, same country
-0 = unknown or clearly outside the country
+100 =
+Clearly a recruiter AND strong evidence that
+their recruiting scope is relevant to the job.
 
-Do not invent a location.
+75 =
+Clearly a recruiter with some relevant recruiting
+signals, or a strong general recruiter.
 
-Recruiter status is more important than location.
+50 =
+Clearly a recruiter but little evidence about
+their recruiting specialization.
 
+25 =
+Weak evidence of recruiting relevance.
 
+0 =
+Not actually a recruiter.
+
+IMPORTANT:
+
+Unknown specialization should NOT automatically
+result in a low score.
+
+==================================================
 OVERALL SCORE
+==================================================
 
-If is_recruiter is TRUE:
+LOCATION IS THE PRIMARY FACTOR.
 
-overall_score = 50 + (location_score * 0.50)
+Use:
 
-If is_recruiter is FALSE:
+overall_score =
+    location_score * 0.70
+    + recruiter_score * 0.30
 
-overall_score = location_score * 0.50
+If is_recruiter is false:
 
+overall_score = 0
 
+The final score must be between 0 and 100.
+
+==================================================
 REASONING
+==================================================
 
-Provide concise reasoning explaining:
+Briefly explain:
 
-1. Why the person is or is not a recruiter.
-2. How their location compares with the job location.
+1. How the recruiter location compares with the
+   job location.
+
+2. Why the person appears to be a recruiter.
+
+3. Whether there is any additional evidence that
+   their recruiting work is relevant to the job.
+
+Remember:
+
+Location is the primary factor.
+
+Job-specific recruiting relevance is only an
+additional advantage.
+
+Do not invent information.
 """
 
-            ranking = structured_llm.invoke(prompt)
+            ranking = structured_llm.invoke(
+                prompt
+            )
 
             ranked.append(
                 (
@@ -133,16 +254,19 @@ Provide concise reasoning explaining:
                 )
             )
 
-        # Sort the ORIGINAL Recruiter objects
-        # using the scores produced by the LLM.
+        # ==================================================
+        # SORT
+        # ==================================================
+
         ranked.sort(
             key=lambda x: x[1],
             reverse=True,
         )
 
+        # Return original Recruiter objects,
+        # only reordered by ranking.
+
         return [
             recruiter
             for recruiter, score in ranked
         ]
-    
-    
