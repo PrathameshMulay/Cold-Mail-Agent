@@ -1,42 +1,18 @@
 # Cold Mail Agent
 
-AI-powered cold email agent that analyzes a job description and resume, discovers relevant recruiters, and generates a personalized outreach email.
+Cold Mail Agent is an AI-powered tool that helps job seekers create personalized recruiter outreach from a job posting and their resume.
 
-## Features
+Instead of sending generic cold emails, the system identifies relevant recruiters at the target company, ranks them based on location and recruiter relevance, and generates a personalized email using evidence from the candidate's background.
 
-- Job description analysis
-- Resume upload via PDF
-- Resume and job matching
-- City-first recruiter discovery
-- Target-company validation
-- Company-wide fallback when local recruiters are insufficient
-- Recruiter filtering and ranking
-- Recruiter selection before email generation
-- Email discovery using Hunter
-- Evidence-backed personalized cold emails
-- Automated evaluation test cases
+## Why It Matters
 
-## Workflow
+Finding the right recruiter and writing a meaningful cold email is time-consuming. Generic outreach is easy to ignore because it often lacks context about both the role and the candidate.
 
-```text
-Job Description + Resume PDF
-            ↓
-      Job Analysis
-            ↓
-      Resume Analysis
-            ↓
-   Recruiter Discovery
-            ↓
-    Target Company Filter
-            ↓
-       Max 10 Recruiters
-            ↓
-     Recruiter Ranking
-            ↓
-     User Selects Recruiter
-            ↓
-       Hunter Email Search
-            ↓
-      Evidence Matching
-            ↓
-     Personalized Email
+Cold Mail Agent aims to make recruiter outreach:
+
+- **More targeted** — identifies recruiters at the company instead of relying on generic outreach.
+- **More personalized** — connects the candidate's experience to the specific job.
+- **More credible** — uses evidence from the candidate's resume rather than inventing qualifications.
+- **More efficient** — reduces the manual effort required to research recruiters and write individual emails.
+
+The goal is to turn a job posting and resume into a **relevant, evidence-backed recruiter outreach message**.
