@@ -1,4 +1,6 @@
 import streamlit as st
+import io
+import pypdf
 
 from app.workflow.pipeline import ColdMailPipeline
 
@@ -63,10 +65,10 @@ with col2:
 
     st.subheader("Resume")
 
-    resume_text = st.text_area(
-        "Paste your resume",
-        height=500,
-        placeholder="Paste your resume here...",
+    uploaded_resume = st.file_uploader(
+        "Upload your resume",
+        type=["pdf"],
+        help="Upload your resume as a PDF.",
         label_visibility="collapsed",
     )
 
@@ -84,16 +86,24 @@ if st.button(
     use_container_width=True,
 ):
 
+    # --------------------------------------------------------
+    # Validate job description
+    # --------------------------------------------------------
+
     if not job_description.strip():
 
         st.error(
             "Please paste a job description."
         )
 
-    elif not resume_text.strip():
+    # --------------------------------------------------------
+    # Validate resume
+    # --------------------------------------------------------
+
+    elif uploaded_resume is None:
 
         st.error(
-            "Please paste your resume."
+            "Please upload your resume."
         )
 
     else:
@@ -104,26 +114,91 @@ if st.button(
                 "Analyzing job, resume, and finding recruiters..."
             ):
 
+                # ==================================================
+                # EXTRACT TEXT FROM PDF
+                # ==================================================
+
+                pdf_reader = pypdf.PdfReader(
+                    io.BytesIO(
+                        uploaded_resume.getvalue()
+                    )
+                )
+
+                resume_text = ""
+
+                for page in pdf_reader.pages:
+
+                    text = page.extract_text()
+
+                    if text:
+
+                        resume_text += (
+                            text + "\n"
+                        )
+
+                # --------------------------------------------------
+                # Make sure text was actually extracted
+                # --------------------------------------------------
+
+                if not resume_text.strip():
+
+                    st.error(
+                        "Could not extract text from the uploaded "
+                        "PDF. Please upload a text-based PDF."
+                    )
+
+                    st.stop()
+
+                # ==================================================
+                # RUN RECRUITER DISCOVERY
+                # ==================================================
+
                 result = pipeline.find_recruiters(
                     job_description=job_description,
                     resume_text=resume_text,
                 )
 
-            # Store results in session state so that
-            # selecting a recruiter doesn't rerun the
-            # expensive discovery process.
+            # ==================================================
+            # HANDLE NO RECRUITERS
+            # ==================================================
 
-            st.session_state["pipeline_result"] = result
+            if not result or not result.get("recruiters"):
 
-            # Clear previously generated email.
-            st.session_state.pop(
-                "email_result",
-                None,
-            )
+                st.session_state.pop(
+                    "pipeline_result",
+                    None,
+                )
 
-            st.success(
-                f"Found {len(result['recruiters'])} recruiters."
-            )
+                st.session_state.pop(
+                    "email_result",
+                    None,
+                )
+
+                st.warning(
+                    "No recruiters could be found at the moment. "
+                    "Please try again later."
+                )
+
+            else:
+
+                # ------------------------------------------------
+                # Store results in session state
+                # ------------------------------------------------
+
+                st.session_state["pipeline_result"] = result
+
+                # ------------------------------------------------
+                # Clear previously generated email
+                # ------------------------------------------------
+
+                st.session_state.pop(
+                    "email_result",
+                    None,
+                )
+
+                st.success(
+                    f"Found {len(result['recruiters'])} recruiters."
+                )
 
         except Exception as e:
 
@@ -149,8 +224,8 @@ if "pipeline_result" in st.session_state:
     st.header("Recruiters")
 
     st.write(
-        "Recruiters are ranked based on recruiter relevance "
-        "and job-location match."
+        "Recruiters are ranked primarily by job-location match, "
+        "with recruiter relevance as a secondary factor."
     )
 
     # --------------------------------------------------------
@@ -160,18 +235,6 @@ if "pipeline_result" in st.session_state:
     recruiter_options = []
 
     for recruiter in recruiters:
-
-        location = (
-            recruiter.location
-            if recruiter.location
-            else "Location not available"
-        )
-
-        title = (
-            recruiter.title
-            if recruiter.title
-            else "Title not available"
-        )
 
         recruiter_options.append(
             (
@@ -189,16 +252,19 @@ if "pipeline_result" in st.session_state:
         index=0,
     )
 
-    # Find selected recruiter from the original ranked list.
+    # --------------------------------------------------------
+    # Find selected recruiter
+    # --------------------------------------------------------
+
     selected_recruiter = next(
         recruiter
         for name, recruiter in recruiter_options
         if name == selected_name
     )
 
-    # --------------------------------------------------------
-    # Display selected recruiter's details
-    # --------------------------------------------------------
+    # ========================================================
+    # DISPLAY SELECTED RECRUITER
+    # ========================================================
 
     st.subheader("Selected Recruiter")
 
