@@ -10,7 +10,7 @@ from app.workflow.pipeline import ColdMailPipeline
 # ============================================================
 
 st.set_page_config(
-    page_title="Cold Mail Agent",
+    page_title="Find Recruiters",
     page_icon="✉️",
     layout="wide",
 )
