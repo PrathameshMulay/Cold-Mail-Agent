@@ -1,4 +1,4 @@
-# FInd_Recruiters
+# FInd_Recruiters - https://find-recruiters.streamlit.app/
 
 FInd_Recruiters is an AI-powered tool that helps job seekers create personalized recruiter outreach from a job posting and their resume.
 
