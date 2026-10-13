@@ -4,8 +4,8 @@ from app.services.llm import get_llm
 
 class JDAnalyzer:
 
-    def __init__(self):
-        self.llm = get_llm()
+    def __init__(self, gemini_api_key: str | None = None):
+      self.llm = get_llm(gemini_api_key)
 
     def analyze(self, job_description: str) -> Job:
 

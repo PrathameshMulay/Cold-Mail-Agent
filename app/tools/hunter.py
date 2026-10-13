@@ -12,13 +12,13 @@ class HunterTool:
 
     BASE_URL = "https://api.hunter.io/v2"
 
-    def __init__(self):
-        self.api_key = os.getenv("HUNTER_API_KEY")
+    def __init__(self, api_key: str | None = None):
+        self.api_key = (
+            api_key or os.getenv("HUNTER_API_KEY") or ""
+        ).strip()
 
         if not self.api_key:
-            raise ValueError(
-                "HUNTER_API_KEY is not set in the .env file."
-            )
+            raise ValueError("A Hunter API key is required.")
 
     def find_email(
         self,

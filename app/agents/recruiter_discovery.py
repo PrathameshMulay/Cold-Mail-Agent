@@ -9,9 +9,10 @@ from app.tools.web_search import WebSearchTool
 
 class RecruiterDiscovery:
 
-    def __init__(self):
+    def __init__(self, gemini_api_key: str | None = None):
         self.search_tool = WebSearchTool()
-        self.llm = get_llm()
+
+        self.llm = get_llm(gemini_api_key)
 
     def discover(self, job: Job) -> List[Recruiter]:
 

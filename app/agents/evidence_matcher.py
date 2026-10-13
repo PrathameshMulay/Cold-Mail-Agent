@@ -6,8 +6,8 @@ from app.services.llm import get_llm
 
 class EvidenceMatcher:
 
-    def __init__(self):
-        self.llm = get_llm()
+    def __init__(self, gemini_api_key: str | None = None):
+        self.llm = get_llm(gemini_api_key)
 
     def match(
         self,

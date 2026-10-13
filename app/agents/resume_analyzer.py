@@ -4,8 +4,8 @@ from app.services.llm import get_llm
 
 class ResumeAnalyzer:
 
-    def __init__(self):
-        self.llm = get_llm()
+    def __init__(self, gemini_api_key: str | None = None):
+      self.llm = get_llm(gemini_api_key)
 
     def analyze(self, resume_text: str) -> Candidate:
 

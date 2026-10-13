@@ -11,15 +11,19 @@ from app.tools.hunter import HunterTool
 
 class ColdMailPipeline:
 
-    def __init__(self):
+    def __init__(
+    self,
+    gemini_api_key: str | None = None,
+    hunter_api_key: str | None = None,
+):
+        self.jd_analyzer = JDAnalyzer(gemini_api_key)
+        self.resume_analyzer = ResumeAnalyzer(gemini_api_key)
+        self.recruiter_discovery = RecruiterDiscovery(gemini_api_key)
+        self.recruiter_ranker = RecruiterRanker(gemini_api_key)
+        self.evidence_matcher = EvidenceMatcher(gemini_api_key)
+        self.email_generator = EmailGenerator(gemini_api_key)
 
-        self.jd_analyzer = JDAnalyzer()
-        self.resume_analyzer = ResumeAnalyzer()
-        self.recruiter_discovery = RecruiterDiscovery()
-        self.recruiter_ranker = RecruiterRanker()
-        self.evidence_matcher = EvidenceMatcher()
-        self.email_generator = EmailGenerator()
-        self.hunter = HunterTool()
+        self.hunter = HunterTool(hunter_api_key)
 
     # ==========================================================
     # STAGE 1
