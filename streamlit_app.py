@@ -24,14 +24,15 @@ st.set_page_config(
 # SESSION STATE
 # ============================================================
 
-if "page" not in st.session_state:
-    st.session_state["page"] = 1
+DEFAULTS = {
+    "page": 1,
+    "pipeline_result": None,
+    "email_result": None,
+}
 
-if "pipeline_result" not in st.session_state:
-    st.session_state["pipeline_result"] = None
-
-if "email_result" not in st.session_state:
-    st.session_state["email_result"] = None
+for key, value in DEFAULTS.items():
+    if key not in st.session_state:
+        st.session_state[key] = value
 
 
 # ============================================================
@@ -39,8 +40,6 @@ if "email_result" not in st.session_state:
 # ============================================================
 
 def create_background_uri():
-    """Create a lightweight abstract SVG background."""
-
     svg = """
     <svg xmlns="http://www.w3.org/2000/svg"
          width="1600" height="1100" viewBox="0 0 1600 1100">
@@ -62,9 +61,9 @@ def create_background_uri():
 
       <g fill="none" stroke="#8f83ee" stroke-opacity=".13"
          stroke-width="2" stroke-dasharray="5 12">
-        <path d="M 950 90 C 1170 150, 1050 330, 1320 350
-                 S 1470 560, 1250 630"/>
-        <path d="M 80 500 C 300 420, 430 580, 550 450"/>
+        <path d="M950 90 C1170 150 1050 330 1320 350
+                 S1470 560 1250 630"/>
+        <path d="M80 500 C300 420 430 580 550 450"/>
       </g>
 
       <g fill="#8e7cf0" fill-opacity=".18">
@@ -81,8 +80,8 @@ def create_background_uri():
 
       <g transform="translate(1320 350) rotate(-12)"
          fill="#7c68e9" fill-opacity=".12">
-        <path d="M 0 0 L 140 -52 L 88 83 L 66 25 Z"/>
-        <path d="M 66 25 L 140 -52 L 88 83 L 77 43 Z"
+        <path d="M0 0 L140 -52 L88 83 L66 25 Z"/>
+        <path d="M66 25 L140 -52 L88 83 L77 43 Z"
               fill-opacity=".2"/>
       </g>
     </svg>
@@ -96,395 +95,547 @@ background_uri = create_background_uri()
 
 
 # ============================================================
-# CUSTOM THEME AND BUTTON STYLING
+# APP STYLING
 # ============================================================
 
-st.markdown(
-    f"""
-    <style>
-    @import url(
-      'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap'
+CSS = """
+@import url(
+  'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap'
+);
+
+:root {
+    --primary: #6548ed;
+    --primary-dark: #5035d3;
+    --text: #18223b;
+    --muted: #667085;
+    --border: #e6e7f0;
+}
+
+html {
+    color-scheme: light !important;
+}
+
+.stApp {
+    background-color: #f6f7ff !important;
+    background-image: url("__BG__");
+    background-size: cover;
+    background-position: center top;
+    background-attachment: fixed;
+    color: #18223b !important;
+}
+
+[data-testid="stAppViewContainer"] {
+    background: transparent !important;
+}
+
+[data-testid="stHeader"] {
+    background: transparent !important;
+}
+
+.block-container {
+    max-width: 1160px;
+    padding-top: 1.5rem;
+    padding-bottom: 3rem;
+}
+
+html, body, [class*="css"] {
+    font-family: 'Inter', sans-serif;
+}
+
+h1, h2, h3, h4,
+[data-testid="stSubheader"],
+[data-testid="stMarkdownContainer"] h1,
+[data-testid="stMarkdownContainer"] h2,
+[data-testid="stMarkdownContainer"] h3 {
+    color: #202044 !important;
+    -webkit-text-fill-color: #202044 !important;
+}
+
+p, label, .stCaption,
+[data-testid="stMarkdownContainer"] p {
+    color: #475467;
+}
+
+/* Brand header */
+
+.brand-row {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    margin-bottom: 10px;
+}
+
+.brand-mark {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 14px;
+    color: white !important;
+    background: linear-gradient(135deg, #8068f6, #5035d3);
+    font-size: 25px;
+    font-weight: 800;
+    box-shadow: 0 7px 20px rgba(101, 72, 237, .24);
+}
+
+.brand-name {
+    font-size: 23px;
+    font-weight: 800;
+    color: #252447 !important;
+    -webkit-text-fill-color: #252447 !important;
+    line-height: 1.2;
+}
+
+.brand-tagline {
+    font-size: 13px;
+    color: #737894 !important;
+    margin-top: 4px;
+}
+
+/* Hero banner */
+
+.hero {
+    position: relative;
+    overflow: hidden;
+    padding: 32px 34px;
+    margin: 18px 0 22px 0;
+    border: 1px solid rgba(220, 218, 248, .95);
+    border-radius: 24px;
+    background: linear-gradient(
+        120deg,
+        rgba(255, 255, 255, .97),
+        rgba(246, 244, 255, .94)
     );
+    box-shadow: 0 14px 40px rgba(61, 49, 121, .07);
+}
 
-    :root {{
-        --primary: #6548ed;
-        --primary-dark: #5035d3;
-        --text: #18223b;
-        --muted: #667085;
-        --border: #e6e7f0;
-        --card: rgba(255, 255, 255, 0.93);
-    }}
+.hero-eyebrow {
+    color: #6548ed !important;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
 
-    /* Main background */
-    .stApp {{
-        background-color: #f6f7ff;
-        background-image: url("{background_uri}");
-        background-size: cover;
-        background-position: center top;
-        background-attachment: fixed;
-    }}
+.hero-title {
+    color: #202044 !important;
+    font-size: clamp(30px, 4vw, 43px);
+    line-height: 1.16;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+    margin: 0 0 12px 0;
+}
 
-    [data-testid="stAppViewContainer"] {{
-        background: transparent;
-    }}
+.hero-title span {
+    color: #6548ed !important;
+}
 
-    [data-testid="stHeader"] {{
-        background: transparent;
-    }}
+.hero-description {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #667085 !important;
+    max-width: 670px;
+    margin: 0;
+}
 
-    .block-container {{
-        max-width: 1160px;
-        padding-top: 1.5rem;
-        padding-bottom: 3rem;
-    }}
+/* Step progress cards */
 
-    html, body, [class*="css"] {{
-        font-family: 'Inter', sans-serif;
-    }}
+.step-card {
+    min-height: 84px;
+    padding: 14px 15px;
+    border: 1px solid #e4e5f0;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, .92);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+}
 
-    h1, h2, h3 {{
-        color: var(--text);
-        letter-spacing: -0.5px;
-    }}
+.step-card.active {
+    background: #f5f2ff;
+    border-color: #9b8bf5;
+    box-shadow: 0 4px 15px rgba(101, 72, 237, .08);
+}
 
-    p, label, .stCaption {{
-        color: #475467;
-    }}
+.step-card.complete {
+    border-color: #b5e4ce;
+    background: #f5fff9;
+}
 
-    /* Brand header */
-    .brand-row {{
-        display: flex;
-        align-items: center;
-        gap: 13px;
-        margin-bottom: 10px;
-    }}
+.step-circle {
+    display: flex;
+    flex: 0 0 34px;
+    height: 34px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #efedf8;
+    color: #6e698b !important;
+    font-size: 14px;
+    font-weight: 700;
+}
 
-    .brand-mark {{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 44px;
-        height: 44px;
-        border-radius: 14px;
-        color: white;
-        background: linear-gradient(135deg, #8068f6, #5035d3);
-        font-size: 25px;
-        font-weight: 800;
-        box-shadow: 0 7px 20px rgba(101, 72, 237, .24);
-    }}
+.step-card.active .step-circle {
+    background: #6548ed;
+    color: white !important;
+}
 
-    .brand-name {{
-        font-size: 23px;
-        font-weight: 800;
-        color: #252447;
-        line-height: 1.2;
-    }}
+.step-card.complete .step-circle {
+    background: #169b62;
+    color: white !important;
+}
 
-    .brand-tagline {{
-        font-size: 13px;
-        color: #737894;
-        margin-top: 4px;
-    }}
+.step-title {
+    font-weight: 700;
+    font-size: 13px;
+    color: #272642 !important;
+}
 
-    /* Hero section */
-    .hero {{
-        position: relative;
-        overflow: hidden;
-        padding: 32px 34px;
-        margin: 18px 0 22px 0;
-        border: 1px solid rgba(220, 218, 248, .95);
-        border-radius: 24px;
-        background: linear-gradient(
-            120deg,
-            rgba(255, 255, 255, .96),
-            rgba(246, 244, 255, .89)
-        );
-        box-shadow: 0 14px 40px rgba(61, 49, 121, .07);
-    }}
+.step-description {
+    margin-top: 4px;
+    font-size: 11px;
+    color: #777c91 !important;
+    line-height: 1.4;
+}
 
-    .hero-eyebrow {{
-        color: #6548ed;
-        font-weight: 700;
-        font-size: 12px;
-        letter-spacing: 1.6px;
-        text-transform: uppercase;
-        margin-bottom: 10px;
-    }}
+/* Section headings */
 
-    .hero-title {{
-        color: #202044;
-        font-size: clamp(30px, 4vw, 43px);
-        line-height: 1.16;
-        font-weight: 800;
-        letter-spacing: -1.5px;
-        margin: 0 0 12px 0;
-    }}
+.section-heading {
+    color: #292747 !important;
+    font-size: 21px;
+    font-weight: 750;
+    margin: 3px 0 5px 0;
+}
 
-    .hero-title span {{
-        color: #6548ed;
-    }}
+.section-description {
+    color: #72778b !important;
+    font-size: 13px;
+    line-height: 1.6;
+    margin-bottom: 17px;
+}
 
-    .hero-description {{
-        font-size: 15px;
-        line-height: 1.7;
-        color: #667085;
-        max-width: 670px;
-        margin: 0;
-    }}
+/* Feature cards */
 
-    /* Progress step cards */
-    .step-card {{
-        min-height: 84px;
-        padding: 14px 15px;
-        border: 1px solid #e4e5f0;
-        border-radius: 15px;
-        background: rgba(255, 255, 255, .78);
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        margin-bottom: 18px;
-    }}
+.feature-card {
+    min-height: 112px;
+    padding: 17px 18px;
+    border-radius: 17px;
+    border: 1px solid #e3e2f3;
+    background: rgba(255, 255, 255, .93);
+    margin-bottom: 18px;
+}
 
-    .step-card.active {{
-        background: rgba(245, 242, 255, .98);
-        border-color: #9b8bf5;
-        box-shadow: 0 4px 15px rgba(101, 72, 237, .08);
-    }}
+.feature-icon {
+    font-size: 23px;
+    margin-bottom: 8px;
+}
 
-    .step-card.complete {{
-        border-color: #b5e4ce;
-        background: rgba(245, 255, 249, .93);
-    }}
+.feature-title {
+    font-weight: 700;
+    font-size: 13px;
+    color: #302b52 !important;
+    margin-bottom: 4px;
+}
 
-    .step-circle {{
-        display: flex;
-        flex: 0 0 34px;
-        height: 34px;
-        align-items: center;
-        justify-content: center;
-        border-radius: 50%;
-        background: #efedf8;
-        color: #6e698b;
-        font-size: 14px;
-        font-weight: 700;
-    }}
+.feature-description {
+    color: #787b90 !important;
+    font-size: 12px;
+    line-height: 1.5;
+}
 
-    .step-card.active .step-circle {{
-        background: #6548ed;
-        color: white;
-    }}
+/* Cards and containers */
 
-    .step-card.complete .step-circle {{
-        background: #169b62;
-        color: white;
-    }}
+[data-testid="stVerticalBlockBorderWrapper"] {
+    background: rgba(255, 255, 255, .95) !important;
+    border-radius: 18px;
+    border-color: #e6e7f0 !important;
+    box-shadow: 0 6px 24px rgba(48, 42, 96, .045);
+}
 
-    .step-title {{
-        font-weight: 700;
-        font-size: 13px;
-        color: #272642;
-    }}
+/* ---------------------------------------------------------
+   TEXT BOXES: FORCE WHITE BACKGROUND AND DARK TEXT
+   Covers API keys, single-line inputs, text areas and
+   editable email fields, regardless of the Cloud theme.
+   --------------------------------------------------------- */
 
-    .step-description {{
-        margin-top: 4px;
-        font-size: 11px;
-        color: #777c91;
-        line-height: 1.4;
-    }}
+.stTextInput input,
+.stTextArea textarea,
+.stNumberInput input,
+.stDateInput input,
+[data-baseweb="input"] input,
+[data-baseweb="textarea"] textarea,
+input[type="text"],
+input[type="password"],
+input[type="email"],
+textarea {
+    background-color: #ffffff !important;
+    color: #18223b !important;
+    -webkit-text-fill-color: #18223b !important;
+    caret-color: #6548ed !important;
+    color-scheme: light !important;
+    border-color: #dedcf2 !important;
+    opacity: 1 !important;
+}
 
-    .section-heading {{
-        color: #292747;
-        font-size: 21px;
-        font-weight: 750;
-        margin: 3px 0 5px 0;
-    }}
+/* BaseWeb input wrappers also need a white background */
 
-    .section-description {{
-        color: #72778b;
-        font-size: 13px;
-        line-height: 1.6;
-        margin-bottom: 17px;
-    }}
+[data-baseweb="input"] > div,
+[data-baseweb="base-input"],
+[data-baseweb="textarea"] > div,
+[data-testid="stTextInput"] div[data-baseweb="input"],
+[data-testid="stTextArea"] div[data-baseweb="textarea"],
+[data-testid="stNumberInput"] div[data-baseweb="input"],
+[data-testid="stDateInput"] div[data-baseweb="input"] {
+    background-color: #ffffff !important;
+    border-color: #dedcf2 !important;
+}
 
-    /* Feature cards */
-    .feature-card {{
-        min-height: 112px;
-        padding: 17px 18px;
-        border-radius: 17px;
-        border: 1px solid rgba(227, 226, 243, .95);
-        background: rgba(255, 255, 255, .86);
-        margin-bottom: 18px;
-    }}
+/* Placeholder text */
 
-    .feature-icon {{
-        font-size: 23px;
-        margin-bottom: 8px;
-    }}
+.stTextInput input::placeholder,
+.stTextArea textarea::placeholder,
+input::placeholder,
+textarea::placeholder {
+    color: #98a2b3 !important;
+    -webkit-text-fill-color: #98a2b3 !important;
+    opacity: 1 !important;
+}
 
-    .feature-title {{
-        font-weight: 700;
-        font-size: 13px;
-        color: #302b52;
-        margin-bottom: 4px;
-    }}
+/* Labels above inputs */
 
-    .feature-description {{
-        color: #787b90;
-        font-size: 12px;
-        line-height: 1.5;
-    }}
+[data-testid="stWidgetLabel"],
+[data-testid="stWidgetLabel"] p,
+[data-testid="stWidgetLabel"] label,
+.stTextInput label,
+.stTextArea label {
+    color: #344054 !important;
+    -webkit-text-fill-color: #344054 !important;
+}
 
-    /* Cards and containers */
-    [data-testid="stVerticalBlockBorderWrapper"] {{
-        background: var(--card);
-        border-radius: 18px;
-        border-color: var(--border);
-        box-shadow: 0 6px 24px rgba(48, 42, 96, .045);
-    }}
+/* Selectboxes */
 
-    /* =====================================================
-       PRIMARY CTA BUTTONS
-       Covers Find Recruiters, Generate Email, Download Email.
-       The broad form-submit selector handles Streamlit's
-       separate form-submit button kind.
-       ===================================================== */
+[data-baseweb="select"] > div {
+    background-color: #ffffff !important;
+    color: #18223b !important;
+    border-color: #dedcf2 !important;
+}
 
-    div.stButton > button[kind="primary"],
-    div.stButton > button[data-testid*="primary"],
-    div.stFormSubmitButton > button,
-    div.stDownloadButton > button,
-    button[data-testid="stBaseButton-primary"],
-    button[data-testid="stBaseButton-primaryFormSubmit"] {{
-        background: linear-gradient(110deg, #765cf4, #593ce0) !important;
-        background-color: #6548ed !important;
-        color: #ffffff !important;
-        border: 1px solid #6548ed !important;
-        border-radius: 12px !important;
-        min-height: 48px;
-        font-family: 'Inter', sans-serif !important;
-        font-weight: 700 !important;
-        box-shadow: 0 7px 18px rgba(101, 72, 237, 0.20) !important;
-        transition: background 0.2s ease, transform 0.2s ease;
-    }}
+[data-baseweb="select"] input,
+[data-baseweb="select"] div,
+[data-baseweb="select"] span {
+    color: #344054 !important;
+}
 
-    /* Force primary button labels/icons to white and bold */
-    div.stButton > button[kind="primary"] *,
-    div.stButton > button[data-testid*="primary"] *,
-    div.stFormSubmitButton > button *,
-    div.stDownloadButton > button *,
-    button[data-testid="stBaseButton-primary"] *,
-    button[data-testid="stBaseButton-primaryFormSubmit"] * {{
-        color: #ffffff !important;
-        font-weight: 700 !important;
-    }}
+/* File uploader */
 
-    /* Primary button hover */
-    div.stButton > button[kind="primary"]:hover,
-    div.stButton > button[data-testid*="primary"]:hover,
-    div.stFormSubmitButton > button:hover,
-    div.stDownloadButton > button:hover,
-    button[data-testid="stBaseButton-primary"]:hover,
-    button[data-testid="stBaseButton-primaryFormSubmit"]:hover {{
-        background: linear-gradient(110deg, #6548ed, #4b2dc7) !important;
-        background-color: #5035d3 !important;
-        color: #ffffff !important;
-        border-color: #5035d3 !important;
-        transform: translateY(-1px);
-    }}
+[data-testid="stFileUploader"] section {
+    background: rgba(255, 255, 255, .96) !important;
+    border-color: #dcd8f0 !important;
+}
 
-    /* =====================================================
-       SECONDARY BUTTONS
-       Back buttons stay white with dark text.
-       ===================================================== */
+[data-testid="stFileUploader"] section *,
+[data-testid="stFileUploader"] button {
+    color: #344054 !important;
+    -webkit-text-fill-color: #344054 !important;
+}
 
-    div.stButton > button[kind="secondary"],
-    div.stButton > button[data-testid*="secondary"],
-    button[data-testid="stBaseButton-secondary"] {{
-        background: rgba(255, 255, 255, 0.96) !important;
-        background-color: #ffffff !important;
-        color: #4c3bb5 !important;
-        border: 1px solid #dedcf2 !important;
-        border-radius: 12px !important;
-        min-height: 44px;
-        font-family: 'Inter', sans-serif !important;
-        font-weight: 500 !important;
-        box-shadow: none !important;
-    }}
+/* ---------------------------------------------------------
+   RADIO BUTTONS AND RECRUITER OPTIONS
+   Purple selection indicator + dark readable text.
+   --------------------------------------------------------- */
 
-    /* Keep secondary button labels/icons dark */
-    div.stButton > button[kind="secondary"] *,
-    div.stButton > button[data-testid*="secondary"] *,
-    button[data-testid="stBaseButton-secondary"] * {{
-        color: #4c3bb5 !important;
-        font-weight: 500 !important;
-    }}
+[data-testid="stRadio"] label,
+[data-testid="stRadio"] label p,
+[data-testid="stRadio"] label span,
+[data-testid="stRadio"] [data-testid="stMarkdownContainer"],
+[data-testid="stRadio"] [data-testid="stMarkdownContainer"] p {
+    color: #344054 !important;
+    -webkit-text-fill-color: #344054 !important;
+    opacity: 1 !important;
+}
 
-    div.stButton > button[kind="secondary"]:hover,
-    div.stButton > button[data-testid*="secondary"]:hover,
-    button[data-testid="stBaseButton-secondary"]:hover {{
-        background: #f7f5ff !important;
-        background-color: #f7f5ff !important;
-        border-color: #c7bdf8 !important;
-        color: #4c3bb5 !important;
-    }}
+[data-testid="stRadio"] input {
+    accent-color: #6548ed !important;
+}
 
-    /* Sidebar */
-    [data-testid="stSidebar"] {{
-        background: rgba(250, 249, 255, .96);
-        border-right: 1px solid #e9e6f4;
-    }}
+[data-testid="stRadio"] label {
+    background-color: transparent !important;
+}
 
-    [data-testid="stSidebar"] h2 {{
-        font-size: 19px;
-    }}
+/* Selected recruiter name: use an explicit HTML style */
 
-    /* Upload and radio widgets */
-    [data-testid="stFileUploader"] {{
-        border-radius: 14px;
-    }}
+.selected-recruiter-name {
+    color: #202044 !important;
+    -webkit-text-fill-color: #202044 !important;
+    font-size: 25px;
+    font-weight: 800;
+    line-height: 1.3;
+    margin: 8px 0 14px 0;
+}
 
-    [data-testid="stRadio"] > div {{
-        gap: 10px;
-    }}
+/* ---------------------------------------------------------
+   PRIMARY BUTTONS
+   Find Recruiters, Generate Email, Download Email,
+   and Start a New Search.
+   --------------------------------------------------------- */
 
-    /* Evidence accordions */
-    div[data-testid="stExpander"] {{
-        border: 1px solid #e5e4f2;
-        border-radius: 13px;
-        background: rgba(255, 255, 255, .78);
-    }}
+div.stButton > button[kind="primary"],
+div.stButton > button[data-testid="stBaseButton-primary"],
+div.stFormSubmitButton > button,
+div.stDownloadButton > button,
+button[data-testid="stBaseButton-primary"],
+button[data-testid="stBaseButton-primaryFormSubmit"] {
+    background: linear-gradient(110deg, #765cf4, #593ce0) !important;
+    background-color: #6548ed !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    border: 1px solid #6548ed !important;
+    border-radius: 12px !important;
+    min-height: 48px;
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 700 !important;
+    box-shadow: 0 7px 18px rgba(101, 72, 237, .20) !important;
+    transition: background .2s ease, transform .2s ease;
+}
 
-    /* Footer */
-    .footer-note {{
-        text-align: center;
-        color: #83869a;
-        font-size: 11px;
-        margin-top: 32px;
-        padding: 15px;
-    }}
+/* Make primary button text/icons bold and white */
 
-    @media (max-width: 700px) {{
-        .hero {{
-            padding: 24px 20px;
-        }}
+div.stButton > button[kind="primary"] *,
+div.stButton > button[data-testid="stBaseButton-primary"] *,
+div.stFormSubmitButton > button *,
+div.stDownloadButton > button *,
+button[data-testid="stBaseButton-primary"] *,
+button[data-testid="stBaseButton-primaryFormSubmit"] * {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    font-weight: 700 !important;
+}
 
-        .brand-name {{
-            font-size: 20px;
-        }}
+div.stButton > button[kind="primary"]:hover,
+div.stFormSubmitButton > button:hover,
+div.stDownloadButton > button:hover,
+button[data-testid="stBaseButton-primary"]:hover,
+button[data-testid="stBaseButton-primaryFormSubmit"]:hover {
+    background: linear-gradient(110deg, #6548ed, #4b2dc7) !important;
+    background-color: #5035d3 !important;
+    color: #ffffff !important;
+    border-color: #5035d3 !important;
+    transform: translateY(-1px);
+}
 
-        .block-container {{
-            padding-left: 1rem;
-            padding-right: 1rem;
-        }}
-    }}
-    </style>
-    """,
+/* ---------------------------------------------------------
+   SECONDARY BUTTONS
+   Back buttons keep white backgrounds and dark text.
+   --------------------------------------------------------- */
+
+div.stButton > button[kind="secondary"],
+div.stButton > button[data-testid="stBaseButton-secondary"],
+button[data-testid="stBaseButton-secondary"] {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    color: #4c3bb5 !important;
+    -webkit-text-fill-color: #4c3bb5 !important;
+    border: 1px solid #dedcf2 !important;
+    border-radius: 12px !important;
+    min-height: 44px;
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 500 !important;
+    box-shadow: none !important;
+}
+
+/* Keep secondary button text dark */
+
+div.stButton > button[kind="secondary"] *,
+div.stButton > button[data-testid="stBaseButton-secondary"] *,
+button[data-testid="stBaseButton-secondary"] * {
+    color: #4c3bb5 !important;
+    -webkit-text-fill-color: #4c3bb5 !important;
+    font-weight: 500 !important;
+}
+
+div.stButton > button[kind="secondary"]:hover,
+div.stButton > button[data-testid="stBaseButton-secondary"]:hover,
+button[data-testid="stBaseButton-secondary"]:hover {
+    background: #f7f5ff !important;
+    background-color: #f7f5ff !important;
+    border-color: #c7bdf8 !important;
+}
+
+/* Sidebar */
+
+[data-testid="stSidebar"] {
+    background: #faf9ff !important;
+    border-right: 1px solid #e9e6f4;
+}
+
+[data-testid="stSidebar"] > div {
+    background: #faf9ff !important;
+}
+
+[data-testid="stSidebar"] h1,
+[data-testid="stSidebar"] h2,
+[data-testid="stSidebar"] h3,
+[data-testid="stSidebar"] p,
+[data-testid="stSidebar"] label {
+    color: #344054 !important;
+}
+
+[data-testid="stSidebar"] a {
+    color: #593ce0 !important;
+}
+
+/* Expanders */
+
+div[data-testid="stExpander"] {
+    border: 1px solid #e5e4f2;
+    border-radius: 13px;
+    background: rgba(255, 255, 255, .96) !important;
+}
+
+[data-testid="stExpander"] summary,
+[data-testid="stExpander"] summary p {
+    color: #344054 !important;
+}
+
+/* Footer */
+
+.footer-note {
+    text-align: center;
+    color: #83869a !important;
+    font-size: 11px;
+    margin-top: 32px;
+    padding: 15px;
+}
+
+@media (max-width: 700px) {
+    .hero {
+        padding: 24px 20px;
+    }
+
+    .brand-name {
+        font-size: 20px;
+    }
+
+    .block-container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+"""
+
+styled_css = CSS.replace("__BG__", background_uri)
+
+st.markdown(
+    f"<style>\n{styled_css}\n</style>",
     unsafe_allow_html=True,
 )
 
 
 # ============================================================
-# SIDEBAR — USER API KEYS
+# SIDEBAR — API KEYS
 # ============================================================
 
 with st.sidebar:
@@ -512,7 +663,6 @@ with st.sidebar:
     st.markdown(
         "[Get a Gemini key ↗](https://aistudio.google.com/apikey)"
     )
-
     st.markdown(
         "[Get a Hunter key ↗](https://hunter.io/api-keys)"
     )
@@ -527,7 +677,7 @@ with st.sidebar:
 
 
 # ============================================================
-# HEADER AND PROGRESS INDICATOR
+# APP BRANDING
 # ============================================================
 
 st.markdown(
@@ -545,6 +695,10 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
+
+# ============================================================
+# PROGRESS INDICATOR
+# ============================================================
 
 def render_steps(active_step):
     steps = [
@@ -593,7 +747,9 @@ if st.session_state["page"] == 1:
     st.markdown(
         """
         <div class="hero">
-            <div class="hero-eyebrow">Your next opportunity starts here</div>
+            <div class="hero-eyebrow">
+                Your next opportunity starts here
+            </div>
             <div class="hero-title">
                 Turn opportunities<br>
                 into <span>conversations.</span>
@@ -774,8 +930,7 @@ if st.session_state["page"] == 1:
 
                     st.caption(
                         "If the error mentions 503 or UNAVAILABLE, "
-                        "Gemini may be temporarily overloaded. "
-                        "Wait briefly and retry."
+                        "Gemini may be temporarily overloaded."
                     )
 
                     with st.expander("Technical details"):
@@ -793,7 +948,10 @@ elif st.session_state["page"] == 2:
     if not result or not result.get("recruiters"):
         st.warning("There are no recruiter results to display.")
 
-        if st.button("Back to Job & Resume", type="primary"):
+        if st.button(
+            "Back to Job & Resume",
+            type="primary",
+        ):
             st.session_state["page"] = 1
             st.rerun()
 
@@ -839,6 +997,7 @@ elif st.session_state["page"] == 2:
 
             def recruiter_label(index):
                 recruiter = recruiters[index]
+
                 title = recruiter.title or "Recruiter"
                 company = recruiter.company or "Company not listed"
                 location = recruiter.location or "Location not listed"
@@ -852,7 +1011,11 @@ elif st.session_state["page"] == 2:
                 "selected_recruiter_index_saved",
                 0,
             )
-            saved_index = min(max(saved_index, 0), len(recruiters) - 1)
+
+            saved_index = min(
+                max(saved_index, 0),
+                len(recruiters) - 1,
+            )
 
             selected_index = st.radio(
                 "Select a recruiter",
@@ -871,8 +1034,18 @@ elif st.session_state["page"] == 2:
                 unsafe_allow_html=True,
             )
 
-            st.subheader(selected_recruiter.name)
-            st.write(selected_recruiter.title or "Title not available")
+            st.markdown(
+                (
+                    '<div class="selected-recruiter-name">'
+                    f"{selected_recruiter.name}"
+                    "</div>"
+                ),
+                unsafe_allow_html=True,
+            )
+
+            st.write(
+                selected_recruiter.title or "Title not available"
+            )
 
             st.write(
                 f"**Company:** "
@@ -893,7 +1066,11 @@ elif st.session_state["page"] == 2:
         back_col, next_col = st.columns([1, 2])
 
         with back_col:
-            if st.button("← Back", use_container_width=True):
+            if st.button(
+                "← Back",
+                type="secondary",
+                use_container_width=True,
+            ):
                 st.session_state["page"] = 1
                 st.rerun()
 
@@ -962,7 +1139,10 @@ elif st.session_state["page"] == 3:
     if not result or not email_result:
         st.warning("Your email results are unavailable.")
 
-        if st.button("Back to Recruiters", type="primary"):
+        if st.button(
+            "Back to Recruiters",
+            type="primary",
+        ):
             st.session_state["page"] = 2
             st.rerun()
 
@@ -998,10 +1178,6 @@ elif st.session_state["page"] == 3:
             unsafe_allow_html=True,
         )
 
-        contact = email_result.get("contact")
-        email = email_result.get("email")
-        evidence = email_result.get("evidence")
-
         def field_value(obj, field_name, default="Not available"):
             if obj is None:
                 return default
@@ -1016,8 +1192,12 @@ elif st.session_state["page"] == 3:
 
             return value
 
+        contact = field_value(email_result, "contact", default=None)
+        email = field_value(email_result, "email", default=None)
+        evidence = field_value(email_result, "evidence", default=None)
+
         # ----------------------------------------------------
-        # CONTACT CARD
+        # CONTACT INFORMATION
         # ----------------------------------------------------
 
         with st.container(border=True):
@@ -1026,7 +1206,14 @@ elif st.session_state["page"] == 3:
                 unsafe_allow_html=True,
             )
 
-            st.subheader(selected_recruiter.name)
+            st.markdown(
+                (
+                    '<div class="selected-recruiter-name">'
+                    f"{selected_recruiter.name}"
+                    "</div>"
+                ),
+                unsafe_allow_html=True,
+            )
 
             contact_col1, contact_col2 = st.columns(2)
 
@@ -1105,7 +1292,6 @@ elif st.session_state["page"] == 3:
                             "**Score:** "
                             f"{field_value(match, 'score')}"
                         )
-
             else:
                 st.caption("No evidence matches were returned.")
 
@@ -1171,6 +1357,7 @@ elif st.session_state["page"] == 3:
         with back_col:
             if st.button(
                 "← Back to Recruiters",
+                type="secondary",
                 use_container_width=True,
             ):
                 st.session_state["page"] = 2
@@ -1198,6 +1385,16 @@ elif st.session_state["page"] == 3:
 
                 st.session_state.pop(
                     "saved_resume_bytes",
+                    None,
+                )
+
+                st.session_state.pop(
+                    "edited_email_subject",
+                    None,
+                )
+
+                st.session_state.pop(
+                    "edited_email_body",
                     None,
                 )
 
