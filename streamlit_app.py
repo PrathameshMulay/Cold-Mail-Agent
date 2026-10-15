@@ -1,6 +1,8 @@
+
 import base64
 import html
 import io
+from urllib.parse import urlsplit
 
 import pypdf
 import streamlit as st
@@ -28,6 +30,7 @@ for key, default in {
     "page": 1,
     "pipeline_result": None,
     "email_result": None,
+    "selected_recruiter_index_saved": 0,
 }.items():
     if key not in st.session_state:
         st.session_state[key] = default
@@ -39,8 +42,7 @@ for key, default in {
 
 def create_background_uri():
     svg = """
-    <svg xmlns="http://www.w3.org/2000/svg"
-         width="1600" height="1100" viewBox="0 0 1600 1100">
+    <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1100" viewBox="0 0 1600 1100">
       <defs>
         <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
           <stop offset="0%" stop-color="#f8f7ff"/>
@@ -52,18 +54,13 @@ def create_background_uri():
           <stop offset="100%" stop-color="#c9bbff" stop-opacity="0"/>
         </radialGradient>
       </defs>
-
       <rect width="1600" height="1100" fill="url(#bg)"/>
       <ellipse cx="1330" cy="100" rx="520" ry="440" fill="url(#glow)"/>
       <ellipse cx="80" cy="900" rx="520" ry="440" fill="url(#glow)"/>
-
-      <g fill="none" stroke="#8f83ee" stroke-opacity=".13"
-         stroke-width="2" stroke-dasharray="5 12">
-        <path d="M950 90 C1170 150 1050 330 1320 350
-                 S1470 560 1250 630"/>
+      <g fill="none" stroke="#8f83ee" stroke-opacity=".13" stroke-width="2" stroke-dasharray="5 12">
+        <path d="M950 90 C1170 150 1050 330 1320 350 S1470 560 1250 630"/>
         <path d="M80 500 C300 420 430 580 550 450"/>
       </g>
-
       <g fill="#8e7cf0" fill-opacity=".18">
         <circle cx="1120" cy="140" r="7"/>
         <circle cx="1180" cy="158" r="4"/>
@@ -75,12 +72,9 @@ def create_background_uri():
         <circle cx="310" cy="730" r="8"/>
         <circle cx="360" cy="775" r="4"/>
       </g>
-
-      <g transform="translate(1320 350) rotate(-12)"
-         fill="#7c68e9" fill-opacity=".12">
+      <g transform="translate(1320 350) rotate(-12)" fill="#7c68e9" fill-opacity=".12">
         <path d="M0 0 L140 -52 L88 83 L66 25 Z"/>
-        <path d="M66 25 L140 -52 L88 83 L77 43 Z"
-              fill-opacity=".2"/>
+        <path d="M66 25 L140 -52 L88 83 L77 43 Z" fill-opacity=".2"/>
       </g>
     </svg>
     """
@@ -92,7 +86,7 @@ background_uri = create_background_uri()
 
 
 # ============================================================
-# STYLING
+# CSS
 # ============================================================
 
 CSS = r"""
@@ -214,7 +208,7 @@ h1, h2, h3, h4 {
 }
 
 
-/* PROGRESS */
+/* PROGRESS INDICATOR */
 
 .step-card {
     min-height: 84px;
@@ -234,8 +228,8 @@ h1, h2, h3, h4 {
 }
 
 .step-card.complete {
-    border-color: #b5e4ce;
     background: #f5fff9 !important;
+    border-color: #b5e4ce;
 }
 
 .step-circle {
@@ -275,7 +269,7 @@ h1, h2, h3, h4 {
 }
 
 
-/* FIRST-PAGE FEATURE CARDS */
+/* FEATURES */
 
 .feature-card {
     min-height: 112px;
@@ -322,7 +316,7 @@ h1, h2, h3, h4 {
 }
 
 
-/* SOLID WHITE STREAMLIT CONTAINERS */
+/* WHITE CONTAINERS */
 
 [data-testid="stVerticalBlockBorderWrapper"] {
     background: #ffffff !important;
@@ -333,12 +327,10 @@ h1, h2, h3, h4 {
 }
 
 
-/* TEXT FIELDS */
+/* WHITE INPUTS */
 
 .stTextInput input,
 .stTextArea textarea,
-.stNumberInput input,
-.stDateInput input,
 [data-baseweb="input"] input,
 [data-baseweb="textarea"] textarea,
 input[type="text"],
@@ -352,21 +344,14 @@ textarea {
     caret-color: #6548ed !important;
     color-scheme: light !important;
     border-color: #dedcf2 !important;
-    opacity: 1 !important;
 }
 
 [data-baseweb="input"] > div,
-[data-baseweb="base-input"],
-[data-baseweb="textarea"] > div,
-[data-testid="stTextInput"] [data-baseweb="input"],
-[data-testid="stTextArea"] [data-baseweb="textarea"] {
+[data-baseweb="textarea"] > div {
     background: #ffffff !important;
-    background-color: #ffffff !important;
     border-color: #dedcf2 !important;
 }
 
-.stTextInput input::placeholder,
-.stTextArea textarea::placeholder,
 input::placeholder,
 textarea::placeholder {
     color: #98a2b3 !important;
@@ -381,120 +366,56 @@ textarea::placeholder {
 }
 
 
-/* SELECTS */
+/* RECRUITER CARD TEXT */
 
-[data-baseweb="select"] > div {
-    background: #ffffff !important;
-    color: #18223b !important;
-    border-color: #dedcf2 !important;
+.recruiter-name {
+    color: #6548ed !important;
+    font-size: 17px;
+    font-weight: 800;
+    line-height: 1.4;
+    margin: 0 0 5px 0;
 }
 
-[data-baseweb="select"] input,
-[data-baseweb="select"] div,
-[data-baseweb="select"] span {
+.recruiter-title {
     color: #344054 !important;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 5px;
 }
 
-
-/* RADIO LABELS */
-
-[data-testid="stRadio"] label,
-[data-testid="stRadio"] label p,
-[data-testid="stRadio"] label span,
-[data-testid="stRadio"] [data-testid="stMarkdownContainer"] p {
-    color: #344054 !important;
-    -webkit-text-fill-color: #344054 !important;
-    opacity: 1 !important;
+.recruiter-meta {
+    color: #667085 !important;
+    font-size: 12px;
+    line-height: 1.7;
 }
 
-[data-testid="stRadio"] input {
-    accent-color: #6548ed !important;
+.selected-label {
+    color: #6548ed !important;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: .7px;
+    margin-bottom: 5px;
 }
 
-[data-testid="stRadio"] label {
-    background: transparent !important;
-}
-
-
-/* SELECTED RECRUITER PROFILE
-   Only the recruiter's name is purple.
-   The section heading remains dark navy.
-*/
-
-.selected-recruiter-panel {
+.recruiter-avatar {
     display: flex;
-    align-items: flex-start;
-    gap: 16px;
-    margin-top: 10px;
-    padding: 20px;
-    border: 1px solid #e5defe;
-    border-radius: 15px;
-    background: linear-gradient(120deg, #ffffff, #f8f6ff) !important;
-}
-
-.selected-recruiter-avatar {
-    display: flex;
-    flex: 0 0 48px;
-    width: 48px;
-    height: 48px;
     align-items: center;
     justify-content: center;
-    border-radius: 14px;
+    width: 44px;
+    height: 44px;
+    border-radius: 13px;
     background: linear-gradient(135deg, #8068f6, #593ce0);
     color: #ffffff !important;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 800;
 }
 
-.selected-recruiter-info {
-    flex: 1;
-    min-width: 0;
-}
-
-.selected-recruiter-name {
+.linkedin-link {
     color: #6548ed !important;
-    -webkit-text-fill-color: #6548ed !important;
-    font-size: 24px;
-    font-weight: 800;
-    line-height: 1.3;
-    margin: 0 0 5px;
-}
-
-.selected-recruiter-role {
-    color: #475467 !important;
-    font-size: 15px;
-    line-height: 1.5;
-    margin-bottom: 12px;
-}
-
-.selected-recruiter-meta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 13px;
-}
-
-.selected-recruiter-chip {
-    display: inline-block;
-    padding: 6px 10px;
-    border: 1px solid #e4defb;
-    border-radius: 8px;
-    background: #ffffff !important;
-    color: #4b456b !important;
     font-size: 12px;
-    line-height: 1.5;
-}
-
-.selected-recruiter-link {
-    color: #6548ed !important;
-    font-weight: 600;
-    font-size: 13px;
-    text-decoration: none;
-}
-
-.selected-recruiter-link:hover {
-    color: #5035d3 !important;
-    text-decoration: underline;
+    font-weight: 700;
+    text-decoration: none !important;
 }
 
 
@@ -516,6 +437,7 @@ textarea::placeholder {
 div.stButton > button[kind="primary"],
 div.stFormSubmitButton > button,
 div.stDownloadButton > button,
+div.stLinkButton > a,
 button[data-testid="stBaseButton-primary"],
 button[data-testid="stBaseButton-primaryFormSubmit"] {
     background: linear-gradient(110deg, #765cf4, #593ce0) !important;
@@ -524,11 +446,9 @@ button[data-testid="stBaseButton-primaryFormSubmit"] {
     -webkit-text-fill-color: #ffffff !important;
     border: 1px solid #6548ed !important;
     border-radius: 12px !important;
-    min-height: 48px;
-    font-family: 'Inter', sans-serif !important;
+    min-height: 44px;
     font-weight: 700 !important;
-    box-shadow: 0 7px 18px rgba(101,72,237,.20) !important;
-    transition: .2s ease-in-out;
+    box-shadow: 0 7px 18px rgba(101,72,237,.13) !important;
 }
 
 div.stButton > button[kind="primary"] *,
@@ -541,31 +461,17 @@ button[data-testid="stBaseButton-primaryFormSubmit"] * {
     font-weight: 700 !important;
 }
 
-div.stButton > button[kind="primary"]:hover,
-div.stFormSubmitButton > button:hover,
-div.stDownloadButton > button:hover,
-button[data-testid="stBaseButton-primary"]:hover,
-button[data-testid="stBaseButton-primaryFormSubmit"]:hover {
-    background: linear-gradient(110deg, #6548ed, #4b2dc7) !important;
-    background-color: #5035d3 !important;
-    color: #ffffff !important;
-    border-color: #5035d3 !important;
-    transform: translateY(-1px);
-}
 
-
-/* SECONDARY BUTTONS — BACK */
+/* SECONDARY BUTTONS */
 
 div.stButton > button[kind="secondary"],
 button[data-testid="stBaseButton-secondary"] {
     background: #ffffff !important;
-    background-color: #ffffff !important;
     color: #4c3bb5 !important;
     -webkit-text-fill-color: #4c3bb5 !important;
     border: 1px solid #dedcf2 !important;
     border-radius: 12px !important;
     min-height: 44px;
-    font-family: 'Inter', sans-serif !important;
     font-weight: 500 !important;
     box-shadow: none !important;
 }
@@ -575,12 +481,6 @@ button[data-testid="stBaseButton-secondary"] * {
     color: #4c3bb5 !important;
     -webkit-text-fill-color: #4c3bb5 !important;
     font-weight: 500 !important;
-}
-
-div.stButton > button[kind="secondary"]:hover,
-button[data-testid="stBaseButton-secondary"]:hover {
-    background: #f7f5ff !important;
-    border-color: #c7bdf8 !important;
 }
 
 
@@ -604,20 +504,6 @@ button[data-testid="stBaseButton-secondary"]:hover {
 }
 
 
-/* EXPANDERS */
-
-div[data-testid="stExpander"] {
-    border: 1px solid #e5e4f2;
-    border-radius: 13px;
-    background: #ffffff !important;
-}
-
-[data-testid="stExpander"] summary,
-[data-testid="stExpander"] summary p {
-    color: #344054 !important;
-}
-
-
 /* FOOTER */
 
 .footer-note {
@@ -628,27 +514,12 @@ div[data-testid="stExpander"] {
     padding: 15px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
     .hero {
         padding: 24px 20px;
     }
 
     .brand-name {
-        font-size: 20px;
-    }
-
-    .selected-recruiter-panel {
-        gap: 12px;
-        padding: 15px;
-    }
-
-    .selected-recruiter-avatar {
-        flex-basis: 42px;
-        width: 42px;
-        height: 42px;
-    }
-
-    .selected-recruiter-name {
         font-size: 20px;
     }
 
@@ -659,7 +530,6 @@ div[data-testid="stExpander"] {
 }
 """
 
-# IMPORTANT: Keep the <style> wrapper so CSS isn't shown as text.
 st.markdown(
     f"<style>\n{CSS.replace('__BG__', background_uri)}\n</style>",
     unsafe_allow_html=True,
@@ -667,12 +537,11 @@ st.markdown(
 
 
 # ============================================================
-# SIDEBAR — API KEYS
+# API KEY SIDEBAR
 # ============================================================
 
 with st.sidebar:
     st.markdown("## 🔑 API Configuration")
-
     st.caption(
         "Enter your own API keys. They are used by this app "
         "to call the respective services."
@@ -700,7 +569,6 @@ with st.sidebar:
     )
 
     st.divider()
-
     st.caption(
         "Keys are not written to a permanent database by this app. "
         "They remain in the active Streamlit session while you use it. "
@@ -709,7 +577,7 @@ with st.sidebar:
 
 
 # ============================================================
-# HEADER
+# APP HEADER
 # ============================================================
 
 st.markdown(
@@ -728,10 +596,6 @@ st.markdown(
 )
 
 
-# ============================================================
-# PROGRESS INDICATOR
-# ============================================================
-
 def render_steps(active_step):
     steps = [
         ("1", "Job & Resume", "Add your details"),
@@ -741,7 +605,9 @@ def render_steps(active_step):
 
     columns = st.columns(3)
 
-    for index, (number, title, description) in enumerate(steps, start=1):
+    for index, (number, title, description) in enumerate(
+        steps, start=1
+    ):
         if index < active_step:
             state, shown_number = "complete", "✓"
         elif index == active_step:
@@ -790,27 +656,20 @@ if st.session_state["page"] == 1:
         unsafe_allow_html=True,
     )
 
-    feature_columns = st.columns(3)
-
     features = [
-        (
-            "⌕",
-            "Relevant recruiters",
-            "Discover recruiters at the company you are targeting.",
-        ),
-        (
-            "▤",
-            "Evidence-backed emails",
-            "Connect job requirements to experience on your resume.",
-        ),
-        (
-            "↗",
-            "Less manual work",
-            "Research recruiters and prepare outreach in one workflow.",
-        ),
+        ("⌕", "Relevant recruiters",
+         "Discover recruiters at the company you are targeting."),
+        ("▤", "Evidence-backed emails",
+         "Connect job requirements to experience on your resume."),
+        ("↗", "Less manual work",
+         "Research recruiters and prepare outreach in one workflow."),
     ]
 
-    for column, (icon, title, description) in zip(feature_columns, features):
+    feature_columns = st.columns(3)
+
+    for column, (icon, title, description) in zip(
+        feature_columns, features
+    ):
         with column:
             st.markdown(
                 f"""
@@ -825,7 +684,7 @@ if st.session_state["page"] == 1:
 
     with st.container(border=True):
         st.markdown(
-            '<div class="section-heading">Job description & resume</div>',
+            '<div class="section-heading">Job description &amp; resume</div>',
             unsafe_allow_html=True,
         )
 
@@ -872,10 +731,8 @@ if st.session_state["page"] == 1:
     if submitted:
         if not job_description.strip():
             st.error("Please paste a job description.")
-
         elif not gemini_api_key.strip():
             st.error("Enter your Gemini API key in the sidebar.")
-
         else:
             resume_bytes = (
                 uploaded_resume.getvalue()
@@ -885,17 +742,18 @@ if st.session_state["page"] == 1:
 
             if not resume_bytes:
                 st.error("Please upload your resume as a PDF.")
-
             else:
                 try:
                     with st.spinner(
                         "Analyzing your job description and resume, "
                         "then finding recruiters..."
                     ):
-                        pdf_reader = pypdf.PdfReader(io.BytesIO(resume_bytes))
+                        reader = pypdf.PdfReader(
+                            io.BytesIO(resume_bytes)
+                        )
                         resume_parts = []
 
-                        for pdf_page in pdf_reader.pages:
+                        for pdf_page in reader.pages:
                             page_text = pdf_page.extract_text()
                             if page_text:
                                 resume_parts.append(page_text)
@@ -922,37 +780,31 @@ if st.session_state["page"] == 1:
                     if not result or not result.get("recruiters"):
                         st.session_state["pipeline_result"] = None
                         st.session_state["email_result"] = None
-
                         st.warning(
                             "No recruiters could be found at the moment. "
                             "Please try again later."
                         )
-
                     else:
                         st.session_state["saved_job_description"] = job_description
                         st.session_state["saved_resume_bytes"] = resume_bytes
                         st.session_state["pipeline_result"] = result
                         st.session_state["email_result"] = None
-
-                        for key in (
-                            "selected_recruiter_index_saved",
-                            "selected_recruiter_index",
-                            "edited_email_subject",
-                            "edited_email_body",
-                        ):
-                            st.session_state.pop(key, None)
-
+                        st.session_state["selected_recruiter_index_saved"] = 0
+                        st.session_state.pop("edited_email_subject", None)
+                        st.session_state.pop("edited_email_body", None)
                         st.session_state["page"] = 2
                         st.rerun()
 
                 except Exception as error:
-                    st.error("Something went wrong while finding recruiters.")
+                    st.error(
+                        "Something went wrong while finding recruiters."
+                    )
                     with st.expander("Technical details"):
                         st.exception(error)
 
 
 # ============================================================
-# PAGE 2 — RECRUITER SELECTION
+# PAGE 2 — NATIVE STREAMLIT RECRUITER CARDS
 # ============================================================
 
 elif st.session_state["page"] == 2:
@@ -977,10 +829,9 @@ elif st.session_state["page"] == 2:
                 Meet your <span>recruiters.</span>
               </div>
               <p class="hero-description">
-                Choose a recruiter at your target company. Recruiters are
-                ranked primarily by location match, with recruiter relevance
-                as a secondary factor. Contact information is retrieved only
-                after you make your selection.
+                Select a recruiter to continue. Results are ranked primarily
+                by location match, with recruiter relevance as a secondary
+                factor. Contact information is retrieved after selection.
               </p>
             </div>
             """,
@@ -988,119 +839,132 @@ elif st.session_state["page"] == 2:
         )
 
         st.caption(f"{len(recruiters)} recruiter(s) found")
+        st.markdown(
+            '<div class="section-heading">Choose a recruiter</div>',
+            unsafe_allow_html=True,
+        )
+        st.markdown(
+            '<div class="section-description">'
+            'Use the circle to select a recruiter. Click the LinkedIn button '
+            'to open their profile separately.'
+            '</div>',
+            unsafe_allow_html=True,
+        )
 
-        # MATCHED RECRUITERS CARD
+        selected_index = int(
+            st.session_state.get("selected_recruiter_index_saved", 0)
+        )
+        selected_index = max(
+            0,
+            min(selected_index, len(recruiters) - 1),
+        )
 
-        with st.container(border=True):
-            st.markdown(
-                '<div class="section-heading">Matched recruiters</div>',
-                unsafe_allow_html=True,
-            )
+        def valid_linkedin_url(value):
+            if not value:
+                return None
+            try:
+                parsed = urlsplit(str(value).strip())
+            except ValueError:
+                return None
 
-            st.markdown(
-                """
-                <div class="section-description">
-                    Select one person to continue. Contact email addresses
-                    are not retrieved or displayed in this list.
-                </div>
-                """,
-                unsafe_allow_html=True,
-            )
+            host = (parsed.hostname or "").lower()
 
-            def recruiter_label(index):
-                recruiter = recruiters[index]
-                return (
-                    f"{recruiter.name} · "
-                    f"{recruiter.title or 'Recruiter'} · "
-                    f"{recruiter.company or 'Company not listed'} · "
-                    f"{recruiter.location or 'Location not listed'}"
+            if (
+                parsed.scheme in ("https", "http")
+                and (
+                    host == "linkedin.com"
+                    or host.endswith(".linkedin.com")
+                )
+            ):
+                return parsed.geturl()
+
+            return None
+
+        # Each card uses native Streamlit controls, not a multiline
+        # HTML block. The LinkedIn control is a separate link button.
+
+        for index, recruiter in enumerate(recruiters):
+            is_selected = index == selected_index
+
+            with st.container(border=True):
+                selector_col, details_col, link_col = st.columns(
+                    [0.45, 5.2, 1.7]
                 )
 
-            saved_index = st.session_state.get(
-                "selected_recruiter_index_saved", 0
-            )
-            saved_index = min(max(saved_index, 0), len(recruiters) - 1)
+                with selector_col:
+                    selector_label = "◉" if is_selected else "○"
+                    selector_type = (
+                        "primary" if is_selected else "secondary"
+                    )
 
-            selected_index = st.radio(
-                "Select a recruiter",
-                options=list(range(len(recruiters))),
-                index=saved_index,
-                format_func=recruiter_label,
-                key="selected_recruiter_index",
-                label_visibility="collapsed",
-            )
+                    if st.button(
+                        selector_label,
+                        key=f"select_recruiter_{index}",
+                        type=selector_type,
+                        help="Select this recruiter",
+                    ):
+                        st.session_state[
+                            "selected_recruiter_index_saved"
+                        ] = index
+                        st.rerun()
+
+                with details_col:
+                    if is_selected:
+                        st.markdown(
+                            '<div class="selected-label">✓ Selected</div>',
+                            unsafe_allow_html=True,
+                        )
+
+                    name = str(recruiter.name or "Recruiter")
+                    safe_name = html.escape(name)
+
+                    st.markdown(
+                        f'<p class="recruiter-name">{safe_name}</p>',
+                        unsafe_allow_html=True,
+                    )
+
+                    st.markdown(
+                        f'<div class="recruiter-title">'
+                        f'{html.escape(str(recruiter.title or "Recruiter"))}'
+                        f'</div>',
+                        unsafe_allow_html=True,
+                    )
+
+                    company = html.escape(
+                        str(recruiter.company or "Company not listed")
+                    )
+                    location = html.escape(
+                        str(recruiter.location or "Location not listed")
+                    )
+
+                    st.markdown(
+                        f'<div class="recruiter-meta">'
+                        f'<strong>Company:</strong> {company}'
+                        f' &nbsp; · &nbsp; '
+                        f'<strong>Location:</strong> {location}'
+                        f'</div>',
+                        unsafe_allow_html=True,
+                    )
+
+                with link_col:
+                    linkedin_url = valid_linkedin_url(
+                        getattr(recruiter, "linkedin_url", None)
+                    )
+
+                    if linkedin_url:
+                        st.link_button(
+                            "View LinkedIn ↗",
+                            linkedin_url,
+                            use_container_width=True,
+                        )
+                    else:
+                        st.caption("LinkedIn unavailable")
 
         selected_recruiter = recruiters[selected_index]
 
-        # SELECTED RECRUITER CARD
-        # Only the selected recruiter's name is purple.
-
-        with st.container(border=True):
-            st.markdown(
-                '<div class="section-heading">Selected recruiter</div>',
-                unsafe_allow_html=True,
-            )
-
-            recruiter_name = str(selected_recruiter.name or "Recruiter")
-            initials = "".join(
-                part[0] for part in recruiter_name.split()[:2]
-            ).upper() or "R"
-
-            safe_name = html.escape(recruiter_name)
-            safe_initials = html.escape(initials)
-            safe_title = html.escape(
-                str(selected_recruiter.title or "Recruiter")
-            )
-            safe_company = html.escape(
-                str(selected_recruiter.company or "Not available")
-            )
-            safe_location = html.escape(
-                str(selected_recruiter.location or "Location not listed")
-            )
-
-            if selected_recruiter.linkedin_url:
-                safe_url = html.escape(
-                    str(selected_recruiter.linkedin_url),
-                    quote=True,
-                )
-                linkedin_markup = (
-                    f'<a class="selected-recruiter-link" href="{safe_url}" '
-                    'target="_blank" rel="noopener noreferrer">'
-                    "View LinkedIn Profile ↗</a>"
-                )
-            else:
-                linkedin_markup = (
-                    '<span class="selected-recruiter-link">'
-                    "LinkedIn profile unavailable</span>"
-                )
-
-            st.markdown(
-                f"""
-                <div class="selected-recruiter-panel">
-                    <div class="selected-recruiter-avatar">
-                        {safe_initials}
-                    </div>
-                    <div class="selected-recruiter-info">
-                        <div class="selected-recruiter-name">
-                            {safe_name}
-                        </div>
-                        <div class="selected-recruiter-role">
-                            {safe_title}
-                        </div>
-                        <div class="selected-recruiter-meta">
-                            <span class="selected-recruiter-chip">
-                                Company · {safe_company}
-                            </span>
-                            <span class="selected-recruiter-chip">
-                                Location · {safe_location}
-                            </span>
-                        </div>
-                        {linkedin_markup}
-                    </div>
-                </div>
-                """,
-                unsafe_allow_html=True,
-            )
+        st.session_state[
+            "selected_recruiter_index_saved"
+        ] = selected_index
 
         back_col, next_col = st.columns([1, 2])
 
@@ -1114,7 +978,6 @@ elif st.session_state["page"] == 2:
                 st.rerun()
 
         with next_col:
-            # Keep this label generic. Do not include the recruiter's name.
             if st.button(
                 "Generate Email →",
                 type="primary",
@@ -1122,13 +985,11 @@ elif st.session_state["page"] == 2:
             ):
                 if not gemini_api_key.strip():
                     st.error("Enter your Gemini API key in the sidebar.")
-
                 elif not hunter_api_key.strip():
                     st.error(
                         "Enter your Hunter API key in the sidebar "
-                        "to retrieve recruiter contact information."
+                        "to retrieve contact information."
                     )
-
                 else:
                     try:
                         with st.spinner(
@@ -1154,13 +1015,15 @@ elif st.session_state["page"] == 2:
                         st.rerun()
 
                     except Exception as error:
-                        st.error("Something went wrong while generating the email.")
+                        st.error(
+                            "Something went wrong while generating the email."
+                        )
                         with st.expander("Technical details"):
                             st.exception(error)
 
 
 # ============================================================
-# PAGE 3 — CONTACT DETAILS AND EMAIL
+# PAGE 3 — CONTACT, EVIDENCE AND EMAIL
 # ============================================================
 
 elif st.session_state["page"] == 3:
@@ -1177,10 +1040,13 @@ elif st.session_state["page"] == 3:
 
     else:
         recruiters = result["recruiters"]
-        selected_index = st.session_state.get(
-            "selected_recruiter_index_saved", 0
+        selected_index = int(
+            st.session_state.get("selected_recruiter_index_saved", 0)
         )
-        selected_index = min(max(selected_index, 0), len(recruiters) - 1)
+        selected_index = max(
+            0,
+            min(selected_index, len(recruiters) - 1),
+        )
         selected_recruiter = recruiters[selected_index]
 
         st.markdown(
@@ -1191,9 +1057,8 @@ elif st.session_state["page"] == 3:
                 Make your first <span>connection.</span>
               </div>
               <p class="hero-description">
-                Review the retrieved contact information, check the resume
-                evidence behind your personalization, and edit your email
-                before downloading it.
+                Review the contact information and resume evidence, then
+                edit your personalized email before downloading.
               </p>
             </div>
             """,
@@ -1203,75 +1068,63 @@ elif st.session_state["page"] == 3:
         def field_value(obj, field_name, default="Not available"):
             if obj is None:
                 return default
-
             if isinstance(obj, dict):
                 value = obj.get(field_name)
             else:
                 value = getattr(obj, field_name, None)
-
-            if value is None or value == "":
-                return default
-            return value
+            return default if value is None or value == "" else value
 
         contact = field_value(email_result, "contact", default=None)
         email = field_value(email_result, "email", default=None)
         evidence = field_value(email_result, "evidence", default=None)
-
-        # CONTACT CARD
 
         with st.container(border=True):
             st.markdown(
                 '<div class="section-heading">Recruiter contact</div>',
                 unsafe_allow_html=True,
             )
-
-            safe_name = html.escape(str(selected_recruiter.name))
-
             st.markdown(
-                f'<div class="selected-recruiter-name">{safe_name}</div>',
+                f'<p class="recruiter-name">'
+                f'{html.escape(str(selected_recruiter.name))}</p>',
                 unsafe_allow_html=True,
             )
 
-            contact_col1, contact_col2 = st.columns(2)
+            col1, col2 = st.columns(2)
 
-            with contact_col1:
+            with col1:
                 st.write(
                     f"**Company:** "
                     f"{selected_recruiter.company or 'Not available'}"
                 )
                 st.write(f"**Email:** {field_value(contact, 'email')}")
 
-            with contact_col2:
+            with col2:
                 st.write(
-                    f"**Hunter score:** "
-                    f"{field_value(contact, 'hunter_score')}"
+                    f"**Hunter score:** {field_value(contact, 'hunter_score')}"
                 )
                 st.write(
                     f"**Verification:** "
                     f"{field_value(contact, 'verification_status')}"
                 )
 
-            if selected_recruiter.linkedin_url:
-                st.markdown(
-                    f"[View LinkedIn Profile ↗]"
-                    f"({selected_recruiter.linkedin_url})"
+            linkedin_url = valid_linkedin_url(
+                getattr(selected_recruiter, "linkedin_url", None)
+            )
+            if linkedin_url:
+                st.link_button(
+                    "View LinkedIn Profile ↗",
+                    linkedin_url,
                 )
-
-        # EVIDENCE CARD
 
         with st.container(border=True):
             st.markdown(
                 '<div class="section-heading">Evidence used</div>',
                 unsafe_allow_html=True,
             )
-
             st.markdown(
-                """
-                <div class="section-description">
-                    Review how your resume supports the requirements
-                    identified in the job description.
-                </div>
-                """,
+                '<div class="section-description">'
+                'Review how your resume supports the job requirements.'
+                '</div>',
                 unsafe_allow_html=True,
             )
 
@@ -1280,44 +1133,34 @@ elif st.session_state["page"] == 3:
             if matches:
                 for index, match in enumerate(matches, start=1):
                     capability = field_value(
-                        match,
-                        "capability",
-                        "Relevant capability",
+                        match, "capability", "Relevant capability"
                     )
-
                     with st.expander(
                         f"{index}. {capability}",
                         expanded=(index == 1),
                     ):
                         st.write(
-                            "**Evidence:** "
-                            f"{field_value(match, 'evidence')}"
+                            f"**Evidence:** {field_value(match, 'evidence')}"
                         )
                         st.write(
-                            "**Why relevant:** "
+                            f"**Why relevant:** "
                             f"{field_value(match, 'relevance_reason')}"
                         )
                         st.write(
-                            "**Score:** "
-                            f"{field_value(match, 'score')}"
+                            f"**Score:** {field_value(match, 'score')}"
                         )
             else:
                 st.caption("No evidence matches were returned.")
-
-        # EDITABLE EMAIL CARD
 
         with st.container(border=True):
             st.markdown(
                 '<div class="section-heading">Your personalized email</div>',
                 unsafe_allow_html=True,
             )
-
             st.markdown(
-                """
-                <div class="section-description">
-                    Review and edit the email before downloading it.
-                </div>
-                """,
+                '<div class="section-description">'
+                'Review and edit the email before downloading it.'
+                '</div>',
                 unsafe_allow_html=True,
             )
 
@@ -1329,7 +1172,6 @@ elif st.session_state["page"] == 3:
                 value=email_subject,
                 key="edited_email_subject",
             )
-
             edited_body = st.text_area(
                 "Email body",
                 value=email_body,
@@ -1369,7 +1211,6 @@ elif st.session_state["page"] == 3:
 
                 for key in (
                     "selected_recruiter_index_saved",
-                    "selected_recruiter_index",
                     "saved_job_description",
                     "saved_resume_bytes",
                     "edited_email_subject",
